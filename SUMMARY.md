@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Workflow Data Fabric Lab: Financial Intelligence at Scale](README.md)
+* [APAC AI End to End Workshop: Workflow Data Fabric](README.md)
 * [Data and Flow Diagrams](data-and-flow-diagrams.md)
 
 ## Main Exercises
