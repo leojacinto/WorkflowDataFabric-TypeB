@@ -6,8 +6,6 @@ icon: folder-grid
 
 [Take me back to main page](../)
 
-<mark style="color:$warning;">**Note:**</mark> This is a controlled lab and is only accessible in ServiceNow internal demo instances. Please bear with us as we translate this into a widely available lab exercise.
-
 This lab will walk you through the configuration and usage of External Content Connectors as a source of unstructured document data to supplement automations needed in Finance case creation.
 
 ## Data flow
@@ -70,7 +68,7 @@ graph LR
 3.  Set the <mark style="color:green;">**a.)**</mark> **Email** to **demouser@wdfdemo.onmicrosoft.com**, <mark style="color:green;">**b.)**</mark> click **Save**. Then <mark style="color:green;">**c.)**</mark> click **Roles** then <mark style="color:green;">**d.)**</mark> click **Edit**.
 
     <figure><img src="../.gitbook/assets/sc_xcc_prep_email_roles_edit.png" alt=""><figcaption></figcaption></figure>
-4.  Search for <mark style="color:green;">**a.)**</mark> **ais\_high\_security\_admin** > <mark style="color:green;">**b.)**</mark> click on **ais\_high\_security\_admin** > <mark style="color:green;">**c.)**</mark> click on **>** to move the role to the right panel > then <mark style="color:green;">**d.)**</mark> click **Save**.&#x20;
+4.  Search for <mark style="color:green;">**a.)**</mark> **ais\_high\_security\_admin** > <mark style="color:green;">**b.)**</mark> click on **ais\_high\_security\_admin** > <mark style="color:green;">**c.)**</mark> click on **>** to move the role to the right panel > then <mark style="color:green;">**d.)**</mark> click **Save**.
 
     <figure><img src="../.gitbook/assets/sc_xcc_prep_add_ais_role.png" alt="" width="563"><figcaption></figcaption></figure>
 5.  Right-click on the top panel and click **Save**.
@@ -80,7 +78,7 @@ graph LR
 
     <figure><img src="../.gitbook/assets/sc_common_logout.png" alt="" width="254"><figcaption></figcaption></figure>
 
-### Crawl and Usage of External Content Connectors
+### Connection and Crawl Config
 
 This provides the steps to execute a crawl of documents to file repositories XCC (External Content Connectors) are set up for. This also provides the steps in a real life scenario on how XCC can help end users with their daily tasks.
 
@@ -131,7 +129,7 @@ This does not include steps in setting up XCC to connect to a SharePoint account
 
 <figure><img src="../.gitbook/assets/sc_xcc_crawl_settings.png" alt=""><figcaption></figcaption></figure>
 
-10. Since you are elevated as **ais\_high\_security\_admin**, you will be able to set this up. If you skipped adding the **ais\_high\_security\_admin** role and elevating to it, you will not be able to set this step up; i.e. even accepting defaults is not possible if you do not have elevated roles in this step. You can do a mapping <mark style="color:green;">**a.)**</mark> Test as an optional step. Otherwise, if you have the correct roles and have elevated your access, you can simply <mark style="color:green;">**b.)**</mark> click **Next**.&#x20;
+10. Since you are elevated as **ais\_high\_security\_admin**, you will be able to set this up. If you skipped adding the **ais\_high\_security\_admin** role and elevating to it, you will not be able to set this step up; i.e. even accepting defaults is not possible if you do not have elevated roles in this step. You can do a mapping <mark style="color:green;">**a.)**</mark> Test as an optional step. Otherwise, if you have the correct roles and have elevated your access, you can simply <mark style="color:green;">**b.)**</mark> click **Next**.
 
     <figure><img src="../.gitbook/assets/sc_xcc_mapping_test.png" alt=""><figcaption></figcaption></figure>
 11. In the next screen, <mark style="color:green;">**a.)**</mark> click **Full document crawl**, <mark style="color:green;">**b.)**</mark> tick **Crawl user permissions**, then finally <mark style="color:green;">**c.)**</mark> click **Next**. If for whatever reason you miss the setting in crawling permissions, don't worry, it is possible to run it separately.
@@ -156,17 +154,22 @@ This does not include steps in setting up XCC to connect to a SharePoint account
 17. Navigate to All > <mark style="color:green;">**a.)**</mark> type **Employee Center** > <mark style="color:green;">**b.)**</mark> click on **Employee Center**.
 
     <figure><img src="../.gitbook/assets/sc_xcc_employee_center_nav.png" alt=""><figcaption></figcaption></figure>
-18. This will lead to the **Employee Center** home page. Note the **Ask Now Assist for help or search**. This is where you will type the query.
 
-    <figure><img src="../.gitbook/assets/sc_xcc_employee_center_home.png" alt=""><figcaption></figcaption></figure>
-19. In that dialog, type: **Marketing team cost centre in France seems to have gone over-budget. Can you look for any documents that can assist in checking if there are management directives which might have triggered this?** Then hit **Return/Enter ↵**.
+### Usage of External Content Connector
 
-    <figure><img src="../.gitbook/assets/sc_xcc_now_assist_query.png" alt=""><figcaption></figcaption></figure>
-20. You will get a <mark style="color:green;">**a.)**</mark> detailed response based on the SharePoint documents that were crawled earlier, which is also aligned with the over-budget entries. Click on the <mark style="color:green;">**b.)**</mark> number **1** then <mark style="color:green;">**c.)**</mark> take note of the PDF file **Strategic Memo - European Product Launch.pdf**. No need to click this file as this will require SharePoint login which is not provided for this activity. <mark style="color:$warning;">**Note:**</mark> as Now Assist, like any LLM-based service is probabilistic, you might get a different response or format to what you see in the screenshot below but the key ideas remain the same.
+1. This will lead to the **Employee Center** home page. Note the **Ask Now Assist for help or search**. This is where you will type the query.
+
+<figure><img src="../.gitbook/assets/sc_xcc_employee_center_home.png" alt=""><figcaption></figcaption></figure>
+
+2. In that dialog, type: **Marketing team cost centre in France seems to have gone over-budget. Can you look for any documents that can assist in checking if there are management directives which might have triggered this?** Then hit **Return/Enter ↵**.
+
+<figure><img src="../.gitbook/assets/sc_xcc_now_assist_query.png" alt=""><figcaption></figcaption></figure>
+
+3. You will get a <mark style="color:green;">**a.)**</mark> detailed response based on the SharePoint documents that were crawled earlier, which is also aligned with the over-budget entries. Click on the <mark style="color:green;">**b.)**</mark> number **1** then <mark style="color:green;">**c.)**</mark> take note of the PDF file **Strategic Memo - European Product Launch.pdf**. No need to click this file as this will require SharePoint login which is not provided for this activity. <mark style="color:$warning;">**Note:**</mark> as Now Assist, like any LLM-based service is probabilistic, you might get a different response or format to what you see in the screenshot below but the key ideas remain the same.
 
 <figure><img src="../.gitbook/assets/sc_xcc_response_detail.png" alt=""><figcaption></figcaption></figure>
 
-21. For reference, a screenshot of the PDF that was used as source on why cost center **MKTG-FR-PR** went over-budget is shown below.&#x20;
+21. For reference, a screenshot of the PDF that was used as source on why cost center **MKTG-FR-PR** went over-budget is shown below.
 
 <figure><img src="../.gitbook/assets/sc_xcc_overbudget.png" alt=""><figcaption></figcaption></figure>
 
