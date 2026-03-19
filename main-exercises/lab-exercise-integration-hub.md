@@ -123,44 +123,12 @@ These are required preparation steps in platform level. These are cross configur
 6.  Search for <mark style="color:green;">**a.)**</mark> **sn\_aia.admin** > <mark style="color:green;">**b.)**</mark> click on **sn\_aia.admin** > <mark style="color:green;">**c.)**</mark> click on **>** to move the role to the right panel > then <mark style="color:green;">**d.)**</mark> click **Save**. You will notice that there are also roles for integration and viewer purposes which can be assigned for users who will need less privileges.
 
     <figure><img src="../.gitbook/assets/sc_ihub_roles_sn_aia_save.png" alt=""><figcaption></figcaption></figure>
-7.  You will get <mark style="color:green;">**a.)**</mark> messages such as **Adding Role agent\_role\_config\_viewer to admin**, there will be 4 of such messages > <mark style="color:green;">**b.)**</mark> right-click on the top panel and click **Save**.
+7.  Right-click on the top panel and click **Save**.
 
-    <figure><img src="../.gitbook/assets/sc_ihub_role_messages_save.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../.gitbook/assets/sc_xcc_prep_save.png" alt=""><figcaption></figcaption></figure>
 8.  <mark style="color:red;">**IMPORTANT**</mark>. Log out and log back in.
 
     <figure><img src="../.gitbook/assets/sc_common_logout.png" alt="" width="254"><figcaption></figcaption></figure>
-9.  Once logged back in navigate to **All** > <mark style="color:green;">**a.)**</mark> type **Assistant Designer** then <mark style="color:green;">**b.)**</mark> click **Conversational Interfaces > Assistant Designer**. This will open a new tab.
-
-    <figure><img src="../.gitbook/assets/sc_common_assistant_designer_nav.png" alt="" width="337"><figcaption></figcaption></figure>
-10. Go to **Now Assist Panel - Platform (default)** > **Edit**.
-
-    <figure><img src="../.gitbook/assets/sc_common_now_assist_panel_edit.png" alt="" width="375"><figcaption></figcaption></figure>
-11. Under **Continue customizing this assistant** > **Add display experiences** > click **Go to display experiences**.
-
-    <figure><img src="../.gitbook/assets/sc_common_display_experiences_link.png" alt="" width="563"><figcaption></figcaption></figure>
-12. Under **Settings** > <mark style="color:green;">**a.)**</mark>**&#x20;Display experiences**, make sure that <mark style="color:green;">**b.)**</mark>**&#x20;Unified Navigation app shell** is selected. If it is not added, you may need to select it from **Add ServiceNow platform** dropdown menu. Click <mark style="color:green;">**c.)**</mark> **Save** then <mark style="color:green;">**d.)**</mark>**&#x20;Activate**. This step is needed to ensure that the Now Assist panel is accessible when AI Agents are triggered.
-
-    <figure><img src="../.gitbook/assets/sc_common_unified_nav_settings.png" alt=""><figcaption></figcaption></figure>
-13. Click on the **Assistant Designer** logo at the top left. You may need to refresh your page to make sure it has picked up the latest status of **Now Assist Panel - Platform (default)**.
-
-    <figure><img src="../.gitbook/assets/sc_common_assistant_designer_logo.png" alt="" width="240"><figcaption></figcaption></figure>
-14. Go to **Now Assist in Virtual Agent (default)** > **Edit**. Note that this is another configuration tile!
-
-    <figure><img src="../.gitbook/assets/sc_common_now_assist_va_edit.png" alt="" width="375"><figcaption></figcaption></figure>
-15. Under **Continue customizing this assistant** > **Add display experiences** > click **Go to display experiences**.
-
-    <figure><img src="../.gitbook/assets/sc_common_display_experiences_link.png" alt="" width="563"><figcaption></figcaption></figure>
-16. Under **Settings** > <mark style="color:green;">**a.)**</mark>**&#x20;Display experiences**, make sure that <mark style="color:green;">**b.)**</mark>**&#x20;Employee Center** is selected. If it is not added, you may need to select it from **Add portal** dropdown menu. Click <mark style="color:green;">**c.)**</mark> **Save** then <mark style="color:green;">**d.)**</mark>**&#x20;Activate**. This step is needed to ensure that the Virtual Agent is accessible in Employee Center where most end users will do their day to day tasks such as processing and opening cases.
-
-<figure><img src="../.gitbook/assets/sc_common_employee_center_display.png" alt=""><figcaption></figcaption></figure>
-
-17. Navigate to **All** > <mark style="color:green;">**a.)**</mark> type **Now Assist Admin** then <mark style="color:green;">**b.)**</mark> click **Now Assist Admin > Experiences**.
-
-<figure><img src="../.gitbook/assets/sc_common_now_assist_admin_nav.png" alt="" width="298"><figcaption></figcaption></figure>
-
-18. Go to> <mark style="color:green;">**a.)**</mark> **Now Assist panel** then <mark style="color:green;">**b.)**</mark> click **Turn on**. This is an additional configuration to ensure **Now Assist panel** is accessible.
-
-<figure><img src="../.gitbook/assets/sc_common_now_assist_turn_on.png" alt="" width="563"><figcaption></figcaption></figure>
 
 ### Preparation: Initial Checks
 
@@ -338,7 +306,7 @@ In the same window of Flow Designer > Subflows > Get Expense Event. Click Test >
 
 Return to AI Agent Studio browser window. Look for the Now Assist badge. Open Now Assist chat. Expand to Modal view. Explore: planning steps, event ID extraction, RAG search results, budget analysis, Finance Case link.
 
-1. Go back to the earlier browser window with **AI Agent Studio**. You will notice that there is a new **Now Assist badge**. This is the AI agent at work in the back end because the **Get Expense Event** subflow has triggered a change in the **Expense Transaction Event** table. Click on the **Now Assist icon** with the updated badge count. If the **Now Assist badge** does not appear, simply reload your page.
+1. Go back to the earlier browser window with **AI Agent Studio**. You will notice that there is a new **Now Assist badge**. This is the AI agent at work in the back end because the **Get Expense Event** subflow has triggered a change in the **Expense Transaction Event** table. Click on the **Now Assist icon** with the updated badge count. <mark style="color:$warning;">**Note:**</mark> if the **Now Assist badge** does not appear, simply reload your page. <mark style="color:$warning;">**In some cases the badge won't load at all**</mark> so simply open Now Assist and look for new chats/correspondences.
 
 <figure><img src="../.gitbook/assets/sc_ihub_now_assist_badge_notification.png" alt=""><figcaption></figcaption></figure>
 

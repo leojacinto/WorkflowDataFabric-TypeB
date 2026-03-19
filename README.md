@@ -3,7 +3,7 @@ description: Building integrations and agents to scale financial intelligence
 icon: magnifying-glass-chart
 ---
 
-# APAC AI End to End Workshop: Workflow Data Fabric
+# APAC AI End-to-End Lab: Workflow Data Fabric
 
 <figure><picture><source srcset=".gitbook/assets/wdf_connectors_banner_dark.gif" media="(prefers-color-scheme: dark)"><img src=".gitbook/assets/wdf_connectors_banner.gif" alt="Workflow Data Fabric"></picture><figcaption></figcaption></figure>
 
@@ -36,7 +36,7 @@ By completing this lab, you'll build an interconnected financial intelligence pl
 * **MCP Server** enabling integration with any application that supports the protocol
 * **AI agents** that autonomously search via [RAG](https://en.wikipedia.org/wiki/Retrieval-augmented_generation), analyze trends, and create contextual cases
 * **Lens and Document Intelligence** for invoice data capture individually or batch, respectively
-* <mark style="color:$warning;">**\[Controlled Lab]**</mark>**&#x20;External Content Connector** bringing executive memos into making decisions
+* **External Content Connector** bringing executive memos into making decisions
 * **Finance Case Management** which receives the cases pre-processed by the AI Agents based on data taken from WDF
 
 You'll master the architectural patterns for transforming siloed enterprise data into unified, intelligent decision-making platforms. **Let's build something intelligent**. 🚀💡
@@ -49,7 +49,7 @@ This lab is divided into 5 exercises with the suggested sequence below. The Serv
 
 This is designed to be a full day workshop covering most of WDF's capabilities. As such, we will not be able to cover in great depth all of the capabilities. If there are capabilities most relevant to your requirements, do ask your Lab Admin if there is a relevant deep dive lab available.
 
-<table><thead><tr><th width="203.09375">Topic</th><th width="180.48828125">Difficulty</th><th>AI Agents involved</th><th>Suggested duration</th></tr></thead><tbody><tr><td><a href="https://servicenow-lf.gitbook.io/the-workflow-data-fabric-loom/data-and-flow-diagrams">Workflow Data Fabric Diagrams</a></td><td>N/A</td><td>No</td><td>N/A</td></tr><tr><td><strong>Main Exercises</strong></td><td></td><td></td><td></td></tr><tr><td><a href="https://servicenow-lf.gitbook.io/the-workflow-data-fabric-loom/lab-exercise-fundamentals">Lab Exercise: Fundamentals</a></td><td>Basic</td><td>No</td><td>30 minutes</td></tr><tr><td><a href="https://servicenow-lf.gitbook.io/the-workflow-data-fabric-loom/lab-exercise-integration-hub">Lab Exercise: Integration Hub</a></td><td>Intermediate</td><td>Yes</td><td>45 minutes</td></tr><tr><td><a href="https://servicenow-lf.gitbook.io/the-workflow-data-fabric-loom/lab-exercise-zero-copy-connectors">Lab Exercise: Zero Copy Connectors</a></td><td>Intermediate</td><td>Yes</td><td>1 hour</td></tr><tr><td><strong>Extended Exercises</strong></td><td></td><td></td><td></td></tr><tr><td><a href="https://servicenow-lf.gitbook.io/the-workflow-data-fabric-loom/lab-exercise-model-context-protocol-server-client">Lab Exercise: Model Context Protocol Server/Client</a></td><td>Intermediate</td><td>Yes</td><td>1 hour</td></tr><tr><td><a href="https://servicenow-lf.gitbook.io/the-workflow-data-fabric-loom/lab-exercise-servicenow-lens-and-document-intelligence">Lab Exercise: ServiceNow Lens and Document Intelligence</a></td><td>Basic</td><td>Yes</td><td>30 minutes</td></tr><tr><td><strong>Hungry for more?</strong></td><td></td><td></td><td></td></tr><tr><td><mark style="color:$warning;"><strong>[Controlled Lab]</strong></mark> <a href="https://servicenow-lf.gitbook.io/the-workflow-data-fabric-loom/lab-exercise-external-content-connector">Lab Exercise: External Content Connector</a></td><td>Basic</td><td>Yes</td><td>20 minutes</td></tr></tbody></table>
+<table><thead><tr><th width="203.09375">Topic</th><th width="180.48828125">Difficulty</th><th>AI Agents involved</th><th>Suggested duration</th></tr></thead><tbody><tr><td><a href="https://servicenow-lf.gitbook.io/the-workflow-data-fabric-loom/data-and-flow-diagrams">Workflow Data Fabric Diagrams</a></td><td>N/A</td><td>No</td><td>N/A</td></tr><tr><td><strong>Main Exercises</strong></td><td></td><td></td><td></td></tr><tr><td><a href="https://servicenow-lf.gitbook.io/the-workflow-data-fabric-loom/lab-exercise-fundamentals">Lab Exercise: Fundamentals</a></td><td>Basic</td><td>No</td><td>30 minutes</td></tr><tr><td><a href="https://servicenow-lf.gitbook.io/the-workflow-data-fabric-loom/lab-exercise-integration-hub">Lab Exercise: Integration Hub</a></td><td>Intermediate</td><td>Yes</td><td>45 minutes</td></tr><tr><td><a href="https://servicenow-lf.gitbook.io/the-workflow-data-fabric-loom/lab-exercise-zero-copy-connectors">Lab Exercise: Zero Copy Connectors</a></td><td>Intermediate</td><td>Yes</td><td>1 hour</td></tr><tr><td><strong>Extended Exercises</strong></td><td></td><td></td><td></td></tr><tr><td><a href="https://servicenow-lf.gitbook.io/the-workflow-data-fabric-loom/lab-exercise-model-context-protocol-server-client">Lab Exercise: Model Context Protocol Server/Client</a></td><td>Intermediate</td><td>Yes</td><td>1 hour</td></tr><tr><td><a href="https://servicenow-lf.gitbook.io/the-workflow-data-fabric-loom/lab-exercise-servicenow-lens-and-document-intelligence">Lab Exercise: ServiceNow Lens and Document Intelligence</a></td><td>Basic</td><td>Yes</td><td>30 minutes</td></tr><tr><td> <a href="https://servicenow-lf.gitbook.io/the-workflow-data-fabric-loom/lab-exercise-external-content-connector">Lab Exercise: External Content Connector</a></td><td>Basic</td><td>Yes</td><td>20 minutes</td></tr><tr><td><strong>Hungry for more?</strong></td><td></td><td></td><td></td></tr><tr><td><a href="https://servicenow-lf.gitbook.io/apac-ai-end-to-end-lab-workflow-data-fabric/hungry-for-more/lab-exercise-kafka_stream_connect">Lab Exercise: Stream Connect for Apache Kafka Lab</a></td><td>Advanced</td><td>Yes</td><td>1 hour</td></tr></tbody></table>
 
 ## For Solution Consultants using internal Demo Hub
 
@@ -80,24 +80,6 @@ Before attempting these exercises, ensure you have access and license entitlemen
 | MCP Client                                        | 1.0.7                                        |
 | Lens                                              | 2.0.0                                        |
 | Document Intelligence                             | 7.1.5                                        |
-
-### External system dependencies
-
-* Cloud data warehouse with SQL endpoint (e.g., Snowflake, Databricks, BigQuery)
-* Claude Desktop with MCP configuration (for MCP Server lab)
-* Sample ERP dataset or equivalent financial data source
-
-### What if I don’t have all of this?
-
-Each lab is designed to be conceptually valuable even without a fully configured environment. You can:
-
-* Follow along to understand the architectural patterns and configuration steps
-* Use the provided screenshots and sample outputs as reference
-* Adapt the exercises to your own data sources and systems
-
-### Guided lab sessions and object dependencies
-
-Fully provisioned environments with all dependencies pre-configured are available through ServiceNow-led workshops and enablement sessions. Please note that this lab uses the latest ServiceNow components as well as custom AI Agents and scoped objects, so provisioning requires lead time. Contact your ServiceNow representative or reach out to the author for availability.
 
 ### About the author
 
