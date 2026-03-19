@@ -52,29 +52,15 @@ The table you will create here will not be used for the rest of the steps and se
 
 ## Steps
 
-### Preparation: AI Search configuration
+### <mark style="color:red;">Important Preparation:</mark> Install Lab Dependencies
 
-This configuration section includes setting up of AI Search which is a critical tool for the AI Agents for your newly provisioned lab instance.
+This contains critical steps to prepare your Demo Hub Instance.
 
-1.  Using an private/incognito browser window, log on to your instance as:
-
-    1. User: **aislab.admin**
-    2. Password: **aislab.admin**
-
-    <figure><img src="../.gitbook/assets/sc_fund_aislab_admin_login.png" alt="" width="362"><figcaption></figcaption></figure>
-2.  Navigate to **All** > <mark style="color:green;">**a.)**</mark> type **Repair Machine Learning Settings** > <mark style="color:green;">**b.)**</mark> click on **Repair Machine Learning Settings**.
-
-    <figure><img src="../.gitbook/assets/sc_fund_repair_ml_nav.png" alt=""><figcaption></figcaption></figure>
-3.  Click on **Reset Machine Learning Settings**.
-
-    <figure><img src="../.gitbook/assets/sc_fund_repair_ml_click.png" alt="" width="375"><figcaption></figcaption></figure>
-4.  You will get a message that the machine learning settings are being reset.
-
-    <figure><img src="../.gitbook/assets/sc_fund_ml_settings_resetting.png" alt="" width="375"><figcaption></figcaption></figure>
-5.  After a 2-3 minutes, you will get a notification that the machine learning settings are reset. This will do indexing of tables in the background which will be needed for the search functionality to be used by the AI Agents later.
-
-    <figure><img src="../.gitbook/assets/sc_fund_ml_settings_reset_done.png" alt="" width="279"><figcaption></figcaption></figure>
-6. Exit your aislab.admin session and go back to your main session where you have logged in as **admin** user with the password provided to you.
+1. Ensure you are at least in Zurich Patch 6 by running stats.do and checking your version.
+2. If you have not done so yet, log in to [Demo Hub](https://demohub.service-now.com/) then go to the [APAC End-to-End AI Workshop ](https://demohub.service-now.com/edsp?id=sc_cat_item\&sys_id=8bb12066fb2f761042e1f57675efdc85\&sysparm_category=f2d15f6893429250e0d5b3aa6aba105a)catalog item to install the lab dependencies in your instance.&#x20;
+3. Provide your <mark style="color:green;">**a.)**</mark> Zurich Patch 6 or newer **Instance** name, <mark style="color:green;">**b.)**</mark>**&#x20;Admin User ID**, and <mark style="color:green;">**c.)**</mark> **Password**, then <mark style="color:green;">**d.)**</mark> click **Submit**.
+4. Wait for 10 to 15 minutes.
+5.
 
 ### Hands on: Create a Scope
 
