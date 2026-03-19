@@ -1,6 +1,6 @@
 # Table of contents
 
-* [APAC AI End to End Workshop - Workflow Data Fabric](README.md)
+* [APAC AI End-to-End Lab: Workflow Data Fabric](README.md)
 * [Data and Flow Diagrams](data-and-flow-diagrams.md)
 
 ## Main Exercises
