@@ -89,7 +89,9 @@ graph TB
     class Employee,EC user
 ```
 
-> **Color Legend:** 🟡 Now Assist | 🟢 Platform | ⚪ User Interaction
+> **Color Legend:** 🟡 Now Assist | 🟢 Platform | 🟣 Workflow Data Fabric | 🔵 External Systems | ⚪ User Interaction
+>
+> [📊 View High-Resolution Diagram](.gitbook/assets/dataflow_lens_document_intelligence.png)
 
 ## Document Intelligence
 

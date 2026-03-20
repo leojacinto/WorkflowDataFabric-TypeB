@@ -72,6 +72,8 @@ graph LR
 ```
 
 > **Color Legend:** 🟢 Platform | 🟣 Workflow Data Fabric | 🔵 External Systems | ⚪ User Interaction
+>
+> [📊 View High-Resolution Diagram](.gitbook/assets/dataflow_external_content_connector.png)
 
 ## Steps
 

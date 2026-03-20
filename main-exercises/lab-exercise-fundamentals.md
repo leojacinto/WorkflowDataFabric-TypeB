@@ -43,6 +43,8 @@ graph LR
 ```
 
 > **Color Legend:** 🟣 Workflow Data Fabric | 🟢 Platform | 🔵 External Systems
+>
+> [📊 View High-Resolution Diagram](.gitbook/assets/dataflow_fundamentals.png)
 
 ## Lab story
 

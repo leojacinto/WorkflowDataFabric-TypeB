@@ -86,6 +86,8 @@ graph LR
 ```
 
 > **Color Legend:** 🟡 Now Assist | 🟢 Platform | 🟣 Workflow Data Fabric | 🔵 External Systems | ⚪ User Interaction
+>
+> [📊 View High-Resolution Diagram](.gitbook/assets/dataflow_mcp.png)
 
 ## MCP Client Configuration
 

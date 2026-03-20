@@ -100,6 +100,8 @@ graph TB
 ```
 
 > **Color Legend:** 🟡 Now Assist | 🟢 Platform | 🟣 Workflow Data Fabric | 🔵 External Systems | ⚪ User Interaction
+>
+> [📊 View High-Resolution Diagram](.gitbook/assets/dataflow_integration_hub.png)
 
 ## Preparation
 
