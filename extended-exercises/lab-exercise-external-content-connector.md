@@ -8,6 +8,24 @@ icon: folder-grid
 
 This lab will walk you through the configuration and usage of External Content Connectors as a source of unstructured document data to supplement automations needed in Finance case creation.
 
+## Lab Sections and Objectives
+
+<table><thead><tr><th width="83">Step</th><th width="106">Who</th><th>Description</th></tr></thead><tbody><tr><td><a href="lab-exercise-external-content-connector.md#data-flow">1</a></td><td>Facilitator</td><td><strong>Context Setting:</strong> Review the data flow diagram showing how ServiceNow uses External Content Connectors to index and search documents from SharePoint.</td></tr></tbody></table>
+
+**Platform Preparation**
+
+<table><thead><tr><th width="83">Step</th><th width="106">Who</th><th>Description</th></tr></thead><tbody><tr><td><a href="lab-exercise-external-content-connector.md#preparation-steps">2</a></td><td>Student</td><td><strong>Preparation Steps:</strong> Configure admin user email and assign ais_high_security_admin role. Log out and log back in.</td></tr></tbody></table>
+
+**External Content Connector Configuration**
+
+<table><thead><tr><th width="83">Step</th><th width="106">Who</th><th>Description</th></tr></thead><tbody><tr><td><a href="lab-exercise-external-content-connector.md#connection-and-crawl-config">3</a></td><td>Student</td><td><strong>Connection and Crawl Config:</strong> Create SharePoint connection with authentication credentials. Configure and execute full document crawl with user permissions.</td></tr></tbody></table>
+
+**Testing and Validation**
+
+<table><thead><tr><th width="83">Step</th><th width="106">Who</th><th>Description</th></tr></thead><tbody><tr><td><a href="lab-exercise-external-content-connector.md#usage-of-external-content-connector">4</a></td><td>Student</td><td><strong>Usage of External Content Connector:</strong> Test Now Assist queries in Employee Center. Verify document search returns relevant SharePoint content.</td></tr></tbody></table>
+
+<table><thead><tr><th width="83">Step</th><th width="106">Who</th><th>Description</th></tr></thead><tbody><tr><td><a href="lab-exercise-external-content-connector.md#conclusion">5</a></td><td>Facilitator</td><td><strong>Conclusion:</strong> Walk through how External Content Connectors enable ServiceNow to leverage unstructured document data for AI-powered workflows.</td></tr></tbody></table>
+
 ## Data flow
 
 The data flow below shows how ServiceNow will get information from indexed documents from a document repository such as SharePoint to provide additional context and information to assist with Flows and Automations.
@@ -59,6 +77,8 @@ graph LR
 
 ### Preparation steps
 
+Configure admin user email and assign ais_high_security_admin role for elevated access to External Content Connector configuration.
+
 1.  Navigate to **All** > <mark style="color:green;">**a.)**</mark> type **Users and Groups** > <mark style="color:green;">**b.)**</mark> click on **Users and Groups > Users**.
 
     <figure><img src="../.gitbook/assets/sc_common_agent_studio_users_nav.png" alt=""><figcaption></figcaption></figure>
@@ -80,9 +100,7 @@ graph LR
 
 ### Connection and Crawl Config
 
-This provides the steps to execute a crawl of documents to file repositories XCC (External Content Connectors) are set up for. This also provides the steps in a real life scenario on how XCC can help end users with their daily tasks.
-
-This does not include steps in setting up XCC to connect to a SharePoint account as that requires SharePoint administrator rights which are not widely available to various personas.
+Create SharePoint connection with authentication credentials. Configure and execute full document crawl with user permissions to index documents for AI-powered search.
 
 1.  For this step, change the scope to Global by navigating to the <mark style="color:green;">**a.)**</mark> **globe icon** and clicking <mark style="color:green;">**b.)**</mark> **Global** application scope.
 
@@ -156,6 +174,8 @@ This does not include steps in setting up XCC to connect to a SharePoint account
     <figure><img src="../.gitbook/assets/sc_xcc_employee_center_nav.png" alt=""><figcaption></figcaption></figure>
 
 ### Usage of External Content Connector
+
+Test Now Assist queries in Employee Center to verify that indexed SharePoint documents are searchable and provide relevant context for finance-related inquiries.
 
 1. This will lead to the **Employee Center** home page. Note the **Ask Now Assist for help or search**. This is where you will type the query.
 
