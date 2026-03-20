@@ -111,7 +111,7 @@ graph TB
 
 > **Color Legend:** 🟡 Now Assist | 🟢 Platform | 🟣 Workflow Data Fabric | 🔵 External Systems | ⚪ User Interaction
 >
-> [📊 View High-Resolution Diagram](.gitbook/assets/dataflow_zero_copy_connectors.png)
+> [📊 View High-Resolution Diagram](https://raw.githubusercontent.com/leojacinto/WorkflowDataFabric-TypeB/main/.gitbook/assets/dataflow_zero_copy_connectors.png)
 
 ## Preparation
 

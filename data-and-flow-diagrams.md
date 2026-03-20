@@ -29,7 +29,7 @@ graph LR
     class ERP,ExpenseAPI,SharePoint,CDW external
 ```
 
-> [📊 View High-Resolution Diagram](.gitbook/assets/dataflow_prerequisites.png)
+> [📊 View High-Resolution Diagram](https://raw.githubusercontent.com/leojacinto/WorkflowDataFabric-TypeB/main/.gitbook/assets/dataflow_prerequisites.png)
 
 * **ERP**: This lab will use an SAP system with either BAPI/RFC or OData endpoints. The authentication and integration is already configured in this exercise and the objective is get the needed data by selecting the ERP data model and extraction table. If you wish to learn more on how to create the configuration in your own environment, check this [Zero Copy Connector for ERP guide by Leo Francia in the ServiceNow community](https://www.servicenow.com/community/app-engine-for-erp-blogs/part-1-of-4-intelligent-erp-workflows-get-sap-data-into/ba-p/3192800). You can also take this ServiceNow University course on [Introduction to Zero Copy Connector for ERP Data Products and Process Extensions](https://learning.servicenow.com/lxp/en/app-engine/introduction-to-zero-copy-connector-for-erp-data-products-and?id=learning_course_prev\&course_id=72e3387d937bea54fb94b4886cba1095).
 * **Cloud Data Warehouse**: Snowflake will be the cloud data warehouse used in this lab. If you have a Databricks or Redshift environment, the principles and steps here will also apply. The Snowflake key-pair authentication and integration is already configured in this exercise and the objective is get the needed data asset by selecting it from Workflow Data Fabric Hub. If you wish to learn more on how to create the configuration in your own environment, check this ServiceNow University course on [Zero Copy Connector Basics](https://learning.servicenow.com/lxp/en/automation-engine/zero-copy-connector-basics?id=learning_course_prev\&course_id=c505959493283e903cc0322d6cba1025).
@@ -56,7 +56,7 @@ graph LR
     class Employee,EC,ClaudeDesktop user
 ```
 
-> [📊 View High-Resolution Diagram](.gitbook/assets/dataflow_user_interaction.png)
+> [📊 View High-Resolution Diagram](https://raw.githubusercontent.com/leojacinto/WorkflowDataFabric-TypeB/main/.gitbook/assets/dataflow_user_interaction.png)
 
 ### ServiceNow Workflow Data Fabric
 
@@ -120,7 +120,7 @@ graph
 
 > **Color Legend:** 🟡 Now Assist | 🟢 Platform | 🟣 Workflow Data Fabric
 >
-> [📊 View High-Resolution Diagram](.gitbook/assets/dataflow_backend_components.png)
+> [📊 View High-Resolution Diagram](https://raw.githubusercontent.com/leojacinto/WorkflowDataFabric-TypeB/main/.gitbook/assets/dataflow_backend_components.png)
 
 #### Data Integration Layer and Zero Copy Tables
 
@@ -242,6 +242,6 @@ graph TB
 
 > **Color Legend:** 🟡 Now Assist | 🟢 Platform | 🟣 Workflow Data Fabric | 🔵 External Systems | ⚪ User Interaction
 >
-> [📊 View High-Resolution Diagram](.gitbook/assets/dataflow_complete_landscape.png)
+> [📊 View High-Resolution Diagram](https://raw.githubusercontent.com/leojacinto/WorkflowDataFabric-TypeB/main/.gitbook/assets/dataflow_complete_landscape.png)
 
 [Take me back to main page](./)
