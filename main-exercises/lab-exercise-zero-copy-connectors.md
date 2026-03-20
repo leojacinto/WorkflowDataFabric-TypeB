@@ -302,7 +302,7 @@ This is a walk through of how an AI Agent equipped with both deterministic and p
 3.  After reviewing the table, navigate to All > <mark style="color:green;">**a.)**</mark> type **AI Agent Studio** > <mark style="color:green;">**b.)**</mark> click on **Create and Manage**.
 
     <figure><img src="../.gitbook/assets/sc_zcc_agent_studio_nav.png" alt="" width="336"><figcaption></figcaption></figure>
-4.  This will go to the list of workflows and agents. Go to **AI agents** tab > <mark style="color:green;">**a.)**</mark> click **search (magnifying glass)** > <mark style="color:green;">**b.)**</mark> type **Forecast Variance** and hit **Return/Enter ↵**.&#x20;
+4.  Go to **AI agents** tab > <mark style="color:green;">**a.)**</mark> click **Conditions** > <mark style="color:green;">**b.)**</mark> select **Field** as **Name** <mark style="color:green;">**c.)**</mark> **Operator** as **is** and for <mark style="color:green;">**d.)**</mark> Value type **Forecast Variance** and hit **Return/Enter ↵**. Click on the <mark style="color:green;">**e.)**</mark> result.
 
     <figure><img src="../.gitbook/assets/sc_zcc_agent_studio_search.png" alt=""><figcaption></figcaption></figure>
 5.  Click on **Define the specialty**. This shows all the instructions for this AI Agent created in plain English. The **List of steps** describes the sequence, purpose, and nuances of the tools configured, which are shown in the next section. No further action is required in this section.

@@ -176,7 +176,7 @@ For this section: Open AI Agent Studio > Forecast Variance Integration Hub Trigg
 
 <figure><img src="../.gitbook/assets/sc_common_agent_studio_create_manage.png" alt=""><figcaption></figcaption></figure>
 
-2.  This will go to the list of Agentic workflows and AI agents. Go to **AI agents** tab > <mark style="color:green;">**a.)**</mark> click **Conditions** > <mark style="color:green;">**b.)**</mark> select **Field** as **Name** <mark style="color:green;">**c.)**</mark> Operator as is and for <mark style="color:green;">**d.)**</mark> Value type **Forecast Variance** **Integration Hub Trigger** and hit **Return/Enter ↵**. Click on the <mark style="color:green;">**e.)**</mark> result.
+2.  This will go to the list of Agentic workflows and AI agents. Go to **AI agents** tab > <mark style="color:green;">**a.)**</mark> click **Conditions** > <mark style="color:green;">**b.)**</mark> select **Field** as **Name** <mark style="color:green;">**c.)**</mark> **Operator** as **is** and for <mark style="color:green;">**d.)**</mark> Value type **Forecast Variance** **Integration Hub Trigger** and hit **Return/Enter ↵**. Click on the <mark style="color:green;">**e.)**</mark> result.
 
     <figure><img src="../.gitbook/assets/sc_ihub_ai_studio_search.png" alt=""><figcaption></figcaption></figure>
 3. Click on **Define the specialty**. This shows all the instructions for this AI Agent created in plain English. The **List of steps** describes the sequence, purpose, and nuances of the tools configured, which are shown in the next section. No further action is required in this section.
