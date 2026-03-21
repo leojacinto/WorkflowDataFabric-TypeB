@@ -12,8 +12,8 @@
 ## Extended Exercises
 
 * [Lab Exercise: External Content Connector](extended-exercises/lab-exercise-external-content-connector.md)
-* [Lab Exercise: Model Context Protocol Server/Client](extended-exercises/lab-exercise-model-context-protocol-server-client.md)
 * [Lab Exercise: ServiceNow Document Intelligence and Lens](extended-exercises/lab-exercise-servicenow-lens-and-document-intelligence.md)
+* [Lab Exercise: Model Context Protocol Server/Client](extended-exercises/lab-exercise-model-context-protocol-server-client.md)
 
 ## Hungry for more?
 
