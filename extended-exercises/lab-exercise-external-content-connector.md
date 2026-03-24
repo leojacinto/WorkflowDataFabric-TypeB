@@ -79,7 +79,7 @@ graph LR
 
 ### Preparation steps
 
-Configure admin user email and assign ais_high_security_admin role for elevated access to External Content Connector configuration.
+Configure admin user email and assign ais\_high\_security\_admin role for elevated access to External Content Connector configuration.
 
 1.  Navigate to **All** > <mark style="color:green;">**a.)**</mark> type **Users and Groups** > <mark style="color:green;">**b.)**</mark> click on **Users and Groups > Users**.
 
@@ -191,7 +191,7 @@ Test Now Assist queries in Employee Center to verify that indexed SharePoint doc
 
 <figure><img src="../.gitbook/assets/sc_xcc_response_detail.png" alt=""><figcaption></figcaption></figure>
 
-21. For reference, a screenshot of the PDF that was used as source on why cost center **MKTG-FR-PR** went over-budget is shown below.
+4. For reference, a screenshot of the PDF that was used as source on why cost center **MKTG-FR-PR** went over-budget is shown below.
 
 <figure><img src="../.gitbook/assets/sc_xcc_overbudget.png" alt=""><figcaption></figcaption></figure>
 
