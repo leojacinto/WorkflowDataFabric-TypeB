@@ -64,7 +64,7 @@ This contains critical steps to prepare your Demo Hub Instance.
 2.  You should get a build tag with Zurich and the needed patch name.
 
     <figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
-3. If you have not done so yet, log in to [Demo Hub](https://demohub.service-now.com/) then go to the [APAC End-to-End AI Workshop ](https://demohub.service-now.com/edsp?id=sc_cat_item\&sys_id=8bb12066fb2f761042e1f57675efdc85\&sysparm_category=f2d15f6893429250e0d5b3aa6aba105a)catalog item to install the lab dependencies in your instance.&#x20;
+3. If you have not done so yet, log in to [Demo Hub](https://demohub.service-now.com/) then go to the [APAC End-to-End AI Workshop ](https://demohub.service-now.com/edsp?id=sc_cat_item\&sys_id=8bb12066fb2f761042e1f57675efdc85\&sysparm_category=f2d15f6893429250e0d5b3aa6aba105a)catalog item to install the lab dependencies in your instance.
 4.  Provide your <mark style="color:green;">**a.)**</mark> Zurich Patch 6 or newer **Instance** name, <mark style="color:green;">**b.)**</mark>**&#x20;Admin User ID**, and <mark style="color:green;">**c.)**</mark> **Password**, then <mark style="color:green;">**d.)**</mark> click **Submit**.
 
     <figure><img src="../.gitbook/assets/sc_fund_cat_item.png" alt="" width="516"><figcaption></figcaption></figure>
@@ -87,15 +87,15 @@ Create a dummy scope. This activity is meant to make you familiar with scope cre
 3.  Go to section **Start from Scratch** and click **Create**
 
     <figure><img src="../.gitbook/assets/sc_fund_create_scope.png" alt=""><figcaption></figcaption></figure>
-4.  Provide the scope details with <mark style="color:green;">**a.)**</mark> name <mark style="color:red;">**Lab**</mark> **Forecast Variance \<YOUR INITIALS>** and the <mark style="color:green;">**b.)**</mark> scope. Click <mark style="color:green;">**c.)**</mark> Create. Note that the scope is a technical name and is automatically populated but you have the option to change it. In this example, the scope is **x\_snc\_forecast\_var**. Feel free to add your initials at the end of the scope. The scope here will not be used in the exercise and is only meant to serve as guide in demonstrating the fundamental steps. Click **Back to list** once done.
+4.  Provide the scope details with <mark style="color:green;">**a.)**</mark> name <mark style="color:$warning;">**Lab**</mark> <mark style="color:$warning;">**\<YOUR INITIALS>**</mark>**&#x20;Forecast Variance** and the <mark style="color:green;">**b.)**</mark> scope. Click <mark style="color:green;">**c.)**</mark> Create. Note that the scope is a technical name and is automatically populated but you have the option to change it. In this example, the scope is **x\_snc\_lab\_lfr**. The scope here will not be used in the exercise and is only meant to serve as guide in demonstrating the fundamental steps. Click **Back to list** once done. <mark style="color:red;">**Note:**</mark> you may get an error that your scope cannot be created; this is because Demo Hub uses a central App Repository and that someone with a similar initials has already created their scope.
 
-    <figure><img src="../.gitbook/assets/sc_fund_scope_details_created.png" alt=""><figcaption></figcaption></figure>
-5.  Verify that you are in the correct scope after you have created it. Being in the correct scope as you proceed with the lab will avoid scope access and object management issues. Do this by a.) clicking on the <mark style="color:green;">**a.)**</mark> scope (globe icon) and ensuring that has the value of the <mark style="color:green;">**b.)**</mark> **Forecast Variance \<YOUR INITIALS>** label you created.
+    <figure><img src="../.gitbook/assets/sc_fund_dummy_scope_create.png" alt=""><figcaption></figcaption></figure>
+5.  Verify that you are in the correct scope after you have created it. Being in the correct scope as you proceed with the lab will avoid scope access and object management issues. Do this by a.) clicking on the <mark style="color:green;">**a.)**</mark> scope (globe icon) and ensuring that has the value of the <mark style="color:green;">**b.)**</mark> <mark style="color:$warning;">**Lab**</mark> <mark style="color:$warning;">**\<YOUR INITIALS>**</mark>**&#x20;Forecast Variance** label you created.
 
-    <figure><img src="../.gitbook/assets/sc_fund_dummy_scope.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../.gitbook/assets/sc_fund_forcast_variance_dummy.png" alt=""><figcaption></figcaption></figure>
 6.  <mark style="color:red;">**THIS NEXT STEP IS CRITICAL**</mark> to ensure you are working in the correct scope in which the objects for this lab are linked to. You will need to change scope after you have created the simulation scope. Click on the <mark style="color:green;">**a.)**</mark> **scope** (globe icon) and <mark style="color:green;">**b.)**</mark> **Forecast Variance**, this time <mark style="color:red;">**WITHOUT**</mark> your initials. This will be the scope you will use throughout the lab.
 
-    <figure><img src="../.gitbook/assets/sc_fund_exercise_scope.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../.gitbook/assets/sc_fund_forcast_variance_scope.png" alt=""><figcaption></figcaption></figure>
 7.  Now that you are in the right scope, you are ready to create the scoped table. Navigate to All > <mark style="color:green;">**a.)**</mark> type **System Definition** > <mark style="color:green;">**b.)**</mark> search for **Tables**
 
     <figure><img src="../.gitbook/assets/sc_fund_sysdef_tables_nav.png" alt=""><figcaption></figcaption></figure>
