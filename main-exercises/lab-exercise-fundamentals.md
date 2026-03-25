@@ -50,7 +50,7 @@ graph LR
 
 While you have the power of CMDB at your fingertips, the process we are solving for here does not concern CI data. You will need to create a scoped table which will store information from an expense event API. This can come from cloud services such as AWS or Azure.
 
-The table you will create here will not be used for the rest of the steps and serves mainly to introduce how target tables for REST API endpoints are created for ServiceNow.
+The table you will create here will not be used for the rest of the lab and serves mainly to introduce how target tables for REST API endpoints are created for ServiceNow.
 
 ## Steps
 
@@ -99,22 +99,23 @@ Create a dummy scope. This activity is meant to make you familiar with scope cre
 7.  Now that you are in the right scope, you are ready to create the scoped table. Navigate to All > <mark style="color:green;">**a.)**</mark> type **System Definition** > <mark style="color:green;">**b.)**</mark> search for **Tables**
 
     <figure><img src="../.gitbook/assets/sc_fund_sysdef_tables_nav.png" alt=""><figcaption></figcaption></figure>
-8.  Go to the top right section of the navigation and click **New**.
+8. <mark style="color:$warning;">**Note:**</mark> the table you will create in the next steps will NOT be used for the rest of the lab and serves mainly to introduce how target tables for REST API endpoints are created for ServiceNow.
+9.  Go to the top right section of the navigation and click **New**.
 
     <figure><img src="../.gitbook/assets/sc_fund_new_table.png" alt="" width="563"><figcaption></figcaption></figure>
-9.  Provide the <mark style="color:green;">**a.)**</mark> **Label** as **Expense Transaction Event \<your initials>**. The <mark style="color:green;">**b.)**</mark> **Name** which is a technical identifier will automatically be populated and can be modified to suit your requirement. Finally, <mark style="color:green;">**c.)**</mark> **untick Create module**.
+10. Provide the <mark style="color:green;">**a.)**</mark> **Label** as **Expense Transaction Event \<your initials>**. The <mark style="color:green;">**b.)**</mark> **Name** which is a technical identifier will automatically be populated and can be modified to suit your requirement. Finally, <mark style="color:green;">**c.)**</mark> **untick Create module**.
 
     <figure><img src="../.gitbook/assets/sc_fund_new_table_details.png" alt=""><figcaption></figcaption></figure>
-10. Right click on the header and click **Save**.
+11. Right click on the header and click **Save**.
 
     <figure><img src="../.gitbook/assets/sc_fund_save.png" alt="" width="135"><figcaption></figcaption></figure>
-11. Staying in the same screen, an option to create fields for the table will be available. In the tab **Columns** click on **New**.
+12. Staying in the same screen, an option to create fields for the table will be available. In the tab **Columns** click on **New**.
 
     <figure><img src="../.gitbook/assets/sc_fund_new_field.png" alt=""><figcaption></figcaption></figure>
-12. Let us use one column as an example. Provide the <mark style="color:green;">**a.)**</mark> **Type**, in this case **String**. Provide the <mark style="color:green;">**b.)**</mark> **Column label**, in this example, **Cost Center** which will automatically populate the <mark style="color:green;">**c.)**</mark> **Column name**. Since this is the string, provide the <mark style="color:green;">**d.)**</mark> **Max length** of **40**. Finally, right click on then header and <mark style="color:green;">**e.)**</mark> **Save**.
+13. Let us use one column as an example. Provide the <mark style="color:green;">**a.)**</mark> **Type**, in this case **String**. Provide the <mark style="color:green;">**b.)**</mark> **Column label**, in this example, **Cost Center** which will automatically populate the <mark style="color:green;">**c.)**</mark> **Column name**. Since this is the string, provide the <mark style="color:green;">**d.)**</mark> **Max length** of **40**. Finally, right click on then header and <mark style="color:green;">**e.)**</mark> **Save**.
 
     <figure><img src="../.gitbook/assets/sc_fund_field_details.png" alt="" width="563"><figcaption></figcaption></figure>
-13. Do the same steps for all of the 16 other fields below. Note that the **Column label**, **Column name**, **Type**, **Max length** vary across some columns. For now, keep **Display** as **false** across all fields. Notice that these 16 fields are expense, invoice, or finance related, specifically tied to the business process problem we are solving for. Correct data foundations are critical to ensure that agents have the correct context and structure especially when delivering enterprise use cases.
+14. Do the same steps for all of the 16 other fields below. Note that the **Column label**, **Column name**, **Type**, **Max length** vary across some columns. For now, keep **Display** as **false** across all fields. Notice that these 16 fields are expense, invoice, or finance related, specifically tied to the business process problem we are solving for. Correct data foundations are critical to ensure that agents have the correct context and structure especially when delivering enterprise use cases.
 
     <figure><img src="../.gitbook/assets/sc_fund_all_fields.png" alt=""><figcaption></figcaption></figure>
 
