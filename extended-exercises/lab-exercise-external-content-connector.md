@@ -87,7 +87,7 @@ Configure admin user email and assign ais\_high\_security\_admin role for elevat
 2.  Search for <mark style="color:green;">**a.)**</mark> **System Administrator** then hit **Return/Enter ↵** > <mark style="color:green;">**b.)**</mark> click on **admin**.
 
     <figure><img src="../.gitbook/assets/sc_common_search_admin_user.png" alt=""><figcaption></figcaption></figure>
-3.  Set the <mark style="color:green;">**a.)**</mark> **Email** to **demouser@wdfdemo.onmicrosoft.com**, <mark style="color:green;">**b.)**</mark> click **Save**. Then <mark style="color:green;">**c.)**</mark> click **Roles** then <mark style="color:green;">**d.)**</mark> click **Edit**.
+3.  Set the <mark style="color:green;">**a.)**</mark> **Email** to **demouser@wdfdemo.onmicrosoft.com**, <mark style="color:green;">**b.)**</mark> click **Save**. Then <mark style="color:green;">**c.)**</mark> click **Roles** then <mark style="color:green;">**d.)**</mark> click **Edit**. The email address will be needed to map with the SharePoint External Content Connector destination.
 
     <figure><img src="../.gitbook/assets/sc_xcc_prep_email_roles_edit.png" alt=""><figcaption></figcaption></figure>
 4.  Search for <mark style="color:green;">**a.)**</mark> **ais\_high\_security\_admin** > <mark style="color:green;">**b.)**</mark> click on **ais\_high\_security\_admin** > <mark style="color:green;">**c.)**</mark> click on **>** to move the role to the right panel > then <mark style="color:green;">**d.)**</mark> click **Save**.
@@ -123,7 +123,7 @@ Create SharePoint connection with authentication credentials. Configure and exec
 6.  You will be asked to select a source. Depending on your instance image, you may have multiple options. For this exercise, you only need **SharePoint**. <mark style="color:green;">**a.)**</mark> Select it and <mark style="color:green;">**b.)**</mark> click **Next**.
 
     <figure><img src="../.gitbook/assets/sc_xcc_select_source_sharepoint.png" alt="" width="563"><figcaption></figcaption></figure>
-7. Input the following details in the next screen. As some of the credentials here are sensitive, you will need to access them through additional logins via the corresponding links.
+7. Input the following details in the next screen. As some of the credentials here are sensitive, you will need to access them through additional logins via the corresponding links. More information on these settings can be found in the [ServiceNow documentation for Microsoft SharePoint Online External Content Connector](https://www.servicenow.com/docs/r/platform-administration/ai-search/create-ext-cont-connector-mspo.html).
 
 <mark style="color:green;">**a.)**</mark> **Connector Name: SharePoint Online \<YOUR INITIALS>**
 

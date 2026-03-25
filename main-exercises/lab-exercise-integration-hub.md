@@ -185,7 +185,17 @@ For this section: Open AI Agent Studio > Forecast Variance Integration Hub Trigg
 
 <figure><img src="../.gitbook/assets/sc_ihub_define_specialty.png" alt=""><figcaption></figcaption></figure>
 
-4. Next, click on **Add tools and information**. This is a collection of **Search retrievals** and **Subflows** that are used by the agent. The purpose and sequence of these tools are also described in the section **Define the specialty**. No further action is required in this section but feel free to explore the configurations of each of the tools.
+4. Next, click on **Add tools and information**. This is a collection of **Search retrievals** and **Subflows** that are used by the agent. The purpose and sequence of these tools are also described in the section **Define the specialty**. No further action is required in this section but feel free to explore the configurations of each of the tools. Below is a brief description of the tools configured for this agent:
+
+**a.) Extract Event ID:** Gets the event ID from the Expense Transaction Event table (x\_snc\_forecast\_v\_0\_expense\_transaction\_event) from the entry created by the action Get Expense event (via REST).
+
+**b.) Extract Cost Center:** gets the cost center from the expense event that is written into the Expense Transaction Event table (x\_snc\_forecast\_v\_0\_expense\_transaction\_event).
+
+**c.) Search Cost Center History:** a RAG based tool which gets the history of a cost center; i.e., is the cost center frequently exceeding its budget? Output serves as reference for the Finance team without the need pull out data for themselves or opening requests to data teams.
+
+**d.) Search for Expense Transactions History:** a RAG based tools which gets the expenses/invoices from a cost center to provide even more granular detail. Output serves as reference for the Finance team without the need pull out data for themselves or opening requests to data teams.
+
+**e). Budget Variance Analysis:** a deterministic flow that assesses whether the latest expense event caused the relevant cost center to be over-budget; if over-budget, creates a Finance Case.
 
 <figure><img src="../.gitbook/assets/sc_ihub_add_tools_info.png" alt=""><figcaption></figcaption></figure>
 

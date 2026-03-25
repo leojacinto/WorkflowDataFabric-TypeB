@@ -314,19 +314,30 @@ This is a walk through of how an AI Agent equipped with both deterministic and p
     <figure><img src="../.gitbook/assets/sc_zcc_agent_studio_search.png" alt=""><figcaption></figcaption></figure>
 5.  Click on **Define the specialty**. This shows all the instructions for this AI Agent created in plain English. The **List of steps** describes the sequence, purpose, and nuances of the tools configured, which are shown in the next section. No further action is required in this section.
 
-    <figure><img src="../.gitbook/assets/sc_zcc_define_specialty.png" alt="" width="563"><figcaption></figcaption></figure>
-6.  Next, click on **Add tools and information**. This is a collection of **Search retrievals** and **Subflows** that are used by the agent. The purpose and sequence of these tools are also described in the section **Define the specialty**. No further action is required in this section but feel free to explore the configurations of each of the tools.
+    <figure><img src="../.gitbook/assets/sc_zcc_define_specialty.png" alt=""><figcaption></figcaption></figure>
+6. Next, click on **Add tools and information**. This is a collection of **Search retrievals** and **Subflows** that are used by the agent. The purpose and sequence of these tools are also described in the section **Define the specialty**. No further action is required in this section but feel free to explore the configurations of each of the tools. Similar to [Lab Exercise: Integration Hub](https://servicenow-lf.gitbook.io/apac-ai-end-to-end-lab-workflow-data-fabric/main-exercises/lab-exercise-integration-hub), below is a brief description of the tools configured for this agent:
 
-    <figure><img src="../.gitbook/assets/sc_zcc_add_tools_info.png" alt="" width="563"><figcaption></figcaption></figure>
-7.  Under **Define security controls** > <mark style="color:green;">**a.)**</mark> click **Define data access** > <mark style="color:green;">**b.)**</mark> select **Dynamic user** from the drop down then > <mark style="color:green;">**c.)**</mark> add **admin** user as the approved role. For this exercise we are using permissive authorisations but this is where you can tighten authorisations for your agents allowing mechanisms such as inheriting the authorisations of logged in user (Dynamic identity type) or a predefined set of access (AI User identity type).
+**a.) Extract Cost Center:** gets the cost center from the expense event that is written into the Expense Transaction Event table (x\_snc\_forecast\_v\_0\_expense\_transaction\_event).
 
-    <figure><img src="../.gitbook/assets/sc_zcc_define_security.png" alt=""><figcaption></figcaption></figure>
-8.  Next, click on **Define trigger**, which is kept blank. You can add the triggers for the AI Agent here but for the exercise, the AI Agent will be triggered manually to be able to show the detail chat responses and debugging. No further action is required in this section.
+**b.) Search Cost Center History:** a RAG based tool which gets the history of a cost center; i.e., is the cost center frequently exceeding its budget? Output serves as reference for the Finance team without the need pull out data for themselves or opening requests to data teams.
 
-    <figure><img src="../.gitbook/assets/sc_zcc_define_trigger_blank.png" alt=""><figcaption></figcaption></figure>
-9.  Finally, click on <mark style="color:green;">**a.)**</mark> **Select channels and status**. This configures the availability of the AI Agent. In this case, it is enabled and can be accessed using <mark style="color:green;">**b.)**</mark>**&#x20;Now Assist panel** toggled on as well as via <mark style="color:green;">**c.)**</mark>**&#x20;Now Assist in Virtual Agent** added as chat assistant. Click <mark style="color:green;">**d.)**</mark>**&#x20;Save and test**. <mark style="color:$warning;">**Note:**</mark> if Chat Assistants (step <mark style="color:green;">**10.c.**</mark>) does not give you options, check and execute the steps in [Lab Exercise: Integration Hub > Platform Configuration](https://servicenow-lf.gitbook.io/the-workflow-data-fabric-loom/main-exercises/lab-exercise-integration-hub#preparation-platform-configuration) > Steps 9 to 18; esp. if you are doing this lab standalone or have skipped the [Lab Exercise: Integration Hub](https://servicenow-lf.gitbook.io/the-workflow-data-fabric-loom/main-exercises/lab-exercise-integration-hub) portion.
+**c.) Search for Expense Transactions History:** a RAG based tools which gets the expenses/invoices from a cost center to provide even more granular detail. Output serves as reference for the Finance team without the need pull out data for themselves or opening requests to data teams.
 
-    <figure><img src="../.gitbook/assets/sc_zcc_select_channels_save.png" alt=""><figcaption></figcaption></figure>
+**d). Budget Variance Analysis:** a deterministic flow that assesses whether the latest expense event caused the relevant cost center to be over-budget; if over-budget, creates a Finance Case.
+
+<figure><img src="../.gitbook/assets/sc_zcc_add_tools_info.png" alt=""><figcaption></figcaption></figure>
+
+7. Under **Define security controls** > <mark style="color:green;">**a.)**</mark> click **Define data access** > <mark style="color:green;">**b.)**</mark> select **Dynamic user** from the drop down then > <mark style="color:green;">**c.)**</mark> add **admin** user as the approved role. For this exercise we are using permissive authorisations but this is where you can tighten authorisations for your agents allowing mechanisms such as inheriting the authorisations of logged in user (Dynamic identity type) or a predefined set of access (AI User identity type).
+
+<figure><img src="../.gitbook/assets/sc_zcc_define_security.png" alt=""><figcaption></figcaption></figure>
+
+8. Next, click on **Define trigger**, which is kept blank. You can add the triggers for the AI Agent here but for the exercise, the AI Agent will be triggered manually to be able to show the detail chat responses and debugging. No further action is required in this section.
+
+<figure><img src="../.gitbook/assets/sc_zcc_define_trigger_blank.png" alt=""><figcaption></figcaption></figure>
+
+9. Finally, click on <mark style="color:green;">**a.)**</mark> **Select channels and status**. This configures the availability of the AI Agent. In this case, it is enabled and can be accessed using <mark style="color:green;">**b.)**</mark>**&#x20;Now Assist panel** toggled on as well as via <mark style="color:green;">**c.)**</mark>**&#x20;Now Assist in Virtual Agent** added as chat assistant. Click <mark style="color:green;">**d.)**</mark>**&#x20;Save and test**. <mark style="color:$warning;">**Note:**</mark> if Chat Assistants (step <mark style="color:green;">**10.c.**</mark>) does not give you options, check and execute the steps in [Lab Exercise: Integration Hub > Platform Configuration](https://servicenow-lf.gitbook.io/the-workflow-data-fabric-loom/main-exercises/lab-exercise-integration-hub#preparation-platform-configuration) > Steps 9 to 18; esp. if you are doing this lab standalone or have skipped the [Lab Exercise: Integration Hub](https://servicenow-lf.gitbook.io/the-workflow-data-fabric-loom/main-exercises/lab-exercise-integration-hub) portion.
+
+<figure><img src="../.gitbook/assets/sc_zcc_select_channels_save.png" alt=""><figcaption></figcaption></figure>
 
 ### Hands-on: Test and review Custom AI Agent
 
