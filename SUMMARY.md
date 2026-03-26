@@ -25,5 +25,5 @@
 
 ## Demo Hub for SCs
 
-* [Demo Hub Considerations](demo-hub-for-scs/demo-hub-considerations.md)
+* [Demo Hub Preparations](demo-hub-for-scs/demo-hub-considerations.md)
 * [For Lab Facilitators](demo-hub-for-scs/for-lab-facilitators.md)
