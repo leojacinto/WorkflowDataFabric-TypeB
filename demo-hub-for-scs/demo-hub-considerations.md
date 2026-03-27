@@ -3,11 +3,11 @@ hidden: true
 icon: people-group
 ---
 
-# Demo Hub Considerations
+# Demo Hub Preparations
 
 ## Obtain Demo Hub Instance
 
-Obtain a **Zurich (Alectri)** ![](<../.gitbook/assets/image (6).png>) instance in Demo Hub as your instance for the workshop in your data center of choice. <mark style="color:red;">**Note:**</mark> the workshop labs will only work on a **Zurich (Alectri) i**mage; selecting any other category will lead to steps not working correctly.
+Obtain a **Zurich (Alectri)** ![](<../.gitbook/assets/image (6).png>) instance in Demo Hub as your instance for the workshop in your data center of choice. <mark style="color:red;">**Note:**</mark> the workshop labs will only work on a **Zurich (Alectri)** image; selecting any other category will lead to steps not working correctly.
 
 1. Log-in to [https://demohub.service-now.com/](https://demohub.service-now.com/) with your ServiceNow account.
 2. Go to Manage Instances in the top right corner of the page. This will open a new window.
