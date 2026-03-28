@@ -19,6 +19,11 @@
 
 * [Lab Exercise: Stream Connect for Apache Kafka Lab](hungry-for-more/lab-exercise-kafka_stream_connect.md)
 
+## Conclusion
+
+* [Key Takeaways](conclusion/key-takeaways.md)
+* [Final Activity](conclusion/final-activity.md)
+
 ***
 
 * [Troubleshooting](troubleshooting.md)
