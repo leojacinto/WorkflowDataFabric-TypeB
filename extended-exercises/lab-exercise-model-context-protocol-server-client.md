@@ -8,6 +8,10 @@ icon: mcp
 
 This lab will walk you through the configuration and usage of MCP ([Model Context Protocol](https://modelcontextprotocol.io/docs/getting-started/intro)) capabilities to interact with ServiceNow either as a client or as a server, allowing end users to interact with the platform as they see fit. For simplicity, this lab will cover ServiceNow acting as an MCP Client. More details on MCP Server scenarios will be added soon.
 
+<figure><img src="../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+
 Specifically, this provides the steps needed to connect ServiceNow to an MCP Server tool configured in Neon.
 
 This exercise does not cover the creation of the MCP Service from Neon as that requires administrator rights and CDW expertise which may not be widely available to various personas.
