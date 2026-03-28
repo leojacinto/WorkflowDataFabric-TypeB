@@ -9,7 +9,7 @@ icon: magnifying-glass-chart
 
 ## Agenda
 
-<figure><img src=".gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/sc_slide_workshop_agenda.png" alt=""><figcaption></figcaption></figure>
 
 ## Business motivation
 

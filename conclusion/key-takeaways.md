@@ -1,3 +1,3 @@
 # Key Takeaways
 
-<figure><img src="../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/sc_slide_key_takeaways.png" alt=""><figcaption></figcaption></figure>

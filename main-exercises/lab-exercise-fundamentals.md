@@ -8,7 +8,7 @@ icon: atom
 
 This lab will walk you through creation of the scoped tables needed to interact with the external system integrations.
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/sc_slide_fundamentals_overview.png" alt=""><figcaption></figcaption></figure>
 
 ## Data flow
 
