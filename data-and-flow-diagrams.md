@@ -6,6 +6,10 @@ icon: diagram-nested
 
 [Take me back to main page](./)
 
+## Before we proceed
+
+<figure><img src=".gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
 ## Components
 
 Let us first start by breaking down the different components of the lab. The diagram below is a good representation of a tightly integrated ServiceNow landscape that spans various internal ServiceNow components and external data sources. These internal and external components will be used by Flows and AI Agents to provide the automations needed to solve our business problem of managing financial budgets. While the components will look overwhelming, the reality is customer landscapes require this level of complexity to manage different types of data across multiple functions. The key thing to note is the end user will interact with **Workspace**, **Employee Center**, or an **MCP Client** (e.g., Claude Code or Desktop).
