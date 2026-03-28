@@ -7,6 +7,10 @@ icon: magnifying-glass-chart
 
 <figure><picture><source srcset=".gitbook/assets/wdf_connectors_banner_dark.gif" media="(prefers-color-scheme: dark)"><img src=".gitbook/assets/wdf_connectors_banner.gif" alt="Workflow Data Fabric"></picture><figcaption></figcaption></figure>
 
+## Agenda
+
+<figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
 ## Business motivation
 
 Finance teams discover budget overruns weeks too late. Expense analysis requires manually piecing together data from ERP systems, data warehouses, and SharePoint. By the time finance reacts, small variances become major problems. **ServiceNow Workflow Data Fabric transforms reactive financial management into proactive intelligence**. By unifying data across systems through Zero Copy for SQL and ERP, Integration Hub, External Content Connectors, MCP, and AI agents, organizations can:

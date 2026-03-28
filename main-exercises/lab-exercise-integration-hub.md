@@ -10,6 +10,10 @@ This lab will walk you through the configuration and usage of **Actions** and **
 
 There are dedicated Integration Hub and Flow Designer labs; hence, the focus of this exercise is to walk through the configurations in AI Agent Studio and Flow Designer. There is an exercise at the end for you to configure an **Action**, which aims to provide an understanding on how the AI Agents are triggered.
 
+<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+
 ## Lab Sections and Objectives
 
 <table><thead><tr><th width="83">Step</th><th width="106">Who</th><th>Description</th></tr></thead><tbody><tr><td><a href="lab-exercise-integration-hub.md#data-flow">1</a></td><td>Facilitator</td><td><strong>Context Setting:</strong> Review the data flow diagram. Understand how ServiceNow consumes REST API endpoints via Integration Hub, processes them through a Flow, triggers an AI Agent, and creates a Finance Case automatically.</td></tr></tbody></table>
