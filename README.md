@@ -31,6 +31,8 @@ You're a **Data Architect** serving the Finance department. Finance Managers nee
 2. "Investigation means manually searching expenses, reports, and memos: can you unify this?"
 3. "We answer the same questions daily: can employees self-serve?"
 
+<figure><img src=".gitbook/assets/sc_slide_building_for_whom.gif" alt=""><figcaption></figcaption></figure>
+
 ## Outcome
 
 By completing this lab, you'll build an interconnected financial intelligence platform demonstrating:
