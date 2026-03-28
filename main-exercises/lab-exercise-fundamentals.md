@@ -8,7 +8,7 @@ icon: atom
 
 Not a fan of complicated schematics and the [Data and Flow Diagrams](../data-and-flow-diagrams.md) not to your liking? Check out a the simplified architectural view of the solution that you will be building below.
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/sc_slide_end_to_end_architecture.png" alt=""><figcaption></figcaption></figure>
 
 This lab will walk you through creation of the scoped tables needed to interact with the external system integrations.
 
