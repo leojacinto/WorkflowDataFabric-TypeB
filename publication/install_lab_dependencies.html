@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Important Preparation: Install Lab Dependencies</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 30px;
+            color: #000;
+            border-bottom: 3px solid #d32f2f;
+            padding-bottom: 15px;
+        }
+        
+        .important-badge {
+            background: #d32f2f;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-right: 10px;
+        }
+        
+        p {
+            margin: 15px 0;
+        }
+        
+        ol {
+            margin: 20px 0;
+            padding-left: 30px;
+        }
+        
+        li {
+            margin: 15px 0;
+            line-height: 1.8;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        figure {
+            margin: 20px 0;
+        }
+        
+        figcaption {
+            font-size: 14px;
+            color: #666;
+            font-style: italic;
+            margin-top: 8px;
+        }
+        
+        .highlight {
+            background: #4CAF50;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+        
+        .highlight-red {
+            background: #d32f2f;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><span class="important-badge">Important Preparation</span> Install Lab Dependencies</h1>
+        
+        <p>This contains critical steps to prepare your Demo Hub Instance.</p>
+        
+        <ol>
+            <li>
+                Ensure you are at least in Zurich Patch 6. Go to <strong>All</strong> > type <strong>stats.do</strong> and hit Return/Enter ↵. Ensure that it is empty.
+                <figure>
+                    <img src="../.gitbook/assets/sc_fund_stats.png" alt="Stats.do navigation">
+                </figure>
+            </li>
+            
+            <li>
+                You should get a build tag with Zurich and the needed patch name.
+                <figure>
+                    <img src="../.gitbook/assets/image.png" alt="Zurich patch version">
+                </figure>
+            </li>
+            
+            <li>
+                If you have not done so yet, log in to <a href="https://demohub.service-now.com/" target="_blank">Demo Hub</a> then go to the <a href="https://demohub.service-now.com/edsp?id=sc_cat_item&sys_id=8bb12066fb2f761042e1f57675efdc85&sysparm_category=f2d15f6893429250e0d5b3aa6aba105a" target="_blank">APAC End-to-End AI Workshop</a> catalog item to install the lab dependencies in your instance.
+            </li>
+            
+            <li>
+                Provide your <span class="highlight">a)</span> Zurich Patch 6 or newer <strong>Instance</strong> name, <span class="highlight">b)</span> <strong>Admin User ID</strong>, and <span class="highlight">c)</span> <strong>Password</strong>, then <span class="highlight">d)</span> click <strong>Submit</strong>.
+                <figure>
+                    <img src="../.gitbook/assets/sc_fund_cat_item.png" alt="Catalog item form" style="max-width: 516px;">
+                </figure>
+            </li>
+            
+            <li>
+                Wait for 10 to 15 minutes.
+            </li>
+            
+            <li>
+                Once completed, you will get an email indicating that the import of update sets is successful.
+                <figure>
+                    <img src="../.gitbook/assets/sc_fund_cat_complete.png" alt="Completion confirmation">
+                </figure>
+            </li>
+        </ol>
+    </div>
+</body>
+</html>

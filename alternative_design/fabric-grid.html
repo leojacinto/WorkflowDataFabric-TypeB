@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Workflow Data Fabric</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0a1414; overflow: hidden; width: 100vw; height: 100vh; }
+  canvas { display: block; width: 100vw; height: 100vh; }
+</style>
+</head>
+<body>
+<canvas id="c" width="1280" height="720"></canvas>
+<script>
+const GIF_W = 1280, GIF_H = 720;
+const canvas = document.getElementById('c');
+const ctx = canvas.getContext('2d');
+
+const COLS = 200, ROWS = 200, SP = 12;
+const FOV = 600, CAM_H = 160, CAM_D = 200;
+const RX = -0.85, RZ = 0.4;
+const cZ = Math.cos(RZ), sZ = Math.sin(RZ);
+const cX = Math.cos(RX), sX = Math.sin(RX);
+
+// All wave frequencies are multiples of 0.5 → perfect loop at period = 4π
+const LOOP_PERIOD = 4 * Math.PI;
+const FADE_R = COLS * SP * 0.6;
+
+function proj(x, y, z) {
+  const x1 = x * cZ - y * sZ, y1 = x * sZ + y * cZ;
+  const y2 = y1 * cX - z * sX, z2 = y1 * sX + z * cX + CAM_D;
+  const sc = FOV / (FOV + z2);
+  return { x: x1 * sc + GIF_W / 2, y: (y2 + CAM_H) * sc + GIF_H / 2, sc };
+}
+
+function hAt(wx, wy, t) {
+  let h = 0;
+  h += Math.sin(wx * .012 + t * 1.0) * Math.cos(wy * .01 + t * 0.5) * 80;
+  h += Math.sin(wx * .025 + wy * .02 + t * 1.5) * 35;
+  h += Math.cos(wx * .04 - t * 1.0) * Math.sin(wy * .035 + t * 0.5) * 20;
+  const d = Math.sqrt(wx * wx + wy * wy);
+  h += Math.sin(d * .015 - t * 0.5) * 40;
+  const ef = Math.max(0, 1 - d / FADE_R);
+  return h * ef * ef;
+}
+
+function opAt(wx, wy) {
+  const d = Math.sqrt((wx / SP) ** 2 + (wy / SP) ** 2) / (COLS / 2);
+  const f = Math.max(0, 1 - d * 0.7);
+  return f * f;
+}
+
+// drawAt renders one frame at a specific time value
+function drawAt(tVal) {
+  ctx.setTransform(1, 0, 0, 1, 0, 0);
+  ctx.clearRect(0, 0, GIF_W, GIF_H);
+
+  const bg = ctx.createRadialGradient(GIF_W * .5, GIF_H * .45, 0, GIF_W * .5, GIF_H * .45, GIF_W * .7);
+  bg.addColorStop(0, '#1e3a38');
+  bg.addColorStop(.5, '#1a2e2e');
+  bg.addColorStop(1, '#111f1f');
+  ctx.fillStyle = bg;
+  ctx.fillRect(0, 0, GIF_W, GIF_H);
+
+  const pts = [];
+  for (let r = 0; r < ROWS; r++) {
+    pts[r] = [];
+    for (let c = 0; c < COLS; c++) {
+      const wx = (c - COLS / 2) * SP, wy = (r - ROWS / 2) * SP;
+      const wz = hAt(wx, wy, tVal);
+      const op = opAt(wx, wy);
+      const p = proj(wx, wy, wz);
+      pts[r][c] = { sx: p.x, sy: p.y, sc: p.sc, op, wz };
+    }
+  }
+
+  const seg = (a, b) => {
+    const al = Math.min(a.op, b.op);
+    if (al < .02) return;
+    const dx = a.sx - b.sx, dy = a.sy - b.sy;
+    if (dx * dx + dy * dy > 3600) return; // cull extreme perspective lines (>60px)
+    const br = .4 + .6 * Math.max(0, Math.min(1, ((a.wz + b.wz) / 2 + 80) / 160));
+    ctx.beginPath();
+    ctx.moveTo(a.sx, a.sy);
+    ctx.lineTo(b.sx, b.sy);
+    ctx.strokeStyle = `rgba(${30 + br * 60 | 0},${180 + br * 75 | 0},${60 + br * 30 | 0},${al * .7})`;
+    ctx.lineWidth = .5 + br * .8;
+    ctx.stroke();
+  };
+
+  for (let r = 0; r < ROWS; r++)
+    for (let c = 0; c < COLS - 1; c++) seg(pts[r][c], pts[r][c + 1]);
+  for (let c = 0; c < COLS; c++)
+    for (let r = 0; r < ROWS - 1; r++) seg(pts[r][c], pts[r + 1][c]);
+
+  for (let r = 0; r < ROWS; r += 2)
+    for (let c = 0; c < COLS; c += 2) {
+      const p = pts[r][c];
+      if (p.op < .1 || p.wz <= 30) continue;
+      const ga = p.op * ((p.wz - 30) / 120) * .15;
+      if (ga < .01) continue;
+      const gr = 6 * p.sc;
+      const g = ctx.createRadialGradient(p.sx, p.sy, 0, p.sx, p.sy, gr);
+      g.addColorStop(0, `rgba(100,255,140,${ga})`);
+      g.addColorStop(1, 'rgba(100,255,140,0)');
+      ctx.fillStyle = g;
+      ctx.fillRect(p.sx - gr, p.sy - gr, gr * 2, gr * 2);
+    }
+}
+
+// Expose drawAtTime for Playwright capture
+window.drawAtTime = function(elapsedSec) {
+  const tVal = (elapsedSec / 6.0) * LOOP_PERIOD; // 6s = one full loop
+  drawAt(tVal);
+};
+
+// Live animation loop
+let t = 0;
+const TIME_STEP = LOOP_PERIOD / 360; // 6s at 60fps
+function animate() {
+  drawAt(t);
+  t += TIME_STEP;
+  if (t >= LOOP_PERIOD) t -= LOOP_PERIOD;
+  requestAnimationFrame(animate);
+}
+animate();
+</script>
+</body>
+</html>

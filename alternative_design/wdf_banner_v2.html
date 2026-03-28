@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>APAC End-to-End AI Workshop Banner</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #0a0a0a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  .banner-wrap {
+    width: 700px;
+  }
+
+  .banner {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    background: linear-gradient(135deg, #0b2a3a 0%, #0f3347 30%, #122f3f 60%, #0d2636 100%);
+    overflow: hidden;
+  }
+
+  /* Fabric grid */
+  .fabric-grid {
+    position: absolute;
+    inset: 0;
+    opacity: 0.13;
+  }
+
+  /* Ambient glows */
+  .glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    pointer-events: none;
+  }
+  .glow-1 {
+    width: 300px; height: 300px;
+    background: rgba(129, 181, 50, 0.07);
+    top: -100px; right: -40px;
+  }
+  .glow-2 {
+    width: 250px; height: 250px;
+    background: rgba(33, 150, 166, 0.05);
+    bottom: -130px; left: -60px;
+  }
+
+  /* Content */
+  .banner-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 44px;
+    gap: 26px;
+  }
+
+  /* Sparkle area */
+  .sparkle-wrap {
+    flex-shrink: 0;
+    width: 76px;
+    height: 76px;
+    position: relative;
+  }
+
+  /* Text */
+  .text-block {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .label-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .tag {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #81B532;
+    background: rgba(129, 181, 50, 0.1);
+    padding: 3px 10px;
+    border-radius: 3px;
+    line-height: 1;
+  }
+
+  .divider-dot {
+    width: 3px; height: 3px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+  }
+
+  .subtitle-tag {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+  }
+
+  .title {
+    font-size: 27px;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.15;
+    letter-spacing: -0.3px;
+  }
+
+  .title em {
+    font-style: normal;
+    color: #81B532;
+  }
+
+  .accent-line {
+    width: 48px; height: 2px;
+    background: linear-gradient(90deg, #81B532, transparent);
+    border-radius: 2px;
+    margin-top: 2px;
+  }
+
+  /* Wordmark */
+  .wordmark {
+    position: absolute;
+    bottom: 14px; right: 44px;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .wordmark span {
+    font-size: 11px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.25);
+    letter-spacing: 0.3px;
+  }
+
+  /* Bottom accent bar */
+  .bottom-bar {
+    width: 100%; height: 3px;
+    background: linear-gradient(90deg, #81B532 0%, #81B532 35%, #2196a6 65%, #0f3347 100%);
+  }
+</style>
+</head>
+<body>
+
+<div class="banner-wrap">
+  <div class="banner">
+
+    <!-- Fabric grid -->
+    <div class="fabric-grid">
+      <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+        <defs>
+          <pattern id="fabric" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse">
+            <line x1="15" y1="0" x2="15" y2="30" stroke="#81B532" stroke-width="0.5" opacity="0.45"/>
+            <line x1="0" y1="15" x2="30" y2="15" stroke="#2196a6" stroke-width="0.35" opacity="0.3"/>
+            <line x1="0" y1="0" x2="30" y2="30" stroke="#81B532" stroke-width="0.18" opacity="0.12"/>
+            <line x1="30" y1="0" x2="0" y2="30" stroke="#2196a6" stroke-width="0.18" opacity="0.08"/>
+            <circle cx="15" cy="15" r="0.8" fill="#81B532" opacity="0.18"/>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#fabric)"/>
+      </svg>
+    </div>
+
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+
+    <!-- Content -->
+    <div class="banner-content">
+
+      <!-- Sparkle: two 4-point stars -->
+      <div class="sparkle-wrap">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <!-- Large 4-point star -->
+          <path d="
+            M 38 15
+            C 40 38, 42 42, 65 45
+            C 42 48, 40 52, 38 85
+            C 36 52, 34 48, 10 45
+            C 34 42, 36 38, 38 15
+            Z
+          " fill="#81B532"/>
+          <!-- Small 4-point star -->
+          <path d="
+            M 72 5
+            C 73 18, 74 20, 90 22
+            C 74 24, 73 26, 72 38
+            C 71 26, 70 24, 54 22
+            C 70 20, 71 18, 72 5
+            Z
+          " fill="#81B532"/>
+        </svg>
+      </div>
+
+      <div class="text-block">
+        <div class="label-row">
+          <span class="tag">Workflow Data Fabric</span>
+          <span class="divider-dot"></span>
+          <span class="subtitle-tag">Solution Consulting</span>
+        </div>
+        <div class="title">APAC End-to-End <em>AI</em> Workshop</div>
+        <div class="accent-line"></div>
+      </div>
+    </div>
+
+    <!-- Wordmark -->
+    <div class="wordmark">
+      <svg width="10" height="10" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="10" cy="10" r="4.5" fill="#81B532" opacity="0.4"/>
+      </svg>
+      <span>servicenow</span>
+    </div>
+
+  </div>
+  <div class="bottom-bar"></div>
+</div>
+
+</body>
+</html>

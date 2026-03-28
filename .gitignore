@@ -1,2 +1,16 @@
 linkedin/
 internal-demo-hub/
+
+# Temporary scripts and generated outputs
+test_path.py
+generate_pdf.py
+generate_pdf_html.py
+html_to_pdf.py
+publish/
+
+# Alternative design working files
+alternative_design/capture_loom_corner_v7.py
+alternative_design/capture_loom_corner_v7_lowres.py
+alternative_design/loom_corner_animation_v7.html
+alternative_design/loom_corner_v7.gif
+alternative_design/loom_corner_v7_lowres.gif

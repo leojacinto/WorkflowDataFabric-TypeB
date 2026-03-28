@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kahoot Ready</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0d1f1f;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+  }
+  canvas { display: block; position: absolute; top: 0; left: 0; }
+
+  .overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  /* === SERVICENOW LOGO === */
+  .sn-logo {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 36px;
+  }
+  .sn-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .headline {
+    font-size: clamp(42px, 6vw, 82px);
+    font-weight: 800;
+    text-align: center;
+    line-height: 1.05;
+    letter-spacing: -1px;
+  }
+  .headline .top {
+    display: block;
+    color: rgba(255,255,255,0.92);
+  }
+  .headline .bottom {
+    display: block;
+    background: linear-gradient(90deg, #44d84a 0%, #2ee8a0 50%, #44d84a 100%);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer 3s ease-in-out infinite;
+  }
+
+  .subtitle {
+    margin-top: 20px;
+    font-size: clamp(14px, 2vw, 22px);
+    color: rgba(255,255,255,0.5);
+    font-weight: 400;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+  }
+
+  .pulse-ring {
+    margin-top: 44px;
+    width: 80px;
+    height: 80px;
+    position: relative;
+  }
+  .pulse-ring::before, .pulse-ring::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 2px solid rgba(68,216,74,0.4);
+    animation: pulseOut 3s ease-out infinite;
+  }
+  .pulse-ring::after {
+    animation: pulseOut 3s ease-out 1.5s infinite;
+  }
+  .pulse-ring .dot {
+    position: absolute;
+    inset: 24px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 40% 38%, #5eff6a, #2ab84a);
+    box-shadow: 0 0 30px rgba(68,216,74,0.5), 0 0 80px rgba(68,216,74,0.15);
+    animation: dotPulse 3s ease-in-out infinite;
+  }
+
+  /* Floating Kahoot-colored diamonds */
+  .diamonds {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    pointer-events: none;
+  }
+  .diamond {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    transform: rotate(45deg);
+    border-radius: 3px;
+    opacity: 0;
+  }
+
+  @keyframes shimmer {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  @keyframes pulseOut {
+    0% { transform: scale(0.8); opacity: 0.7; }
+    100% { transform: scale(2.2); opacity: 0; }
+  }
+  @keyframes dotPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.12); }
+    100% { transform: scale(1); }
+  }
+</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+
+<div class="diamonds" id="diamonds"></div>
+
+<div class="overlay">
+  <!-- ServiceNow Logo -->
+  <div class="sn-logo">
+    <img src="Servicenow_icon.png" alt="ServiceNow">
+  </div>
+
+  <div class="headline">
+    <span class="top">Are You Ready?</span>
+    <span class="bottom">Let's Kahoot!</span>
+  </div>
+  <div class="subtitle">WDF &amp; RaptorDB Pro Workshop</div>
+
+  <div class="pulse-ring">
+    <div class="dot"></div>
+  </div>
+</div>
+
+<script>
+// === DETERMINISTIC 3-SECOND LOOP ===
+const LOOP_DURATION = 3000; // 3 seconds in ms
+let startTime = performance.now();
+
+// === FABRIC GRID (from the WDF hero animation) ===
+const canvas = document.getElementById('c');
+const ctx = canvas.getContext('2d');
+let W, H, dpr;
+
+function resize() {
+  dpr = window.devicePixelRatio || 1;
+  W = canvas.width = window.innerWidth * dpr;
+  H = canvas.height = window.innerHeight * dpr;
+  canvas.style.width = window.innerWidth + 'px';
+  canvas.style.height = window.innerHeight + 'px';
+}
+resize();
+window.addEventListener('resize', resize);
+
+const COLS = 60, ROWS = 60, SP = 16;
+const fov = 600, camH = 220, camD = 380;
+const rotX = -0.82, rotZ = 0.38;
+
+const cosX = Math.cos(rotX), sinX = Math.sin(rotX);
+const cosZ = Math.cos(rotZ), sinZ = Math.sin(rotZ);
+
+function hAt(x, y, t) {
+  // Sync to 3-second loop: use angular frequencies that complete in 3s
+  // 2π/3 ≈ 2.094 for 1 cycle per 3s
+  // 4π/3 ≈ 4.189 for 2 cycles per 3s
+  return Math.sin(x * 0.04 + t * 2.094) * 28
+       + Math.cos(y * 0.035 + t * 4.189) * 22
+       + Math.sin((x + y) * 0.025 + t * 2.094) * 18;
+}
+
+function proj(wx, wy, wz) {
+  let x1 = wx * cosZ - wy * sinZ;
+  let y1 = wx * sinZ + wy * cosZ;
+  let y2 = y1 * cosX - wz * sinX;
+  let z2 = y1 * sinX + wz * cosX;
+  const ez = z2 - camD;
+  const ey = y2 - camH;
+  if (ez >= -10) return null;
+  const sc = fov / -ez;
+  return { x: W / 2 + x1 * sc, y: H / 2 + ey * sc, sc, ez };
+}
+
+const cx = (COLS - 1) * SP / 2, cy = (ROWS - 1) * SP / 2;
+
+function draw(now) {
+  // Calculate deterministic time with crossfade
+  const elapsed = now - startTime;
+  const loopTime = elapsed % LOOP_DURATION;
+  const t = (loopTime / LOOP_DURATION) * (Math.PI * 2); // 0 to 2π per loop
+  
+  ctx.clearRect(0, 0, W, H);
+
+  // Radial bg glow
+  const grd = ctx.createRadialGradient(W * 0.5, H * 0.45, 0, W * 0.5, H * 0.45, W * 0.55);
+  grd.addColorStop(0, 'rgba(30,80,60,0.12)');
+  grd.addColorStop(1, 'rgba(13,31,31,0)');
+  ctx.fillStyle = grd;
+  ctx.fillRect(0, 0, W, H);
+
+  // Grid lines - Horizontal
+  for (let r = 0; r < ROWS; r++) {
+    ctx.beginPath();
+    let started = false;
+    for (let c = 0; c < COLS; c++) {
+      const wx = c * SP - cx, wy = r * SP - cy;
+      const wz = hAt(wx, wy, t);
+      const p = proj(wx, wy, wz);
+      if (!p) continue;
+      const fade = Math.max(0, Math.min(1, 1 - Math.sqrt(wx * wx + wy * wy) / (cx * 1.1)));
+      if (fade < 0.02) continue;
+      if (!started) { ctx.moveTo(p.x, p.y); started = true; }
+      else ctx.lineTo(p.x, p.y);
+    }
+    ctx.strokeStyle = 'rgba(68,216,74,0.13)';
+    ctx.lineWidth = 0.8 * dpr;
+    ctx.stroke();
+  }
+  
+  // Grid lines - Vertical
+  for (let c = 0; c < COLS; c++) {
+    ctx.beginPath();
+    let started = false;
+    for (let r = 0; r < ROWS; r++) {
+      const wx = c * SP - cx, wy = r * SP - cy;
+      const wz = hAt(wx, wy, t);
+      const p = proj(wx, wy, wz);
+      if (!p) continue;
+      const fade = Math.max(0, Math.min(1, 1 - Math.sqrt(wx * wx + wy * wy) / (cx * 1.1)));
+      if (fade < 0.02) continue;
+      if (!started) { ctx.moveTo(p.x, p.y); started = true; }
+      else ctx.lineTo(p.x, p.y);
+    }
+    ctx.strokeStyle = 'rgba(68,216,74,0.10)';
+    ctx.lineWidth = 0.8 * dpr;
+    ctx.stroke();
+  }
+
+  // Intersection glows on peaks
+  for (let r = 0; r < ROWS; r += 3) {
+    for (let c = 0; c < COLS; c += 3) {
+      const wx = c * SP - cx, wy = r * SP - cy;
+      const wz = hAt(wx, wy, t);
+      if (wz < 10) continue;
+      const p = proj(wx, wy, wz);
+      if (!p) continue;
+      const fade = Math.max(0, Math.min(1, 1 - Math.sqrt(wx * wx + wy * wy) / (cx * 1.05)));
+      const intensity = fade * ((wz - 10) / 50) * 0.18;
+      if (intensity < 0.01) continue;
+      const gr = 5 * p.sc * dpr;
+      const g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, gr);
+      g.addColorStop(0, `rgba(100,255,140,${intensity})`);
+      g.addColorStop(1, 'rgba(100,255,140,0)');
+      ctx.fillStyle = g;
+      ctx.fillRect(p.x - gr, p.y - gr, gr * 2, gr * 2);
+    }
+  }
+
+  requestAnimationFrame(draw);
+}
+requestAnimationFrame(draw);
+
+// === DETERMINISTIC FLOATING KAHOOT DIAMONDS ===
+const kahootColors = [
+  'rgba(226,27,60,0.6)',   // red
+  'rgba(19,104,206,0.6)',  // blue
+  'rgba(216,158,0,0.55)',  // yellow
+  'rgba(38,137,12,0.6)',   // green
+];
+const dContainer = document.getElementById('diamonds');
+
+// Pre-defined diamond spawn pattern for deterministic playback
+// More diamonds, faster movement for 3-second loop
+const diamondPattern = [];
+for (let i = 0; i < 30; i++) {
+  diamondPattern.push({
+    spawnTime: (i * 100) % LOOP_DURATION,
+    left: (i * 37 + 23) % 100, // pseudo-random but deterministic
+    size: 10 + ((i * 17) % 16),
+    colorIndex: i % 4,
+    duration: 2500 + ((i * 13) % 1000) // Faster: 2.5-3.5 seconds
+  });
+}
+
+function updateDiamonds(now) {
+  const elapsed = now - startTime;
+  const loopTime = elapsed % LOOP_DURATION;
+  
+  // Clear all and redraw - simpler and more deterministic
+  dContainer.innerHTML = '';
+  
+  // Draw all diamonds that should be visible at this exact moment
+  diamondPattern.forEach(pattern => {
+    // Calculate where this diamond is in its lifecycle
+    // Offset the spawn time so diamonds are mid-flight at t=0
+    const adjustedSpawnTime = (pattern.spawnTime - pattern.duration * 0.3 + LOOP_DURATION) % LOOP_DURATION;
+    
+    let timeSinceSpawn = loopTime - adjustedSpawnTime;
+    if (timeSinceSpawn < 0) timeSinceSpawn += LOOP_DURATION;
+    
+    // Only show if within duration
+    if (timeSinceSpawn < pattern.duration) {
+      const progress = timeSinceSpawn / pattern.duration;
+      const color = kahootColors[pattern.colorIndex];
+      
+      const el = document.createElement('div');
+      el.className = 'diamond';
+      
+      // Calculate position and opacity for smooth continuous motion
+      const yPos = -progress * 110;
+      const scale = 0.6 + (1 - progress) * 0.4;
+      const opacity = progress < 0.1 ? progress * 10 : progress > 0.9 ? (1 - progress) * 10 : 0.7;
+      
+      el.style.cssText = `
+        left: ${pattern.left}%;
+        bottom: -30px;
+        width: ${pattern.size}px;
+        height: ${pattern.size}px;
+        background: ${color};
+        box-shadow: 0 0 ${pattern.size}px ${color};
+        transform: rotate(45deg) translateY(${yPos}vh) scale(${scale});
+        opacity: ${opacity};
+      `;
+      dContainer.appendChild(el);
+    }
+  });
+  
+  requestAnimationFrame(updateDiamonds);
+}
+requestAnimationFrame(updateDiamonds);
+</script>
+</body>
+</html>

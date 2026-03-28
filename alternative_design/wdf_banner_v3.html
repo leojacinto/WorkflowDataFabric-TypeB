@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>APAC End-to-End AI Workshop Banner</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #0a0a0a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  .banner-wrap {
+    width: 700px;
+  }
+
+  .banner {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    background: linear-gradient(135deg, #0b2a3a 0%, #0f3347 30%, #122f3f 60%, #0d2636 100%);
+    overflow: hidden;
+  }
+
+  /* Fabric grid canvas - positioned bottom-right, fades left */
+  .fabric-grid-canvas {
+    position: absolute;
+    right: -60px;
+    bottom: -40px;
+    width: 700px;
+    height: 280px;
+    opacity: 0.14;
+    pointer-events: none;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.3) 25%, rgba(0,0,0,0.7) 45%, black 65%);
+    mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.3) 25%, rgba(0,0,0,0.7) 45%, black 65%);
+  }
+
+  /* Ambient glows */
+  .glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    pointer-events: none;
+  }
+  .glow-1 {
+    width: 300px; height: 300px;
+    background: rgba(129, 181, 50, 0.07);
+    top: -100px; right: -40px;
+  }
+  .glow-2 {
+    width: 250px; height: 250px;
+    background: rgba(33, 150, 166, 0.05);
+    bottom: -130px; left: -60px;
+  }
+
+  /* Content */
+  .banner-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 44px;
+    gap: 26px;
+  }
+
+  /* Now Assist icon */
+  .now-assist-wrap {
+    flex-shrink: 0;
+    width: 76px;
+    height: 76px;
+    position: relative;
+  }
+  .now-assist-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  /* Text */
+  .text-block {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .label-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .tag {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #63DF4E;
+    background: rgba(99, 223, 78, 0.1);
+    padding: 3px 10px;
+    border-radius: 3px;
+    line-height: 1;
+  }
+
+  .divider-dot {
+    width: 3px; height: 3px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+  }
+
+  .subtitle-tag {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+  }
+
+  .title {
+    font-size: 27px;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.15;
+    letter-spacing: -0.3px;
+  }
+
+  .title em {
+    font-style: normal;
+    color: #63DF4E;
+  }
+
+  .accent-line {
+    width: 48px; height: 2px;
+    background: linear-gradient(90deg, #81B532, transparent);
+    border-radius: 2px;
+    margin-top: 2px;
+  }
+
+  /* ServiceNow wordmark */
+  .wordmark {
+    position: absolute;
+    bottom: 14px; right: 44px;
+    z-index: 3;
+    height: 32px;
+  }
+  .wordmark img {
+    height: 100%;
+    opacity: 0.3;
+  }
+
+  /* Bottom accent bar */
+  .bottom-bar {
+    width: 100%; height: 3px;
+    background: linear-gradient(90deg, #81B532 0%, #81B532 35%, #2196a6 65%, #0f3347 100%);
+  }
+</style>
+</head>
+<body>
+
+<div class="banner-wrap">
+  <div class="banner">
+
+    <!-- Fabric grid canvas - bottom right -->
+    <canvas class="fabric-grid-canvas" id="fabricGrid" width="700" height="280"></canvas>
+
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+
+    <!-- Content -->
+    <div class="banner-content">
+
+      <!-- Now Assist icon -->
+      <div class="now-assist-wrap">
+        <img src="Now Assist.png" alt="Now Assist">
+      </div>
+
+      <div class="text-block">
+        <div class="label-row">
+          <span class="tag">Now Assist</span>
+          <span class="divider-dot"></span>
+          <span class="tag">WDF</span>
+          <span class="divider-dot"></span>
+          <span class="tag">RaptorDB Pro</span>
+          <span class="divider-dot"></span>
+          <span class="subtitle-tag">Solution Consulting</span>
+        </div>
+        <div class="title">APAC End-to-End <em>AI</em> Workshop</div>
+        <div class="accent-line"></div>
+      </div>
+    </div>
+
+    <!-- ServiceNow wordmark -->
+    <div class="wordmark">
+      <img src="ServiceNow.svg" alt="ServiceNow">
+    </div>
+
+  </div>
+  <div class="bottom-bar"></div>
+</div>
+
+<script>
+// === STATIC FABRIC GRID (from fabric-grid.html) ===
+// Rendered once, no animation. More diagonal, positioned for bottom-right.
+const canvas = document.getElementById('fabricGrid');
+const ctx = canvas.getContext('2d');
+const GW = canvas.width, GH = canvas.height;
+
+const COLS = 160, ROWS = 120, SP = 10;
+const FOV = 500, CAM_H = 100, CAM_D = 180;
+
+// More diagonal rotation than original
+const RX = -0.75, RZ = 0.72;
+const cZ = Math.cos(RZ), sZ = Math.sin(RZ);
+const cX = Math.cos(RX), sX = Math.sin(RX);
+
+const FADE_R = COLS * SP * 0.55;
+
+function proj(x, y, z) {
+  const x1 = x * cZ - y * sZ, y1 = x * sZ + y * cZ;
+  const y2 = y1 * cX - z * sX, z2 = y1 * sX + z * cX + CAM_D;
+  const sc = FOV / (FOV + z2);
+  // Offset to position grid toward bottom-right of canvas
+  return { x: x1 * sc + GW * 0.35, y: (y2 + CAM_H) * sc + GH * 0.4, sc };
+}
+
+function hAt(wx, wy) {
+  // Frozen mid-wave: use a fixed time value for interesting peaks
+  const t = 3.5;
+  let h = 0;
+  h += Math.sin(wx * .012 + t * 1.0) * Math.cos(wy * .01 + t * 0.5) * 60;
+  h += Math.sin(wx * .025 + wy * .02 + t * 1.5) * 25;
+  h += Math.cos(wx * .04 - t * 1.0) * Math.sin(wy * .035 + t * 0.5) * 15;
+  const d = Math.sqrt(wx * wx + wy * wy);
+  h += Math.sin(d * .015 - t * 0.5) * 30;
+  const ef = Math.max(0, 1 - d / FADE_R);
+  return h * ef * ef;
+}
+
+function opAt(wx, wy) {
+  const d = Math.sqrt((wx / SP) ** 2 + (wy / SP) ** 2) / (COLS / 2);
+  const f = Math.max(0, 1 - d * 0.7);
+  return f * f;
+}
+
+// Render static grid once
+(function renderGrid() {
+  ctx.clearRect(0, 0, GW, GH);
+
+  const pts = [];
+  for (let r = 0; r < ROWS; r++) {
+    pts[r] = [];
+    for (let c = 0; c < COLS; c++) {
+      const wx = (c - COLS / 2) * SP, wy = (r - ROWS / 2) * SP;
+      const wz = hAt(wx, wy);
+      const op = opAt(wx, wy);
+      const p = proj(wx, wy, wz);
+      pts[r][c] = { sx: p.x, sy: p.y, sc: p.sc, op, wz };
+    }
+  }
+
+  const seg = (a, b) => {
+    const al = Math.min(a.op, b.op);
+    if (al < .02) return;
+    const dx = a.sx - b.sx, dy = a.sy - b.sy;
+    if (dx * dx + dy * dy > 3600) return;
+    const br = .4 + .6 * Math.max(0, Math.min(1, ((a.wz + b.wz) / 2 + 60) / 120));
+    ctx.beginPath();
+    ctx.moveTo(a.sx, a.sy);
+    ctx.lineTo(b.sx, b.sy);
+    ctx.strokeStyle = `rgba(${30 + br * 60 | 0},${180 + br * 75 | 0},${60 + br * 30 | 0},${al * .7})`;
+    ctx.lineWidth = .4 + br * .6;
+    ctx.stroke();
+  };
+
+  // Draw grid lines
+  for (let r = 0; r < ROWS; r++)
+    for (let c = 0; c < COLS - 1; c++) seg(pts[r][c], pts[r][c + 1]);
+  for (let c = 0; c < COLS; c++)
+    for (let r = 0; r < ROWS - 1; r++) seg(pts[r][c], pts[r + 1][c]);
+
+  // Draw glow points on peaks
+  for (let r = 0; r < ROWS; r += 2)
+    for (let c = 0; c < COLS; c += 2) {
+      const p = pts[r][c];
+      if (p.op < .1 || p.wz <= 20) continue;
+      const ga = p.op * ((p.wz - 20) / 100) * .12;
+      if (ga < .01) continue;
+      const gr = 5 * p.sc;
+      const g = ctx.createRadialGradient(p.sx, p.sy, 0, p.sx, p.sy, gr);
+      g.addColorStop(0, `rgba(100,255,140,${ga})`);
+      g.addColorStop(1, 'rgba(100,255,140,0)');
+      ctx.fillStyle = g;
+      ctx.fillRect(p.sx - gr, p.sy - gr, gr * 2, gr * 2);
+    }
+})();
+</script>
+
+</body>
+</html>
