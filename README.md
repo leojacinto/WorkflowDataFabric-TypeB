@@ -7,11 +7,9 @@ icon: magnifying-glass-chart
 
 <figure><picture><source srcset=".gitbook/assets/wdf_connectors_banner_dark.gif" media="(prefers-color-scheme: dark)"><img src=".gitbook/assets/wdf_connectors_banner.gif" alt="Workflow Data Fabric"></picture><figcaption></figcaption></figure>
 
-## Agenda
-
-<figure><img src=".gitbook/assets/sc_slide_workshop_agenda.png" alt=""><figcaption></figcaption></figure>
-
 ## Business motivation
+
+<figure><img src=".gitbook/assets/sc_slide_building_for_whom.gif" alt=""><figcaption></figcaption></figure>
 
 Finance teams discover budget overruns weeks too late. Expense analysis requires manually piecing together data from ERP systems, data warehouses, and SharePoint. By the time finance reacts, small variances become major problems. **ServiceNow Workflow Data Fabric transforms reactive financial management into proactive intelligence**. By unifying data across systems through Zero Copy for SQL and ERP, Integration Hub, External Content Connectors, MCP, and AI agents, organizations can:
 
@@ -31,9 +29,9 @@ You're a **Data Architect** serving the Finance department. Finance Managers nee
 2. "Investigation means manually searching expenses, reports, and memos: can you unify this?"
 3. "We answer the same questions daily: can employees self-serve?"
 
-<figure><img src=".gitbook/assets/sc_slide_building_for_whom.gif" alt=""><figcaption></figcaption></figure>
-
 ## Outcome
+
+<figure><img src=".gitbook/assets/sc_readme_hero.png" alt=""><figcaption></figcaption></figure>
 
 By completing this lab, you'll build an interconnected financial intelligence platform demonstrating:
 
@@ -47,15 +45,19 @@ By completing this lab, you'll build an interconnected financial intelligence pl
 
 You'll master the architectural patterns for transforming siloed enterprise data into unified, intelligent decision-making platforms. **Let's build something intelligent**. 🚀💡
 
-<figure><img src=".gitbook/assets/sc_readme_hero.png" alt=""><figcaption></figcaption></figure>
+## Workshop agenda
 
-## Table of contents
+<figure><img src=".gitbook/assets/sc_slide_workshop_agenda.png" alt=""><figcaption></figcaption></figure>
 
 This lab is divided into 5 exercises with the suggested sequence below. The ServiceNow-led lab environments which contains these exercises will allow you to complete individual labs in any sequence you prefer. The exercises focus on walk through and basic configuration of Workflow Data Fabric integrations and there are pre-made custom agents that make use of the integrations to demonstrate what is possible. You will not need to configure agents in this lab but steps are provided on how you can explore how the agents were configured.
 
 This is designed to be a full day workshop covering most of WDF's capabilities. As such, we will not be able to cover in great depth all of the capabilities. If there are capabilities most relevant to your requirements, do ask your Lab Admin if there is a relevant deep dive lab available.
 
 <table><thead><tr><th width="203.09375">Topic</th><th width="180.48828125">Difficulty</th><th>AI Agents involved</th><th>Suggested duration</th></tr></thead><tbody><tr><td><a href="https://servicenow-lf.gitbook.io/the-workflow-data-fabric-loom/data-and-flow-diagrams">Workflow Data Fabric Diagrams</a></td><td>N/A</td><td>No</td><td>N/A</td></tr><tr><td><strong>Main Exercises</strong></td><td></td><td></td><td></td></tr><tr><td><a href="https://servicenow-lf.gitbook.io/the-workflow-data-fabric-loom/lab-exercise-fundamentals">Lab Exercise: Fundamentals</a></td><td>Beginner</td><td>No</td><td>30 minutes</td></tr><tr><td><a href="https://servicenow-lf.gitbook.io/the-workflow-data-fabric-loom/lab-exercise-integration-hub">Lab Exercise: Integration Hub</a></td><td>Intermediate</td><td>Yes</td><td>90 minutes</td></tr><tr><td><a href="https://servicenow-lf.gitbook.io/the-workflow-data-fabric-loom/lab-exercise-zero-copy-connectors">Lab Exercise: Zero Copy Connectors</a></td><td>Intermediate</td><td>Yes</td><td>1.75 hours</td></tr><tr><td><strong>Extended Exercises</strong></td><td></td><td></td><td></td></tr><tr><td><a href="https://servicenow-lf.gitbook.io/the-workflow-data-fabric-loom/lab-exercise-external-content-connector">Lab Exercise: External Content Connector</a></td><td>Beginner</td><td>Yes</td><td>30 minutes</td></tr><tr><td><a href="https://servicenow-lf.gitbook.io/the-workflow-data-fabric-loom/lab-exercise-servicenow-lens-and-document-intelligence">Lab Exercise: ServiceNow Lens and Document Intelligence</a></td><td>Beginner</td><td>Yes</td><td>30 minutes</td></tr><tr><td><a href="https://servicenow-lf.gitbook.io/the-workflow-data-fabric-loom/lab-exercise-model-context-protocol-server-client">Lab Exercise: Model Context Protocol Server/Client</a></td><td>Intermediate</td><td>Yes</td><td>1 hour</td></tr><tr><td><strong>Hungry for more?</strong></td><td></td><td></td><td></td></tr><tr><td><a href="https://servicenow-lf.gitbook.io/apac-ai-end-to-end-lab-workflow-data-fabric/hungry-for-more/lab-exercise-kafka_stream_connect">Lab Exercise: Stream Connect for Apache Kafka Lab</a></td><td>Advanced</td><td>Yes</td><td>1 hour</td></tr></tbody></table>
+
+## How each lab exercise will be conducted
+
+<figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Post-lab recommended materials
 
