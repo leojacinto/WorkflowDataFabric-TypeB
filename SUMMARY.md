@@ -15,14 +15,14 @@
 * [Lab Exercise: ServiceNow Document Intelligence and Lens](extended-exercises/lab-exercise-servicenow-lens-and-document-intelligence.md)
 * [Lab Exercise: Model Context Protocol Server/Client](extended-exercises/lab-exercise-model-context-protocol-server-client.md)
 
-## Hungry for more?
-
-* [Lab Exercise: Stream Connect for Apache Kafka Lab](hungry-for-more/lab-exercise-kafka_stream_connect.md)
-
 ## Conclusion
 
 * [Key Takeaways](conclusion/key-takeaways.md)
 * [Final Activity](conclusion/final-activity.md)
+
+## Hungry for more?
+
+* [Lab Exercise: Stream Connect for Apache Kafka Lab](hungry-for-more/lab-exercise-kafka_stream_connect.md)
 
 ***
 
