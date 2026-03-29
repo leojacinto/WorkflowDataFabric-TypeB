@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>What you will be building for whom</title>
+<style>
+  /* EMU→px scale: 3420/12192000 = 0.000280563 */
+  @font-face {
+    font-family: 'ServiceNow Sans';
+    src: url('ServiceNowSans-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0b1a2b;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    font-family: 'ServiceNow Sans', 'Segoe UI', system-ui, sans-serif;
+    color: #fff;
+  }
+  canvas { position: absolute; top: 0; left: 0; display: block; }
+  .slide { position: absolute; inset: 0; z-index: 10; pointer-events: none; }
+  .el { position: absolute; }
+
+  /* Title — inherits from master: bold italic, large */
+  .title {
+    left: 153px; top: 55px; width: 3111px; height: 265px;
+    display: flex; align-items: center;
+    font-size: 140px; font-weight: 800; line-height: 1.05;
+  }
+  /* Green accent line (TopRule id=99) */
+  .top-rule {
+    left: 153px; top: 331px; width: 3111px; height: 0;
+    border-top: 2px solid rgba(99,223,78,0.3);
+  }
+  /* Vertical divider (id=120) */
+  .divider {
+    left: 1657px; top: 385px; width: 0; height: 1390px;
+    border-left: 2px solid rgba(255,255,255,0.15);
+  }
+
+  /* === LEFT COLUMN === */
+  /* "The Business Problem" (id=3) */
+  .header-problem {
+    left: 196px; top: 464px; width: 1334px; height: 120px;
+    display: flex; align-items: center;
+    font-size: 71px; font-weight: 700; color: #63DF4E;
+  }
+  /* Problem bullets (id=102) */
+  .problem-bullets {
+    left: 196px; top: 578px; width: 1390px; height: 339px;
+    font-size: 50px; font-weight: normal; line-height: 1.2;
+  }
+  .problem-bullets ul { list-style: disc; padding-left: 48px; }
+  .problem-bullets li { margin-top: 11px; }
+  /* "What the Finance Team needs" (id=5) */
+  .header-finance {
+    left: 196px; top: 999px; width: 1334px; height: 120px;
+    display: flex; align-items: center;
+    font-size: 71px; font-weight: 700; color: #63DF4E;
+  }
+  /* Persona bullet (id=112) */
+  .finance-bullet {
+    left: 196px; top: 1119px; width: 1390px; height: 214px;
+    font-size: 50px; font-weight: normal; line-height: 1.2;
+  }
+  .finance-bullet ul { list-style: disc; padding-left: 48px; }
+
+  /* === RIGHT COLUMN === */
+  /* "What you will build" header (id=130) */
+  .header-build {
+    left: 1728px; top: 464px; width: 1532px; height: 135px;
+  }
+  .header-build .main { font-size: 71px; font-weight: 700; color: #63DF4E; }
+  .header-build .sub  { font-size: 36px; font-weight: normal; color: #fff; margin-top: 6px; }
+
+  /* Card backgrounds (id=200–250) — gradient from rgba(28,66,85,0.7) to transparent */
+  .card {
+    width: 738px; height: 303px; border-radius: 12px;
+    background: linear-gradient(180deg, rgba(28,66,85,0.7) 0%, rgba(28,66,85,0) 100%);
+    padding: 35px 36px 35px 43px;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .card-title { font-size: 43px; font-weight: 700; margin-bottom: 10px; }
+  .card-desc  { font-size: 36px; font-weight: normal; color: #fff; line-height: 1.35; }
+
+  /* Card grid positions (2 cols × 3 rows, gap-x:61 gap-y:50) */
+  .c00 { left: 1728px; top: 625px; }
+  .c10 { left: 2527px; top: 625px; }
+  .c01 { left: 1728px; top: 978px; }
+  .c11 { left: 2527px; top: 978px; }
+  .c02 { left: 1728px; top: 1331px; }
+  .c12 { left: 2527px; top: 1331px; }
+
+  /* "Demo" pill (id=7) — filled green, dark text */
+  .demo-pill {
+    left: 2274px; top: 658px; width: 156px; height: 49px;
+    background: #63DF4E; border-radius: 25px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 29px; font-weight: 500; color: #0b1a2b;
+  }
+</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<div class="slide">
+  <div class="el title">What you will be building for whom</div>
+  <div class="el top-rule"></div>
+  <div class="el divider"></div>
+
+  <!-- Left column -->
+  <div class="el header-problem">The Business Problem</div>
+  <div class="el problem-bullets"><ul>
+    <li>Finance teams discover budget overruns weeks too late</li>
+    <li>Expense data is siloed across ERP, data warehouses, and SharePoint</li>
+    <li>By the time finance reacts, small variances become major problems</li>
+  </ul></div>
+  <div class="el header-finance">What the Finance Team needs</div>
+  <div class="el finance-bullet"><ul>
+    <li>Automated case creation to proactively address cost centers, vendors, and expenses that need attention</li>
+  </ul></div>
+
+  <!-- Right column -->
+  <div class="el header-build">
+    <div class="main">What you will build</div>
+    <div class="sub">Multiple protocols orchestrated for finance automation</div>
+  </div>
+  <div class="el card c00">
+    <div class="card-title">Integration Hub</div>
+    <div class="card-desc">Real-time expense event processing via spokes</div>
+  </div>
+  <div class="el demo-pill">Demo</div>
+  <div class="el card c10">
+    <div class="card-title">Zero Copy for SQL &amp; ERP</div>
+    <div class="card-desc">Access warehouse and ERP data without duplication</div>
+  </div>
+  <div class="el card c01">
+    <div class="card-title">External Content Connector</div>
+    <div class="card-desc">Bring executive memos into AI agent decisions</div>
+  </div>
+  <div class="el card c11">
+    <div class="card-title">Lens &amp; Doc Intelligence</div>
+    <div class="card-desc">Invoice data capture: individual and batch</div>
+  </div>
+  <div class="el card c02">
+    <div class="card-title">MCP Client</div>
+    <div class="card-desc">ServiceNow connects to a MCP-compatible database</div>
+  </div>
+  <div class="el card c12">
+    <div class="card-title">AI Agents</div>
+    <div class="card-desc">Detect issues, analyze trends, create cases</div>
+  </div>
+</div>
+<script>
+const canvas = document.getElementById('c');
+const ctx = canvas.getContext('2d');
+let W, H, dpr;
+
+const DEEP = '#0b1a2b';
+const CYAN  = [52, 180, 204];
+const GREEN = [129, 195, 65];
+const AMBER = [255, 186, 65];
+
+const LOOP_DURATION = 10000;
+const FADE_MS = 800;
+
+const FIGURES = [
+  '142.7K','\u22123.2%','87.4K','+1.1%','2.4M','56.9K',
+  '\u22120.8%','318K','+4.7%','1.1M','24.3K','\u22122.1%',
+  '762K','+0.3%','93.1K','445K','\u22121.5%','+2.8%'
+];
+
+function mulberry32(a) {
+  return function() {
+    a |= 0; a = a + 0x6D2B79F5 | 0;
+    var t = Math.imul(a ^ a >>> 15, 1 | a);
+    t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+    return ((t ^ t >>> 14) >>> 0) / 4294967296;
+  }
+}
+
+let rng;
+const SEED = 42;
+function sRNG() { return rng(); }
+function rR(min, max) { return min + sRNG() * (max - min); }
+
+class DriftingFigure {
+  constructor(init) { this.init = init; this.seed(); }
+  seed() {
+    this.x = rR(W * 0.02, W * 0.48);
+    this.y = this.init ? rR(H * 0.30, H * 0.95) : H + 10;
+    this.vy = -(0.5 + sRNG() * 0.8);
+    this.vx = -0.14 + sRNG() * 0.28;
+    this.text = FIGURES[Math.floor(sRNG() * FIGURES.length)];
+    this.opacity = 0;
+    this.maxOpacity = 0.14 + sRNG() * 0.12;
+    this.size = 56 + sRNG() * 22;
+    this.isNeg = this.text.includes('\u2212');
+    this.life = this.init ? Math.floor(sRNG() * 200) : 0;
+    this.maxLife = 350 + sRNG() * 400;
+    this._nextSeeds = [];
+    for (let i = 0; i < 8; i++) this._nextSeeds.push(sRNG());
+  }
+  reset() {
+    const s = this._nextSeeds;
+    this.x = W * 0.02 + s[0] * W * 0.46;
+    this.y = H + 10;
+    this.vy = -(0.5 + s[1] * 0.8);
+    this.vx = -0.14 + s[2] * 0.28;
+    this.text = FIGURES[Math.floor(s[3] * FIGURES.length)];
+    this.maxOpacity = 0.14 + s[4] * 0.12;
+    this.size = 56 + s[5] * 22;
+    this.isNeg = this.text.includes('\u2212');
+    this.life = 0;
+    this.maxLife = 350 + s[6] * 400;
+    this.opacity = 0;
+  }
+  update() {
+    this.x += this.vx; this.y += this.vy; this.life++;
+    if (this.life < 50) this.opacity = (this.life / 50) * this.maxOpacity;
+    else if (this.life > this.maxLife - 70) this.opacity = Math.max(0, ((this.maxLife - this.life) / 70) * this.maxOpacity);
+    else this.opacity = this.maxOpacity;
+    if (this.life > this.maxLife || this.y < -30) this.reset();
+  }
+  draw() {
+    if (this.opacity < 0.01) return;
+    const col = this.isNeg ? AMBER : CYAN;
+    ctx.font = `300 ${this.size}px "SF Mono","Consolas","Courier New",monospace`;
+    ctx.fillStyle = `rgba(${col[0]},${col[1]},${col[2]},${this.opacity})`;
+    ctx.fillText(this.text, this.x, this.y);
+  }
+}
+
+class ChartFragment {
+  constructor() { this.seed(); }
+  seed() {
+    this.x = rR(W * 0.02, W * 0.40);
+    this.y = rR(H * 0.35, H * 0.90);
+    this.width = 285 + sRNG() * 430;
+    this.points = [];
+    const steps = 10 + Math.floor(sRNG() * 8);
+    let val = sRNG() * 70;
+    for (let i = 0; i <= steps; i++) { val += (sRNG() - 0.48) * 21; this.points.push(val); }
+    this.opacity = 0;
+    this.maxOpacity = 0.14 + sRNG() * 0.1;
+    this.life = Math.floor(sRNG() * 150);
+    this.maxLife = 400 + sRNG() * 500;
+    this.trend = this.points[this.points.length - 1] > this.points[0];
+    this.drawProgress = 0;
+    this._nextSeeds = [];
+    for (let i = 0; i < 20; i++) this._nextSeeds.push(sRNG());
+  }
+  reset() {
+    const s = this._nextSeeds;
+    this.x = W * 0.02 + s[0] * W * 0.38;
+    this.y = H * 0.35 + s[1] * H * 0.55;
+    this.width = 285 + s[2] * 430;
+    this.points = [];
+    const steps = 10 + Math.floor(s[3] * 8);
+    let val = s[4] * 70;
+    for (let i = 0; i <= steps; i++) { val += (s[5 + Math.min(i, 14)] - 0.48) * 21; this.points.push(val); }
+    this.maxOpacity = 0.14 + s[6] * 0.1;
+    this.life = 0;
+    this.maxLife = 400 + s[7] * 500;
+    this.trend = this.points[this.points.length - 1] > this.points[0];
+    this.drawProgress = 0;
+    this.opacity = 0;
+  }
+  update() {
+    this.life++;
+    this.drawProgress = Math.min(1, this.life / 100);
+    if (this.life < 60) this.opacity = (this.life / 60) * this.maxOpacity;
+    else if (this.life > this.maxLife - 80) this.opacity = Math.max(0, ((this.maxLife - this.life) / 80) * this.maxOpacity);
+    else this.opacity = this.maxOpacity;
+    if (this.life > this.maxLife) this.reset();
+  }
+  draw() {
+    if (this.opacity < 0.01) return;
+    const col = this.trend ? GREEN : AMBER;
+    const vis = Math.floor(this.points.length * this.drawProgress);
+    if (vis < 2) return;
+    ctx.beginPath();
+    for (let i = 0; i < vis; i++) {
+      const px = this.x + (i / (this.points.length - 1)) * this.width;
+      const py = this.y - this.points[i];
+      if (i === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+    }
+    ctx.strokeStyle = `rgba(${col[0]},${col[1]},${col[2]},${this.opacity})`;
+    ctx.lineWidth = 5;
+    ctx.stroke();
+    if (vis >= 2) {
+      const lx = this.x + ((vis - 1) / (this.points.length - 1)) * this.width;
+      const ly = this.y - this.points[vis - 1];
+      ctx.fillStyle = `rgba(${col[0]},${col[1]},${col[2]},${this.opacity * 0.8})`;
+      ctx.beginPath(); ctx.arc(lx, ly, 9, 0, Math.PI * 2); ctx.fill();
+    }
+  }
+}
+
+function drawLedgerGrid(t) {
+  const sp = 196;
+  const halfW = W * 0.50;
+  for (let y = sp; y < H; y += sp) {
+    const pulse = 0.7 + 0.3 * Math.sin(t * 0.0006 + y * 0.012);
+    ctx.strokeStyle = `rgba(52,180,204,${0.035 * pulse})`;
+    ctx.lineWidth = 1.5;
+    ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(halfW, y); ctx.stroke();
+  }
+  for (let x = sp; x < halfW; x += sp * 2) {
+    const pulse = 0.7 + 0.3 * Math.sin(t * 0.0005 + x * 0.008);
+    ctx.strokeStyle = `rgba(52,180,204,${0.025 * pulse})`;
+    ctx.lineWidth = 1.5;
+    ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke();
+  }
+}
+
+function drawEdgeFade() {
+  const m = 140;
+  const tf = ctx.createLinearGradient(0, 0, 0, m);
+  tf.addColorStop(0, 'rgba(11,26,43,0.6)'); tf.addColorStop(1, 'rgba(11,26,43,0)');
+  ctx.fillStyle = tf; ctx.fillRect(0, 0, W, m);
+  const bf = ctx.createLinearGradient(0, H - m, 0, H);
+  bf.addColorStop(0, 'rgba(11,26,43,0)'); bf.addColorStop(1, 'rgba(11,26,43,0.6)');
+  ctx.fillStyle = bf; ctx.fillRect(0, H - m, W, m);
+  const lf = ctx.createLinearGradient(0, 0, m, 0);
+  lf.addColorStop(0, 'rgba(11,26,43,0.6)'); lf.addColorStop(1, 'rgba(11,26,43,0)');
+  ctx.fillStyle = lf; ctx.fillRect(0, 0, m, H);
+}
+
+let figures = [], charts = [];
+let loopStart = -1;
+
+function buildAll() {
+  rng = mulberry32(SEED);
+  figures = []; charts = [];
+  for (let i = 0; i < 16; i++) figures.push(new DriftingFigure(true));
+  for (let i = 0; i < 7; i++) charts.push(new ChartFragment());
+}
+
+function resize() {
+  dpr = window.devicePixelRatio || 1;
+  W = window.innerWidth || 1;
+  H = window.innerHeight || 1;
+  canvas.width = W * dpr;
+  canvas.height = H * dpr;
+  canvas.style.width = W + 'px';
+  canvas.style.height = H + 'px';
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  buildAll();
+  loopStart = -1;
+}
+
+function animate(t) {
+  if (loopStart < 0) loopStart = t;
+  const elapsed = t - loopStart;
+  const loopPos = elapsed % LOOP_DURATION;
+
+  if (elapsed > 0 && loopPos < 16.7) {
+    buildAll();
+  }
+
+  let globalAlpha = 1;
+  if (loopPos < FADE_MS) globalAlpha = loopPos / FADE_MS;
+  else if (loopPos > LOOP_DURATION - FADE_MS) globalAlpha = (LOOP_DURATION - loopPos) / FADE_MS;
+
+  ctx.clearRect(0, 0, W, H);
+
+  ctx.globalAlpha = globalAlpha;
+  drawLedgerGrid(loopPos);
+  charts.forEach(c => { c.update(); c.draw(); });
+  figures.forEach(f => { f.update(); f.draw(); });
+  ctx.globalAlpha = 1;
+  drawEdgeFade();
+
+  requestAnimationFrame(animate);
+}
+
+resize();
+window.addEventListener('resize', resize);
+requestAnimationFrame(animate);
+</script>
+</body>
+</html>
