@@ -57,7 +57,7 @@ This is designed to be a full day workshop covering most of WDF's capabilities. 
 
 ## How each lab exercise will be conducted
 
-<figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/sc_slide_how_this_workshop_works.png" alt=""><figcaption></figcaption></figure>
 
 ## Post-lab recommended materials
 
