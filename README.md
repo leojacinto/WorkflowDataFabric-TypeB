@@ -32,18 +32,18 @@ You're a **Data Architect** serving the Finance department. Finance Managers nee
 ## Outcome
 
 ```mermaid
-graph LR
-    subgraph WS["Workspace"]
-        Agent["AI Agent"]
-        RAG["RAG via<br/>AI Search"]
-    end
+graph TB
 
+    Employee((Employee/<br/>Finance Manager))
+  
     subgraph TOOLS["Agent Tools & Data Sources"]
         T1["Extract Cost Center<br/><i>REST API</i>"]
-        T2["Search Cost Center History<br/><i>Zero Copy for SQL</i>"]
-        T3["Search Expense Transactions<br/><i>Zero Copy for SQL</i>"]
-        T4["Get Details via Neon MCP<br/><i>MCP Client</i>"]
-        T5["Budget Variance Analysis<br/><i>Zero Copy for ERP</i>"]
+        T2["Search Cost Center Details<br/><i>Zero Copy for ERP</i>"]
+        T3["Search Cost Center Summary<br/><i>Zero Copy for SQL</i>"]        
+        T4["Search Cost Center History<br/><i>Zero Copy for SQL</i>"]
+        T5["Search Expense Transactions<br/><i>Zero Copy for SQL</i>"]
+        T6["Get Details via Neon MCP<br/><i>MCP Client</i>"]
+        T7["Budget Variance Analysis<br/><i>Flow Designer</i>"]
     end
 
     subgraph EXT["External Systems"]
@@ -53,14 +53,14 @@ graph LR
         MCP_EXT["External<br/>MCP Server"]
     end
 
-    Agent --> RAG
-    Agent --> T1 & T2 & T3 & T4 & T5
+   
+    Employee --> T1 --> T2 --> T3 --> T4 --> T5 --> T6 --> T7 --> FC["Finance Case"]
     T1 --> API
     T2 --> CDW
     T3 --> CDW
     T4 --> MCP_EXT
     T5 --> ERP
-    Agent -->|creates| FC["Finance Case"]
+   
 
     %% Styling
     classDef external fill:#2196F3,stroke:#1565C0,stroke-width:2px,color:#fff
@@ -71,7 +71,7 @@ graph LR
 
     class API,CDW,ERP,MCP_EXT external
     class Agent,RAG nowassist
-    class T1,T2,T3,T4,T5 wdf
+    class T1,T2,T3,T4,T5,T6,T7 wdf
     class FC platform
     class WS user
 ```
