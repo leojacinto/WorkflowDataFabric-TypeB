@@ -32,7 +32,7 @@ You're a **Data Architect** serving the Finance department. Finance Managers nee
 ## Outcome
 
 ```mermaid
-graph LR
+graph TB
 
 
     EC[Employee Center or<br/>Workspace with Now Assist]
