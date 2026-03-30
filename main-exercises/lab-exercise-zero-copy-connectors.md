@@ -2,6 +2,12 @@
 icon: arrows-to-circle
 ---
 
+# Where we are in this workshop
+
+<figure><img src="../.gitbook/assets/dataflow_outcome_agent_flow_zero_copy.png" alt="Zero Copy Connectors focus: Cost Center and Expense data from CDW and ERP"><figcaption></figcaption></figure>
+
+> **Color Legend:** 🟣 Workflow Data Fabric | 🔵 External Systems
+
 # Lab Exercise: Zero Copy Connectors
 
 [Take me back to main page](../)
