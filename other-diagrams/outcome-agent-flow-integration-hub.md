@@ -1,6 +1,7 @@
-# Outcome: Agent Flow Diagram
+# Outcome: Agent Flow — Integration Hub Highlight
 
-Source mermaid for the outcome diagram in README.md. The PNG is generated from this and placed in `.gitbook/assets/dataflow_outcome_agent_flow.png`.
+Greyed-out variant of outcome-agent-flow.md with only Expense → REST API highlighted.
+Used in `main-exercises/lab-exercise-integration-hub.md`.
 
 ```mermaid
 graph TD
@@ -33,18 +34,26 @@ graph TD
     T5 --> CDW
     T6 --> MCP_EXT
     T7 --> SharePoint
-    
-  
 
     %% Styling
     classDef external fill:#2196F3,stroke:#1565C0,stroke-width:2px,color:#fff
-    classDef user fill:#F5F5F5,stroke:#616161,stroke-width:3px,color:#1a1a1a
-    classDef nowassist fill:#FFB300,stroke:#F57F17,stroke-width:2px,color:#1a1a1a
     classDef wdf fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px,color:#fff
-    classDef user fill:#F5F5F5,stroke:#616161,stroke-width:3px,color:#1a1a1a
+    classDef greyed fill:#D5D5D5,stroke:#BDBDBD,stroke-width:1px,color:#9E9E9E
 
-    class API,CDW,ERP,MCP_EXT,SharePoint external
-    class Agent,RAG nowassist
-    class T1,T2,T3,T4,T5,T6,T7,T8 wdf
-    class EC user
+    %% Highlight only Expense and REST API
+    class T1 wdf
+    class API external
+
+    %% Grey out everything else
+    class EC,T2,T3,T4,T5,T6,T7 greyed
+    class CDW,ERP,MCP_EXT,SharePoint greyed
+
+    %% Grey out non-highlighted edges
+    linkStyle 0 stroke:#D5D5D5,stroke-width:1px
+    linkStyle 2 stroke:#D5D5D5,stroke-width:1px
+    linkStyle 3 stroke:#D5D5D5,stroke-width:1px
+    linkStyle 4 stroke:#D5D5D5,stroke-width:1px
+    linkStyle 5 stroke:#D5D5D5,stroke-width:1px
+    linkStyle 6 stroke:#D5D5D5,stroke-width:1px
+    linkStyle 7 stroke:#D5D5D5,stroke-width:1px
 ```
