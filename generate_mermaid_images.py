@@ -16,6 +16,7 @@ LAB_FILES = [
     ("extended-exercises/lab-exercise-model-context-protocol-server-client.md", "dataflow_mcp.png"),
     ("extended-exercises/lab-exercise-external-content-connector.md", "dataflow_external_content_connector.png"),
     ("extended-exercises/lab-exercise-servicenow-lens-and-document-intelligence.md", "dataflow_lens_document_intelligence.png"),
+    ("other-diagrams/outcome-agent-flow.md", "dataflow_outcome_agent_flow.png"),
     ("data-and-flow-diagrams.md", [
         ("dataflow_prerequisites.png", 0),
         ("dataflow_user_interaction.png", 1),
