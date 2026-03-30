@@ -31,6 +31,53 @@ You're a **Data Architect** serving the Finance department. Finance Managers nee
 
 ## Outcome
 
+```mermaid
+graph LR
+    subgraph WS["Workspace"]
+        Agent["AI Agent"]
+        RAG["RAG via<br/>AI Search"]
+    end
+
+    subgraph TOOLS["Agent Tools & Data Sources"]
+        T1["Extract Cost Center<br/><i>REST API</i>"]
+        T2["Search Cost Center History<br/><i>Zero Copy for SQL</i>"]
+        T3["Search Expense Transactions<br/><i>Zero Copy for SQL</i>"]
+        T4["Get Details via Neon MCP<br/><i>MCP Client</i>"]
+        T5["Budget Variance Analysis<br/><i>Zero Copy for ERP</i>"]
+    end
+
+    subgraph EXT["External Systems"]
+        API["Expense Event<br/>API"]
+        CDW["Cloud Data<br/>Warehouse"]
+        ERP["ERP System"]
+        MCP_EXT["External<br/>MCP Server"]
+    end
+
+    Agent --> RAG
+    Agent --> T1 & T2 & T3 & T4 & T5
+    T1 --> API
+    T2 --> CDW
+    T3 --> CDW
+    T4 --> MCP_EXT
+    T5 --> ERP
+    Agent -->|creates| FC["Finance Case"]
+
+    %% Styling
+    classDef external fill:#2196F3,stroke:#1565C0,stroke-width:2px,color:#fff
+    classDef user fill:#F5F5F5,stroke:#616161,stroke-width:3px,color:#1a1a1a
+    classDef nowassist fill:#FFB300,stroke:#F57F17,stroke-width:2px,color:#1a1a1a
+    classDef platform fill:#4CAF50,stroke:#2E7D32,stroke-width:2px,color:#fff
+    classDef wdf fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px,color:#fff
+
+    class API,CDW,ERP,MCP_EXT external
+    class Agent,RAG nowassist
+    class T1,T2,T3,T4,T5 wdf
+    class FC platform
+    class WS user
+```
+
+> **Color Legend:** 🟡 Now Assist | 🟢 Platform | 🟣 Workflow Data Fabric | 🔵 External Systems | ⚪ Workspace
+
 <figure><img src=".gitbook/assets/sc_readme_hero.png" alt=""><figcaption></figcaption></figure>
 
 By completing this lab, you'll build an interconnected financial intelligence platform demonstrating:
