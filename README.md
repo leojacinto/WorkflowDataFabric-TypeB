@@ -32,9 +32,10 @@ You're a **Data Architect** serving the Finance department. Finance Managers nee
 ## Outcome
 
 ```mermaid
-graph TB
+graph LR
 
-    Employee((Employee/<br/>Finance Manager))
+
+    EC[Employee Center or<br/>Workspace with Now Assist]
   
     subgraph TOOLS["Agent Tools & Data Sources"]
         T1["Extract Cost Center<br/><i>REST API</i>"]
@@ -44,6 +45,7 @@ graph TB
         T5["Search Expense Transactions<br/><i>Zero Copy for SQL</i>"]
         T6["Get Details via Neon MCP<br/><i>MCP Client</i>"]
         T7["Budget Variance Analysis<br/><i>Flow Designer</i>"]
+        T8["Executive Memos<br/><i>External Content Connector</i>"]
     end
 
     subgraph EXT["External Systems"]
@@ -51,16 +53,20 @@ graph TB
         CDW["Cloud Data<br/>Warehouse"]
         ERP["ERP System"]
         MCP_EXT["External<br/>MCP Server"]
+        SharePoint[SharePoint<br/>Executive Memos]
     end
 
    
-    Employee --> T1 --> T2 --> T3 --> T4 --> T5 --> T6 --> T7 --> FC["Finance Case"]
+    EC --> TOOLS
     T1 --> API
-    T2 --> CDW
+    T2 --> ERP
     T3 --> CDW
-    T4 --> MCP_EXT
-    T5 --> ERP
-   
+    T4 --> CDW
+    T5 --> CDW
+    T6 --> MCP_EXT
+    T8 --> SharePoint
+    
+  
 
     %% Styling
     classDef external fill:#2196F3,stroke:#1565C0,stroke-width:2px,color:#fff
@@ -68,12 +74,13 @@ graph TB
     classDef nowassist fill:#FFB300,stroke:#F57F17,stroke-width:2px,color:#1a1a1a
     classDef platform fill:#4CAF50,stroke:#2E7D32,stroke-width:2px,color:#fff
     classDef wdf fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px,color:#fff
+    classDef user fill:#F5F5F5,stroke:#616161,stroke-width:3px,color:#1a1a1a
 
-    class API,CDW,ERP,MCP_EXT external
+    class API,CDW,ERP,MCP_EXT,SharePoint external
     class Agent,RAG nowassist
-    class T1,T2,T3,T4,T5,T6,T7 wdf
+    class T1,T2,T3,T4,T5,T6,T7,T8 wdf
     class FC platform
-    class WS user
+    class EC user
 ```
 
 > **Color Legend:** 🟡 Now Assist | 🟢 Platform | 🟣 Workflow Data Fabric | 🔵 External Systems | ⚪ Workspace
