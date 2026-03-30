@@ -52,7 +52,7 @@ def render_mermaid_to_png(mermaid_code, output_path, width=2400):
             '-i', str(temp_mmd),
             '-o', str(output_path),
             '-w', str(width),
-            '-b', 'transparent',
+            '-b', 'white',
             '-t', 'default',
             '--scale', '2'
         ]
