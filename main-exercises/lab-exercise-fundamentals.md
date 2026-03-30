@@ -50,7 +50,9 @@ graph LR
 
 > **Color Legend:** 🟣 Workflow Data Fabric | 🟢 Platform | 🔵 External Systems
 >
-> [📊 View High-Resolution Diagram](https://raw.githubusercontent.com/leojacinto/WorkflowDataFabric-TypeB/main/.gitbook/assets/dataflow_fundamentals.png)
+> 📊 High-Resolution Diagram (click to expand):
+>
+> <figure><img src="../.gitbook/assets/dataflow_fundamentals.png" alt="High-Resolution Diagram"><figcaption></figcaption></figure>
 
 ## Lab story
 
