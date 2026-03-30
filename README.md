@@ -32,8 +32,7 @@ You're a **Data Architect** serving the Finance department. Finance Managers nee
 ## Outcome
 
 ```mermaid
-graph TB
-
+graph TD
 
     EC[Employee Center or<br/>Workspace with Now Assist]
   
@@ -43,7 +42,7 @@ graph TB
         T3["Cost<br/>Center<br/>Summary"]        
         T4["Cost<br/>Center<br/>History"]
         T5["Expense<br/>History"]
-        T6["Alternate<br/>DB"]
+        T6["External<br/>DB"]
         T7["Executive<br/>Memos"]
     end
 
@@ -54,7 +53,7 @@ graph TB
         MCP_EXT["External<br/>MCP<br/>Server"]
         SharePoint["SharePoint"]
     end
-   
+    
     EC --> TOOLS
     T1 --> API
     T2 --> ERP
