@@ -38,24 +38,22 @@ graph TB
     EC[Employee Center or<br/>Workspace with Now Assist]
   
     subgraph TOOLS["Agent Tools & Data Sources"]
-        T1["Extract Cost Center<br/><i>REST API</i>"]
-        T2["Search Cost Center Details<br/><i>Zero Copy for ERP</i>"]
-        T3["Search Cost Center Summary<br/><i>Zero Copy for SQL</i>"]        
-        T4["Search Cost Center History<br/><i>Zero Copy for SQL</i>"]
-        T5["Search Expense Transactions<br/><i>Zero Copy for SQL</i>"]
-        T6["Get Details via Neon MCP<br/><i>MCP Client</i>"]
-        T7["Budget Variance Analysis<br/><i>Flow Designer</i>"]
-        T8["Executive Memos<br/><i>External Content Connector</i>"]
+        T1["Expense<br/>"]
+        T2["Cost<br/>Center<br/>Details"]
+        T3["Cost<br/>Center<br/>Summary"]        
+        T4["Cost<br/>Center<br/>History"]
+        T5["Expense<br/>History"]
+        T6["Alternate<br/>DB"]
+        T7["Executive<br/>Memos"]
     end
 
     subgraph EXT["External Systems"]
-        API["Expense Event<br/>API"]
-        CDW["Cloud Data<br/>Warehouse"]
-        ERP["ERP System"]
-        MCP_EXT["External<br/>MCP Server"]
-        SharePoint[SharePoint<br/>Executive Memos]
+        API["REST<br/>API"]
+        CDW["Cloud<br/>Data<br/>Warehouse"]
+        ERP["ERP<br>System"]
+        MCP_EXT["External<br/>MCP<br/>Server"]
+        SharePoint["SharePoint"]
     end
-
    
     EC --> TOOLS
     T1 --> API
@@ -64,7 +62,7 @@ graph TB
     T4 --> CDW
     T5 --> CDW
     T6 --> MCP_EXT
-    T8 --> SharePoint
+    T7 --> SharePoint
     
   
 
