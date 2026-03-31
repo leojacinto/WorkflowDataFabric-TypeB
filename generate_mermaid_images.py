@@ -21,6 +21,7 @@ LAB_FILES = [
     ("other-diagrams/outcome-agent-flow-zero-copy.md", "dataflow_outcome_agent_flow_zero_copy.png"),
     ("other-diagrams/outcome-agent-flow-external-content.md", "dataflow_outcome_agent_flow_external_content.png"),
     ("other-diagrams/outcome-agent-flow-doc-intelligence.md", "dataflow_outcome_agent_flow_doc_intelligence.png"),
+    ("other-diagrams/outcome-agent-flow-mcp.md", "dataflow_outcome_agent_flow_mcp.png"),
     ("data-and-flow-diagrams.md", [
         ("dataflow_prerequisites.png", 0),
         ("dataflow_user_interaction.png", 1),

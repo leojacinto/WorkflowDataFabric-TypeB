@@ -2,6 +2,12 @@
 icon: mcp
 ---
 
+# Where we are in this workshop
+
+<figure><img src="../.gitbook/assets/dataflow_outcome_agent_flow_mcp.png" alt="MCP focus: External DB to External MCP Server"><figcaption></figcaption></figure>
+
+> **Color Legend:** 🟣 Workflow Data Fabric | 🔵 External Systems
+
 # Lab Exercise: Model Context Protocol Server/Client
 
 [Take me back to main page](../)
