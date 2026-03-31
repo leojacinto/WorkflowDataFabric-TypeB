@@ -51,7 +51,7 @@ You'll master the architectural patterns for transforming siloed enterprise data
 
 ## Lab exercises
 
-This lab is divided into 5 exercises with the suggested sequence below. The ServiceNow-led lab environments which contains these exercises will allow you to complete individual labs in any sequence you prefer. The exercises focus on walk through and basic configuration of Workflow Data Fabric integrations and there are pre-made custom agents that make use of the integrations to demonstrate what is possible. You will not need to configure agents in this lab but steps are provided on how you can explore how the agents were configured.
+This lab is divided into 7 exercisesover 3 sections with the suggested sequence below. The ServiceNow-led lab environments which contains these exercises will allow you to complete individual labs in any sequence you prefer. The exercises focus on walk through and basic configuration of Workflow Data Fabric integrations and there are pre-made custom agents that make use of the integrations to demonstrate what is possible. You will not need to configure agents in this lab but steps are provided on how you can explore how the agents were configured.
 
 This is designed to be a full day workshop covering most of WDF's capabilities. As such, we will not be able to cover in great depth all of the capabilities. If there are capabilities most relevant to your requirements, do ask your Lab Admin if there is a relevant deep dive lab available.
 
