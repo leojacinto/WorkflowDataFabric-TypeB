@@ -44,7 +44,7 @@ graph TD
     classDef external fill:#2196F3,stroke:#1565C0,stroke-width:2px,color:#fff
     classDef wdf fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px,color:#fff
     classDef data fill:#8D6E63,stroke:#5D4037,stroke-width:2px,color:#fff
-    classDef docintel fill:#FF9800,stroke:#E65100,stroke-width:2px,color:#fff
+    classDef docintel fill:#FFB300,stroke:#F57F17,stroke-width:2px,color:#1a1a1a
     classDef greyed fill:#D5D5D5,stroke:#BDBDBD,stroke-width:1px,color:#9E9E9E
 
     %% Highlight Expense → Doc Intel or Lens → Documents
