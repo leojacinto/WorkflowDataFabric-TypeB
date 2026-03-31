@@ -2,13 +2,15 @@
 icon: file-magnifying-glass
 ---
 
-# Where we are in this workshop
+# Lab Exercise: ServiceNow Document Intelligence and Lens
+
+## Where we are in this workshop
 
 <figure><picture><source srcset="../.gitbook/assets/dataflow_outcome_agent_flow_doc_intelligence_dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/dataflow_outcome_agent_flow_doc_intelligence.png" alt="Document Intelligence focus: Expense to Documents"></picture><figcaption></figcaption></figure>
 
-> **Color Legend:** 🟣 Workflow Data Fabric | 🔵 External Systems
+> **Color Legend:** 🟤 Data | 🟣 Workflow Data Fabric | 🔵 External Systems
 
-# Lab Exercise: ServiceNow Document Intelligence and Lens
+## Lab Exercise: ServiceNow Document Intelligence and Lens
 
 [Take me back to main page](../)
 
@@ -24,7 +26,7 @@ To keep this exercise self-contained and reuse the agent built in [Lab Exercise:
 
 A more detailed version of this exercise with significantly more configuration steps is available as standalone. Reach out to your Lab Administrator for more details.
 
-## Lab Sections and Objectives
+### Lab Sections and Objectives
 
 <table><thead><tr><th width="83">Step</th><th width="106">Who</th><th>Description</th></tr></thead><tbody><tr><td><a href="lab-exercise-servicenow-lens-and-document-intelligence.md#data-flow">1</a></td><td>Facilitator</td><td><strong>Context Setting:</strong> Review the data flow diagram showing how ServiceNow captures information from documents via Lens and Document Intelligence.</td></tr></tbody></table>
 
@@ -38,7 +40,7 @@ A more detailed version of this exercise with significantly more configuration s
 
 <table><thead><tr><th width="83">Step</th><th width="106">Who</th><th>Description</th></tr></thead><tbody><tr><td><a href="lab-exercise-servicenow-lens-and-document-intelligence.md#conclusion">11</a></td><td>Facilitator</td><td><strong>Conclusion:</strong> Walk through the capabilities of both Document Intelligence and AI Lens for document-based data capture.</td></tr></tbody></table>
 
-## Data flow
+### Data flow
 
 The data flow below shows how ServiceNow will get information from documents from invoices and further process said information to evaluate whether a Finance case should be created.
 
@@ -103,9 +105,9 @@ graph TB
 >
 > [📊 View High-Resolution Diagram](https://raw.githubusercontent.com/leojacinto/WorkflowDataFabric-TypeB/main/.gitbook/assets/dataflow_lens_document_intelligence.png)
 
-## Document Intelligence
+### Document Intelligence
 
-### Walkthrough: Document Intelligence Setup
+#### Walkthrough: Document Intelligence Setup
 
 Navigate to Now Assist Admin Skills. Activate the Extract information from documents skill. Review the Expense Transaction Event use case configuration and integrations.
 
@@ -170,7 +172,7 @@ Navigate to Now Assist Admin Skills. Activate the Extract information from docum
 
     <figure><img src="../.gitbook/assets/sc_ldi_skills_screen.png" alt=""><figcaption></figcaption></figure>
 
-### Hands-on: Document Intelligence Parameters
+#### Hands-on: Document Intelligence Parameters
 
 1. Steps 2 to 4 are applicable if you do **NOT** have [Document Intelligence Admin](https://store.servicenow.com/sn_appstore_store.do#!/store/application/8700f4efc3a411101d9a3cadb140ddad/1.1.0) plugin installed which is the case for this lab. Succeeding versions of this lab will have the said plugin installed which will result in a more streamlined experience.
 2.  For this step, change the scope to Global by navigating to the <mark style="color:green;">**a.)**</mark> **globe icon** and clicking <mark style="color:green;">**b.)**</mark> **Global** application scope.
@@ -188,7 +190,7 @@ Navigate to Now Assist Admin Skills. Activate the Extract information from docum
 
 <figure><img src="../.gitbook/assets/sc_ldi_scope_forecast_variance.png" alt="" width="319"><figcaption></figcaption></figure>
 
-### Hands-on: Document Intelligence Runtime
+#### Hands-on: Document Intelligence Runtime
 
 Create a variance task record. Upload the Invoice\_IT\_Laptop\_CC\_IT\_002.pdf document. Set state to Work in Progress and submit.
 
@@ -217,7 +219,7 @@ Create a variance task record. Upload the Invoice\_IT\_Laptop\_CC\_IT\_002.pdf d
 
     <figure><img src="../.gitbook/assets/sc_ldi_save_or_submit.png" alt=""><figcaption></figcaption></figure>
 
-### Walkthrough: Custom Forecast Variance AI Agent
+#### Walkthrough: Custom Forecast Variance AI Agent
 
 Look for the Now Assist badge. Open Now Assist chat. Expand to Modal view. Review planning steps, event ID extraction, RAG search results, and Finance Case link.
 
@@ -244,7 +246,7 @@ Look for the Now Assist badge. Open Now Assist chat. Expand to Modal view. Revie
 
 <figure><img src="../.gitbook/assets/sc_ldi_agent_results_overview.png" alt=""><figcaption></figcaption></figure>
 
-### Completion: Verify Finance Case
+#### Completion: Verify Finance Case
 
 Navigate to Finance Operations Workspace. Find the case created by the agent.
 
@@ -262,7 +264,7 @@ Navigate to Finance Operations Workspace. Find the case created by the agent.
 
 4. Congratulations! You have walked through the configuration and runtime of Document Intelligence, integrated with AI Agents that process the contents of the invoice for appropriate case handling for over-budget cost centers.
 
-### \[Optional] Completion: Verify Document Output
+#### \[Optional] Completion: Verify Document Output
 
 Navigate to Now Assist Admin Skills. Review the extracted document information in the Test Outputs tab.
 
@@ -286,11 +288,11 @@ Navigate to Now Assist Admin Skills. Review the extracted document information i
 
     <figure><img src="../.gitbook/assets/sc_ldi_extracted_info_view.png" alt=""><figcaption></figcaption></figure>
 
-## AI Lens
+### AI Lens
 
 **ServiceNow AI Lens** is a capability that allows capturing of information from documents and images via UI (dialog) with the use of AI. Unlike Document Intelligence which can execute in the back-end (e.g. by picking information from documents attached in cases or tasks), Lens requires user interaction. Also unlike Document Intelligence, Lens requires less set-up upfront.
 
-### Walkthrough: AI Lens Setup
+#### Walkthrough: AI Lens Setup
 
 Navigate to Now Assist Admin Skills. Activate ServiceNow AI Lens.
 
@@ -308,7 +310,7 @@ Navigate to Now Assist Admin Skills. Activate ServiceNow AI Lens.
     <figure><img src="../.gitbook/assets/sc_ldi_lens_back_to_skills.png" alt="" width="563"><figcaption></figcaption></figure>
 5. The **Lens** version in used in the lab is 3.01. If you have already obtained Lens for your own use, skip steps 6 and 7.
 
-### Walkthrough: AI Lens Download
+#### Walkthrough: AI Lens Download
 
 Download and install the Lens application for your device.
 
@@ -319,7 +321,7 @@ Download and install the Lens application for your device.
 
     <figure><img src="../.gitbook/assets/sc_ldi_lens_download_packages.png" alt=""><figcaption></figcaption></figure>
 
-### Hands-on: AI Lens Runtime
+#### Hands-on: AI Lens Runtime
 
 Obtain the invoice file to attach which is a sample invoice for **PROD\_DE\_2** cost center. File here: [**Invoice\_Injection\_PROD\_DE\_2.pdf**](https://raw.githubusercontent.com/leojacinto/WorkflowDataFabric-TypeA/refs/heads/main/.gitbook/assets/Invoice_Injection_PROD_DE_2.pdf)**.** Open the file once you have downloaded it.
 
@@ -342,7 +344,7 @@ Obtain the invoice file to attach which is a sample invoice for **PROD\_DE\_2** 
 
     <figure><img src="../.gitbook/assets/sc_ldi_lens_event_saved.png" alt=""><figcaption></figcaption></figure>
 
-## Conclusion
+### Conclusion
 
 Congratulations! You now have explored the capabilities of both Document Intelligence and AI Lens.
 

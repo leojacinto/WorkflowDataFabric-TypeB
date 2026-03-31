@@ -2,13 +2,15 @@
 icon: folder-grid
 ---
 
-# Where we are in this workshop
+# Lab Exercise: External Content Connector
+
+## Where we are in this workshop
 
 <figure><picture><source srcset="../.gitbook/assets/dataflow_outcome_agent_flow_external_content_dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/dataflow_outcome_agent_flow_external_content.png" alt="External Content Connector focus: Executive Memos to SharePoint"></picture><figcaption></figcaption></figure>
 
-> **Color Legend:** � Data | �🟣 Workflow Data Fabric | 🔵 External Systems
+> **Color Legend:** 🟤 Data | 🟣 Workflow Data Fabric | 🔵 External Systems
 
-# Lab Exercise: External Content Connector
+## Lab Exercise: External Content Connector
 
 [Take me back to main page](../)
 
@@ -18,7 +20,7 @@ This lab will walk you through the configuration and usage of External Content C
 
 <figure><img src="../.gitbook/assets/sc_slide_xcc_demo_preview.png" alt=""><figcaption></figcaption></figure>
 
-## Lab Sections and Objectives
+### Lab Sections and Objectives
 
 <table><thead><tr><th width="83">Step</th><th width="106">Who</th><th>Description</th></tr></thead><tbody><tr><td><a href="lab-exercise-external-content-connector.md#data-flow">1</a></td><td>Facilitator</td><td><strong>Context Setting:</strong> Review the data flow diagram showing how ServiceNow uses External Content Connectors to index and search documents from SharePoint.</td></tr></tbody></table>
 
@@ -36,7 +38,7 @@ This lab will walk you through the configuration and usage of External Content C
 
 <table><thead><tr><th width="83">Step</th><th width="106">Who</th><th>Description</th></tr></thead><tbody><tr><td><a href="lab-exercise-external-content-connector.md#conclusion">5</a></td><td>Facilitator</td><td><strong>Conclusion:</strong> Walk through how External Content Connectors enable ServiceNow to leverage unstructured document data for AI-powered workflows.</td></tr></tbody></table>
 
-## Data flow
+### Data flow
 
 The data flow below shows how ServiceNow will get information from indexed documents from a document repository such as SharePoint to provide additional context and information to assist with Flows and Automations.
 
@@ -85,9 +87,9 @@ graph LR
 >
 > [📊 View High-Resolution Diagram](https://raw.githubusercontent.com/leojacinto/WorkflowDataFabric-TypeB/main/.gitbook/assets/dataflow_external_content_connector.png)
 
-## Steps
+### Steps
 
-### Preparation steps
+#### Preparation steps
 
 Configure admin user email and assign ais\_high\_security\_admin role for elevated access to External Content Connector configuration.
 
@@ -110,7 +112,7 @@ Configure admin user email and assign ais\_high\_security\_admin role for elevat
 
     <figure><img src="../.gitbook/assets/sc_common_logout.png" alt="" width="254"><figcaption></figcaption></figure>
 
-### Connection and Crawl Config
+#### Connection and Crawl Config
 
 Create SharePoint connection with authentication credentials. Configure and execute full document crawl with user permissions to index documents for AI-powered search.
 
@@ -185,7 +187,7 @@ Create SharePoint connection with authentication credentials. Configure and exec
 
     <figure><img src="../.gitbook/assets/sc_xcc_employee_center_nav.png" alt=""><figcaption></figcaption></figure>
 
-### Usage of External Content Connector
+#### Usage of External Content Connector
 
 Test Now Assist queries in Employee Center to verify that indexed SharePoint documents are searchable and provide relevant context for finance-related inquiries.
 
@@ -205,11 +207,11 @@ Test Now Assist queries in Employee Center to verify that indexed SharePoint doc
 
 <figure><img src="../.gitbook/assets/sc_xcc_overbudget.png" alt=""><figcaption></figcaption></figure>
 
-## Conclusion
+### Conclusion
 
 Congratulations! You have completed configuration of the **External Content Connector** integration that allows ServiceNow to read indexed unstructured documents to supplement unstructured data for both interactive and AI Agent-based workflows.
 
-## Next step
+### Next step
 
 Keeping with the unstructured data theme, you can explore an exercise that focuses on how ServiceNow gets unstructured data from documents and feed them into ServiceNow forms or records.
 

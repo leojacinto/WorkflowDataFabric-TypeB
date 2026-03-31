@@ -2,13 +2,15 @@
 icon: mcp
 ---
 
-# Where we are in this workshop
+# Lab Exercise: Model Context Protocol Server/Client
+
+## Where we are in this workshop
 
 <figure><picture><source srcset="../.gitbook/assets/dataflow_outcome_agent_flow_mcp_dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/dataflow_outcome_agent_flow_mcp.png" alt="MCP focus: External DB to External MCP Server"></picture><figcaption></figcaption></figure>
 
-> **Color Legend:** � Data | �🟣 Workflow Data Fabric | 🔵 External Systems
+> **Color Legend:** 🟤 Data | 🟣 Workflow Data Fabric | 🔵 External Systems
 
-# Lab Exercise: Model Context Protocol Server/Client
+## Lab Exercise: Model Context Protocol Server/Client
 
 [Take me back to main page](../)
 
@@ -22,7 +24,7 @@ Specifically, this provides the steps needed to connect ServiceNow to an MCP Ser
 
 This exercise does not cover the creation of the MCP Service from Neon as that requires administrator rights and CDW expertise which may not be widely available to various personas.
 
-## Lab Sections and Objectives
+### Lab Sections and Objectives
 
 <table><thead><tr><th width="83">Step</th><th width="106">Who</th><th>Description</th></tr></thead><tbody><tr><td><a href="lab-exercise-model-context-protocol-server-client.md#data-flow">1</a></td><td>Facilitator</td><td><strong>Context Setting:</strong> Review the data flow diagram showing how ServiceNow provides MCP client and server capabilities to interact with external systems.</td></tr></tbody></table>
 
@@ -40,7 +42,7 @@ This exercise does not cover the creation of the MCP Service from Neon as that r
 
 <table><thead><tr><th width="83">Step</th><th width="106">Who</th><th>Description</th></tr></thead><tbody><tr><td><a href="lab-exercise-model-context-protocol-server-client.md#conclusion">7</a></td><td>Facilitator</td><td><strong>Conclusion:</strong> Walk through how MCP allows ServiceNow to connect to external systems using LLM-powered integrations as an alternative to traditional APIs.</td></tr></tbody></table>
 
-## Data flow
+### Data flow
 
 The data flow below shows how ServiceNow provides MCP client and server capabilities.
 
@@ -99,9 +101,9 @@ graph LR
 >
 > [📊 View High-Resolution Diagram](https://raw.githubusercontent.com/leojacinto/WorkflowDataFabric-TypeB/main/.gitbook/assets/dataflow_mcp.png)
 
-## MCP Client Configuration
+### MCP Client Configuration
 
-### Hands-on: Configure MCP Client
+#### Hands-on: Configure MCP Client
 
 Navigate to AI Agent Studio Settings. Add a new MCP Server entry for Neon with API Key authentication.
 
@@ -129,9 +131,9 @@ Note: there should be the word **Bearer** as a prefix so your value in the API K
 
 <figure><img src="../.gitbook/assets/sc_mcp_add_neon_server_details.png" alt=""><figcaption></figcaption></figure>
 
-## AI Agent Configuration
+### AI Agent Configuration
 
-### Hands-On: Configure new AI Agent for MCP scenario
+#### Hands-On: Configure new AI Agent for MCP scenario
 
 This provides the steps needed to connect ServiceNow to an MCP ([Model Context Protocol](https://modelcontextprotocol.io/docs/getting-started/intro)) Server tool configured in Neon. ServiceNow can serve as an MCP Client to connect to any solution that has MCP support.
 
@@ -159,7 +161,7 @@ This exercise does not cover the creation of the MCP Service from Neon as that r
 
     <figure><img src="../.gitbook/assets/sc_mcp_rename_agent_neon.png" alt=""><figcaption></figcaption></figure>
 
-### Hands-On: Configure MCP Step and Tool
+#### Hands-On: Configure MCP Step and Tool
 
 Add MCP instructions to the agent specialty. Add the variance-baseline-search MCP server tool from Neon. Configure tool name, description, and execution mode.
 
@@ -201,7 +203,7 @@ Add MCP instructions to the agent specialty. Add the variance-baseline-search MC
 
     <figure><img src="../.gitbook/assets/sc_common_save_and_continue (1).png" alt=""><figcaption></figcaption></figure>
 
-### Walkthrough: Complete AI Agent configuration
+#### Walkthrough: Complete AI Agent configuration
 
 Accept default security controls. Configure channels and status. Save and test.
 
@@ -215,9 +217,9 @@ Accept default security controls. Configure channels and status. Save and test.
 
     <figure><img src="../.gitbook/assets/sc_mcp_duplicate_warning.png" alt=""><figcaption></figcaption></figure>
 
-## AI Agent Testing
+### AI Agent Testing
 
-### Hands-on: Test and review Custom AI Agent
+#### Hands-on: Test and review Custom AI Agent
 
 Enter test prompt to process an expense event. Verify the MCP tool returns matching cost center data from Neon.
 
@@ -235,11 +237,11 @@ Enter test prompt to process an expense event. Verify the MCP tool returns match
 
 4. **Challenge:** once you are done with this lab, see if you can remove the tool **Extract Cost Center** and replace it completely with the data from **Get Details via Neon MCP** as seen in step 7. No hints this time. 😉
 
-## Conclusion
+### Conclusion
 
 Congratulations! You have created the **MCP Server** integrations that allows ServiceNow to make use of MCP capabilities from other systems outside ServiceNow, allowing LLM-powered integrations alternative to APIs that require less development.
 
-## Next step
+### Next step
 
 You can explore a bonus use case that makes use of Stream Connect for Apache Kafka for integrations that require more throughput and data volume.
 

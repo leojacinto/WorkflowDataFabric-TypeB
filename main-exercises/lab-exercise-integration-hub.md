@@ -2,13 +2,15 @@
 icon: link
 ---
 
-# Where we are in this workshop
+# Lab Exercise: Integration Hub
+
+## Where we are in this workshop
 
 <figure><picture><source srcset="../.gitbook/assets/dataflow_outcome_agent_flow_integration_hub_dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/dataflow_outcome_agent_flow_integration_hub.png" alt="Integration Hub focus: Expense to REST API"></picture><figcaption></figcaption></figure>
 
-> **Color Legend:** � Data | �🟣 Workflow Data Fabric | 🔵 External Systems
+> **Color Legend:** 🟤 Data | 🟣 Workflow Data Fabric | 🔵 External Systems
 
-# Lab Exercise: Integration Hub
+## Lab Exercise: Integration Hub
 
 [Take me back to main page](../)
 
@@ -20,7 +22,7 @@ There are dedicated Integration Hub and Flow Designer labs; hence, the focus of 
 
 <figure><img src="../.gitbook/assets/sc_slide_inthub_demo_preview.png" alt=""><figcaption></figcaption></figure>
 
-## Lab Sections and Objectives
+### Lab Sections and Objectives
 
 <table><thead><tr><th width="83">Step</th><th width="106">Who</th><th>Description</th></tr></thead><tbody><tr><td><a href="lab-exercise-integration-hub.md#data-flow">1</a></td><td>Facilitator</td><td><strong>Context Setting:</strong> Review the data flow diagram. Understand how ServiceNow consumes REST API endpoints via Integration Hub, processes them through a Flow, triggers an AI Agent, and creates a Finance Case automatically.</td></tr></tbody></table>
 
@@ -42,7 +44,7 @@ There are dedicated Integration Hub and Flow Designer labs; hence, the focus of 
 
 <table><thead><tr><th width="83">Step</th><th width="106">Who</th><th>Description</th></tr></thead><tbody><tr><td><a href="lab-exercise-integration-hub.md#conclusion">11</a></td><td>Facilitator</td><td><strong>Conclusion:</strong> Walk through the complete data flow chain. External event triggers proactive financial intelligence with zero human intervention.</td></tr></tbody></table>
 
-## Data flow
+### Data flow
 
 The data flow below shows how ServiceNow will consume REST API endpoints via Integration Hub Spokes then further processed by a Flow so the entries will be written in the scoped table.
 
@@ -113,9 +115,9 @@ graph TB
 >
 > [📊 View High-Resolution Diagram](https://raw.githubusercontent.com/leojacinto/WorkflowDataFabric-TypeB/main/.gitbook/assets/dataflow_integration_hub.png)
 
-## Preparation
+### Preparation
 
-### Preparation: Platform Configuration
+#### Preparation: Platform Configuration
 
 These are required preparation steps in platform level. These are cross configurations that affect instance behaviour (across applications).
 
@@ -142,7 +144,7 @@ These are required preparation steps in platform level. These are cross configur
 
     <figure><img src="../.gitbook/assets/sc_common_logout.png" alt="" width="254"><figcaption></figcaption></figure>
 
-### Preparation: Initial Checks
+#### Preparation: Initial Checks
 
 Verify Now Assist panel is accessible. Navigate to the Expense Transaction Event table and verify it's empty. Delete entry/entries if there are any.
 
@@ -159,7 +161,7 @@ Verify Now Assist panel is accessible. Navigate to the Expense Transaction Event
 
 <figure><img src="../.gitbook/assets/sc_ihub_expense_event_delete.png" alt=""><figcaption></figcaption></figure>
 
-### Hands-on: Connection Setup
+#### Hands-on: Connection Setup
 
 Navigate to Connection & Credential Aliases. Open the pre-configured "Get Expense Event" alias. Create a new Connection pointing to the REST API endpoint.
 
@@ -176,9 +178,9 @@ Navigate to Connection & Credential Aliases. Open the pre-configured "Get Expens
 
     <figure><img src="../.gitbook/assets/sc_ihub_connection_url_submit.png" alt=""><figcaption></figcaption></figure>
 
-## AI Agent Configuration
+### AI Agent Configuration
 
-### Walkthrough: Custom Forecast Variance AI Agent
+#### Walkthrough: Custom Forecast Variance AI Agent
 
 This is a walk through of how an AI agent equipped with both deterministic and probabilistic capabilities can automate research and validation of cost center history and expenses; as well as creation of Finance Cases should cost centers be above their budget allocations. <mark style="color:red;">**Note:**</mark> this is a custom AI agent pre-configured in the lab instance provided in ServiceNow-led lab sessions; this is not an OOTB agent.
 
@@ -213,7 +215,7 @@ For this section: Open AI Agent Studio > Forecast Variance Integration Hub Trigg
 
 <figure><img src="../.gitbook/assets/sc_ihub_define_security.png" alt=""><figcaption></figcaption></figure>
 
-### Hands-on: Configure AI Agent Trigger
+#### Hands-on: Configure AI Agent Trigger
 
 Delete any existing trigger. Create new trigger: Table = Expense Transaction Event, Field = Vendor, Condition = is not empty. Toggle trigger ON. Save.
 
@@ -259,9 +261,9 @@ Delete any existing trigger. Create new trigger: Table = Expense Transaction Eve
 
 <figure><img src="../.gitbook/assets/sc_ihub_select_channels.png" alt=""><figcaption></figcaption></figure>
 
-## Action and Subflow
+### Action and Subflow
 
-### Walkthrough: Action
+#### Walkthrough: Action
 
 The scoped **Action** is a key feature for the trigger that obtains expense data via REST API. If you wish to learn more on how Flows and AI Agents can get more granular and higher throughput of data through streaming, have a look at the bonus exercise on [Stream Connect for Apache Kafka](https://servicenow-lf.gitbook.io/the-workflow-data-fabric-loom/lab-exercise-kafka_stream_connect).
 
@@ -286,7 +288,7 @@ This action will populate the expense events coming from the external API endpoi
     <figure><img src="../.gitbook/assets/sc_ihub_action_output.png" alt=""><figcaption></figcaption></figure>
 6. You now have familiarity of the **Action** used by the **Subflow** needed to trigger the **AI agent**, which is described in the next section.
 
-### Hands-on: Flow Execution
+#### Hands-on: Flow Execution
 
 In the same window of Flow Designer > Subflows > Get Expense Event. Click Test > Run Test. Wait for completion. Click execution details link. Verify all steps show Completed or Evaluated - True.
 
@@ -317,9 +319,9 @@ In the same window of Flow Designer > Subflows > Get Expense Event. Click Test >
 
 <figure><img src="../.gitbook/assets/sc_ihub_test_results.png" alt=""><figcaption></figcaption></figure>
 
-## AI Agent and Finance Operations Workspace
+### AI Agent and Finance Operations Workspace
 
-### Walkthrough: Agent Runtime
+#### Walkthrough: Agent Runtime
 
 Return to AI Agent Studio browser window. Look for the Now Assist badge. Open Now Assist chat. Expand to Modal view. Explore: planning steps, event ID extraction, RAG search results, budget analysis, Finance Case link.
 
@@ -347,7 +349,7 @@ Return to AI Agent Studio browser window. Look for the Now Assist badge. Open No
 
 <figure><img src="../.gitbook/assets/sc_ihub_agent_results_overview.png" alt=""><figcaption></figcaption></figure>
 
-### Completion: Verify Finance Case
+#### Completion: Verify Finance Case
 
 Navigate to Finance Operations Workspace. Find the case created by the agent. Confirm it contains the cost center, vendor, and budget analysis.
 
@@ -363,11 +365,11 @@ Navigate to Finance Operations Workspace. Find the case created by the agent. Co
 
 <figure><img src="../.gitbook/assets/sc_ihub_finance_case_list.png" alt=""><figcaption></figcaption></figure>
 
-## Conclusion
+### Conclusion
 
 Congratulations! You have created the **Workflow Data Fabric** integrations that powers the **Financial Forecast Variance Agent** allowing proactive creation of cases based on multiple data sources in a complex landscape to allow proactive management of budgets with zero human intervention. The AI Agent is triggered as soon as there are changes in the **Expense Transaction Event** table.
 
-## Next step
+### Next step
 
 Let us continue building the data foundations for AI Agents to use. The next suggested exercise is to go deep dive in the data integrations used by the same agent in this exercise - Zero Copy.
 

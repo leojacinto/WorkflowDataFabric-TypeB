@@ -2,13 +2,15 @@
 icon: arrows-to-circle
 ---
 
-# Where we are in this workshop
+# Lab Exercise: Zero Copy Connectors
+
+## Where we are in this workshop
 
 <figure><picture><source srcset="../.gitbook/assets/dataflow_outcome_agent_flow_zero_copy_dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/dataflow_outcome_agent_flow_zero_copy.png" alt="Zero Copy Connectors focus: Cost Center and Expense data from CDW and ERP"></picture><figcaption></figcaption></figure>
 
-> **Color Legend:** � Data | �🟣 Workflow Data Fabric | 🔵 External Systems
+> **Color Legend:** 🟤 Data | 🟣 Workflow Data Fabric | 🔵 External Systems
 
-# Lab Exercise: Zero Copy Connectors
+## Lab Exercise: Zero Copy Connectors
 
 [Take me back to main page](../)
 
@@ -20,7 +22,7 @@ This lab will walk you through integration of data coming from Cloud Data Wareho
 
 <figure><img src="../.gitbook/assets/sc_slide_zerocopy_demo_preview.png" alt=""><figcaption></figcaption></figure>
 
-## Lab Sections and Objectives
+### Lab Sections and Objectives
 
 <table><thead><tr><th width="83">Step</th><th width="106">Who</th><th>Description</th></tr></thead><tbody><tr><td><a href="lab-exercise-zero-copy-connectors.md#data-flow">1</a></td><td>Facilitator</td><td><strong>Context Setting:</strong> Review the data flow diagram showing how ServiceNow consumes data from Cloud Data Warehouses and ERP systems via Zero Copy Connectors for SQL and ERP.</td></tr></tbody></table>
 
@@ -42,7 +44,7 @@ This lab will walk you through integration of data coming from Cloud Data Wareho
 
 <table><thead><tr><th width="83">Step</th><th width="106">Who</th><th>Description</th></tr></thead><tbody><tr><td><a href="lab-exercise-zero-copy-connectors.md#conclusion">14</a></td><td>Facilitator</td><td><strong>Conclusion:</strong> Walk through the complete data flow chain showing how Zero Copy Connectors bring external data into ServiceNow for AI Agent-driven case management.</td></tr></tbody></table>
 
-## Data flow
+### Data flow
 
 The data flow below shows how ServiceNow consumes data from the local Expense Transaction Event table populated by REST API events. The events processed can be near-real-time or historical (e.g. transaction events after over a period of time). Aside from local tables, ServiceNow will also consume external data from a Cloud Data Warehouse and an ERP system via ZCC for SQL and ERP respectively. The data taken from the external sources will be used by an agent which will also create Finance Cases for Cost Centers which are going over budget. While majority of the workflow is handled deterministically, AI Agents will provide additional context by searching and comparing expenses and cost center histories to enrich the workflow data that will be used by the personnel in charge of the cost centers.
 
@@ -125,9 +127,9 @@ graph TB
 >
 > [📊 View High-Resolution Diagram](https://raw.githubusercontent.com/leojacinto/WorkflowDataFabric-TypeB/main/.gitbook/assets/dataflow_zero_copy_connectors.png)
 
-## Preparation
+### Preparation
 
-### Preparation: Platform Configuration
+#### Preparation: Platform Configuration
 
 Complete Integration Hub platform configuration if not done. Assign `sn_erp_integration.erp_admin` role to admin user.
 
@@ -152,9 +154,9 @@ Complete Integration Hub platform configuration if not done. Assign `sn_erp_inte
 
     <figure><img src="../.gitbook/assets/sc_common_logout.png" alt="" width="254"><figcaption></figcaption></figure>
 
-## Zero Copy Connector for ERP
+### Zero Copy Connector for ERP
 
-### Walkthrough: Explore ZCC for ERP Workspace
+#### Walkthrough: Explore ZCC for ERP Workspace
 
 This provides the steps needed to connect ServiceNow to the ERP system to obtain Cost Center Master data.
 
@@ -165,7 +167,7 @@ This provides the steps needed to connect ServiceNow to the ERP system to obtain
 
     <figure><img src="../.gitbook/assets/sc_zcc_erp_home_layout.png" alt=""><figcaption></figcaption></figure>
 
-### Hands-on: Clone ERP Data Product for Cost Center
+#### Hands-on: Clone ERP Data Product for Cost Center
 
 Clone the OOTB DP: Cost Center model. Label it SAP Cost Center. Assign ERP system S4D.
 
@@ -185,7 +187,7 @@ Clone the OOTB DP: Cost Center model. Label it SAP Cost Center. Assign ERP syste
 
     <figure><img src="../.gitbook/assets/sc_zcc_model_config_save.png" alt=""><figcaption></figcaption></figure>
 
-### Walkthrough: Explore ZCC for ERP BAPI Entity
+#### Walkthrough: Explore ZCC for ERP BAPI Entity
 
 Review the BAPI\_COSTCENTER\_GETDETAIL1 entity. Explore Specify Inputs and Choose Outputs configurations.
 
@@ -202,7 +204,7 @@ Review the BAPI\_COSTCENTER\_GETDETAIL1 entity. Explore Specify Inputs and Choos
 
     <figure><img src="../.gitbook/assets/sc_zcc_choose_outputs.png" alt=""><figcaption></figcaption></figure>
 
-### Walkthrough: Explore ZCC for ERP Extraction Tables
+#### Walkthrough: Explore ZCC for ERP Extraction Tables
 
 Filter and review SAP Cost Center extraction table. Navigate to the target table containing Cost Center Master Data from SAP.
 
@@ -221,13 +223,13 @@ Filter and review SAP Cost Center extraction table. Navigate to the target table
 
 5. Congratulations! You have set-up the integration to a Cloud Data Warehouse using Zero Copy Connector for ERP.
 
-### Additional Reading: Direct online read for ZCC for ERP
+#### Additional Reading: Direct online read for ZCC for ERP
 
 1. Direct online read is also possible with more details found on the blog post [Zero Copy Connector for ERP guide by Leo Francia in the ServiceNow community](https://www.servicenow.com/community/app-engine-for-erp-blogs/part-1-of-4-intelligent-erp-workflows-get-sap-data-into/ba-p/3192800).
 
-## Zero Copy Connector for SQL
+### Zero Copy Connector for SQL
 
-### Reference: Cloud Data Warehouse Source
+#### Reference: Cloud Data Warehouse Source
 
 This provides the steps needed to connect ServiceNow to the Cloud Data Warehouse and get summary data needed for workflow context and logic.
 
@@ -235,7 +237,7 @@ This provides the steps needed to connect ServiceNow to the Cloud Data Warehouse
 
 <figure><img src="../.gitbook/assets/sc_zcc_snowflake.png" alt=""><figcaption></figcaption></figure>
 
-### Walkthrough: Navigation and Review of ZCC Connection
+#### Walkthrough: Navigation and Review of ZCC Connection
 
 Navigate to Workflow Data Fabric Hub. Review the established Snowflake connection details.
 
@@ -253,7 +255,7 @@ Navigate to Workflow Data Fabric Hub. Review the established Snowflake connectio
 
     <figure><img src="../.gitbook/assets/sc_zcc_connection_details.png" alt="" width="563"><figcaption></figcaption></figure>
 
-### Hands-on: Configure Column Mappings
+#### Hands-on: Configure Column Mappings
 
 Create a data fabric table from the Snowflake data asset. Set Cost Center as a Reference field to the ERP extraction table. Set GL Account as primary key.
 
@@ -290,7 +292,7 @@ Create a data fabric table from the Snowflake data asset. Set Cost Center as a R
 
 <figure><img src="../.gitbook/assets/sc_zcc_confirm_pk.png" alt="" width="375"><figcaption></figcaption></figure>
 
-### Walkthrough: Open Data Fabric Table
+#### Walkthrough: Open Data Fabric Table
 
 View the data assets created and open the data fabric table contents.
 
@@ -304,9 +306,9 @@ View the data assets created and open the data fabric table contents.
 
 3. Congratulations! You have set-up the integration to a Cloud Data Warehouse using Zero Copy Connector for SQL.
 
-## AI Agent and Finance Operations Workspace
+### AI Agent and Finance Operations Workspace
 
-### Walkthrough: Custom Forecast Variance AI Agent
+#### Walkthrough: Custom Forecast Variance AI Agent
 
 This is a walk through of how an AI Agent equipped with both deterministic and probabilistic capabilities can automate research and validation of cost center history and expenses as well as creation of Finance Cases should cost centers be above their budget allocations. <mark style="color:red;">**Note:**</mark> this is a custom AI agent pre-configured in the lab instance provided in ServiceNow-led lab sessions; this is not a pre-built agent.
 
@@ -351,7 +353,7 @@ This is a walk through of how an AI Agent equipped with both deterministic and p
 
 <figure><img src="../.gitbook/assets/sc_zcc_select_channels_save.png" alt=""><figcaption></figcaption></figure>
 
-### Hands-on: Test and review Custom AI Agent
+#### Hands-on: Test and review Custom AI Agent
 
 Enter test prompt to process an expense event. Review planning steps, cost center and vendor extraction, RAG search results, and Finance Case creation.
 
@@ -377,7 +379,7 @@ Enter test prompt to process an expense event. Review planning steps, cost cente
 
 <figure><img src="../.gitbook/assets/sc_zcc_decision_logs.png" alt=""><figcaption></figcaption></figure>
 
-### Completion: Verify Finance Case
+#### Completion: Verify Finance Case
 
 Navigate to Finance Operations Workspace. Find the case created by the agent.
 
@@ -393,11 +395,11 @@ Navigate to Finance Operations Workspace. Find the case created by the agent.
 
 <figure><img src="../.gitbook/assets/sc_zcc_finance_case_list.png" alt=""><figcaption></figcaption></figure>
 
-## Conclusion
+### Conclusion
 
 Congratulations! You have created the **Workflow Data Fabric** integrations that powers the **Financial Forecast Variance Agent** allowing proactive creation of cases based on multiple data sources in a complex landscape to allow proactive management of budgets.
 
-## Next step
+### Next step
 
 Let us continue building the data foundations for AI Agents to use. The next suggested exercise is the creation of the External Content Connector to SharePoint.
 
