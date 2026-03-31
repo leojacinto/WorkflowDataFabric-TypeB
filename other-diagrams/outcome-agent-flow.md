@@ -19,7 +19,7 @@ graph TD
         S2["Zero<br/>Copy<br/>ERP"]
         S3["Zero<br/>Copy<br/>SQL"]        
         S6["MCP"]
-        S7["Externale<br/>Content<br/>Connector"]
+        S7["External<br/>Content<br/>Connector"]
     end
 
     subgraph EXT["External Systems"]
@@ -46,10 +46,11 @@ graph TD
     classDef user fill:#F5F5F5,stroke:#616161,stroke-width:3px,color:#1a1a1a
     classDef nowassist fill:#FFB300,stroke:#F57F17,stroke-width:2px,color:#1a1a1a
     classDef wdf fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px,color:#fff
+    classDef data fill:#8D6E63,stroke:#5D4037,stroke-width:2px,color:#fff
     classDef user fill:#F5F5F5,stroke:#616161,stroke-width:3px,color:#1a1a1a
 
     class API,CDW,ERP,MCP_EXT,SharePoint external
-    class Agent,RAG nowassist
-    class T1,T2,T3,T4,T5,T6,T7,T8,S1,S2,S3,S6,S7 wdf
+    class S1,S2,S3,S6,S7 wdf
+    class T1,T2,T3,T4,T5,T6,T7 data
     class EC user
 ```

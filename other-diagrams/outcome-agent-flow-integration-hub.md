@@ -1,6 +1,6 @@
 # Outcome: Agent Flow — Integration Hub Highlight
 
-Greyed-out variant of outcome-agent-flow.md with only Expense → REST API highlighted.
+Greyed-out variant of outcome-agent-flow.md with Expense → Integration Hub → REST API highlighted.
 Used in `main-exercises/lab-exercise-integration-hub.md`.
 
 ```mermaid
@@ -9,13 +9,18 @@ graph TD
     EC[Employee Center or<br/>Workspace with Now Assist]
   
     subgraph TOOLS["Agent Tools & Data Sources"]
-        T1["Expense<br/>"]
+        T1["Expense"]
         T2["Cost<br/>Center<br/>Details"]
         T3["Cost<br/>Center<br/>Summary"]        
         T4["Cost<br/>Center<br/>History"]
         T5["Expense<br/>History"]
         T6["External<br/>DB"]
         T7["Executive<br/>Memos"]
+        S1["Integration<br>Hub"]
+        S2["Zero<br/>Copy<br/>ERP"]
+        S3["Zero<br/>Copy<br/>SQL"]        
+        S6["MCP"]
+        S7["External<br/>Content<br/>Connector"]
     end
 
     subgraph EXT["External Systems"]
@@ -27,33 +32,40 @@ graph TD
     end
     
     EC --> TOOLS
-    T1 --> API
-    T2 --> ERP
-    T3 --> CDW
-    T4 --> CDW
-    T5 --> CDW
-    T6 --> MCP_EXT
-    T7 --> SharePoint
+    T1 --> S1 --> API
+    T2 --> S2 --> ERP
+    T3 --> S3 --> CDW
+    T4 --> S3 
+    T5 --> S3 
+    T6 --> S6 --> MCP_EXT
+    T7 --> S7 --> SharePoint
 
     %% Styling
     classDef external fill:#2196F3,stroke:#1565C0,stroke-width:2px,color:#fff
     classDef wdf fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px,color:#fff
+    classDef data fill:#8D6E63,stroke:#5D4037,stroke-width:2px,color:#fff
     classDef greyed fill:#D5D5D5,stroke:#BDBDBD,stroke-width:1px,color:#9E9E9E
 
-    %% Highlight only Expense and REST API
-    class T1 wdf
+    %% Highlight Expense → Integration Hub → REST API
+    class T1 data
+    class S1 wdf
     class API external
 
     %% Grey out everything else
     class EC,T2,T3,T4,T5,T6,T7 greyed
+    class S2,S3,S6,S7 greyed
     class CDW,ERP,MCP_EXT,SharePoint greyed
 
-    %% Grey out non-highlighted edges
+    %% Grey out non-highlighted edges (keep 1:T1→S1, 2:S1→API)
     linkStyle 0 stroke:#D5D5D5,stroke-width:1px
-    linkStyle 2 stroke:#D5D5D5,stroke-width:1px
     linkStyle 3 stroke:#D5D5D5,stroke-width:1px
     linkStyle 4 stroke:#D5D5D5,stroke-width:1px
     linkStyle 5 stroke:#D5D5D5,stroke-width:1px
     linkStyle 6 stroke:#D5D5D5,stroke-width:1px
     linkStyle 7 stroke:#D5D5D5,stroke-width:1px
+    linkStyle 8 stroke:#D5D5D5,stroke-width:1px
+    linkStyle 9 stroke:#D5D5D5,stroke-width:1px
+    linkStyle 10 stroke:#D5D5D5,stroke-width:1px
+    linkStyle 11 stroke:#D5D5D5,stroke-width:1px
+    linkStyle 12 stroke:#D5D5D5,stroke-width:1px
 ```
