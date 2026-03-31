@@ -8,6 +8,10 @@ from pathlib import Path
 BASE_DIR = Path(__file__).parent
 OUTPUT_DIR = BASE_DIR / ".gitbook" / "assets"
 
+# Naming convention:
+#   Light mode: dataflow_<name>.png          (white bg, default theme)
+#   Dark mode:  dataflow_<name>_dark.png      (dark bg, dark theme)
+
 # Lab exercises with mermaid diagrams
 LAB_FILES = [
     ("main-exercises/lab-exercise-fundamentals.md", "dataflow_fundamentals.png"),
@@ -22,6 +26,20 @@ LAB_FILES = [
     ("other-diagrams/outcome-agent-flow-external-content.md", "dataflow_outcome_agent_flow_external_content.png"),
     ("other-diagrams/outcome-agent-flow-doc-intelligence.md", "dataflow_outcome_agent_flow_doc_intelligence.png"),
     ("other-diagrams/outcome-agent-flow-mcp.md", "dataflow_outcome_agent_flow_mcp.png"),
+]
+
+# Outcome diagrams that also need dark mode variants (_dark.png suffix)
+DARK_VARIANTS = [
+    ("other-diagrams/outcome-agent-flow.md", "dataflow_outcome_agent_flow"),
+    ("other-diagrams/outcome-agent-flow-integration-hub.md", "dataflow_outcome_agent_flow_integration_hub"),
+    ("other-diagrams/outcome-agent-flow-zero-copy.md", "dataflow_outcome_agent_flow_zero_copy"),
+    ("other-diagrams/outcome-agent-flow-external-content.md", "dataflow_outcome_agent_flow_external_content"),
+    ("other-diagrams/outcome-agent-flow-doc-intelligence.md", "dataflow_outcome_agent_flow_doc_intelligence"),
+    ("other-diagrams/outcome-agent-flow-mcp.md", "dataflow_outcome_agent_flow_mcp"),
+]
+
+# Multi-diagram files
+MULTI_FILES = [
     ("data-and-flow-diagrams.md", [
         ("dataflow_prerequisites.png", 0),
         ("dataflow_user_interaction.png", 1),
@@ -41,7 +59,19 @@ def extract_mermaid_diagrams(file_path):
     
     return matches
 
-def render_mermaid_to_png(mermaid_code, output_path, width=2400):
+def transform_for_dark_mode(mermaid_code):
+    """Transform mermaid code for dark mode rendering."""
+    # Replace light greyed colors with dark-appropriate ones
+    code = mermaid_code
+    code = code.replace(
+        'fill:#D5D5D5,stroke:#BDBDBD,stroke-width:1px,color:#9E9E9E',
+        'fill:#3a3a3a,stroke:#555555,stroke-width:1px,color:#777777'
+    )
+    code = code.replace('stroke:#D5D5D5,stroke-width:1px', 'stroke:#3a3a3a,stroke-width:1px')
+    return code
+
+def render_mermaid_to_png(mermaid_code, output_path, width=2400,
+                          background='white', theme='default'):
     """Render mermaid diagram to high-res PNG using mmdc (mermaid-cli)."""
     # Create temporary mermaid file
     temp_mmd = output_path.parent / f"{output_path.stem}_temp.mmd"
@@ -57,8 +87,8 @@ def render_mermaid_to_png(mermaid_code, output_path, width=2400):
             '-i', str(temp_mmd),
             '-o', str(output_path),
             '-w', str(width),
-            '-b', 'white',
-            '-t', 'default',
+            '-b', background,
+            '-t', theme,
             '--scale', '2'
         ]
         
@@ -92,40 +122,46 @@ def main():
     
     print("Generating mermaid diagram images...\n")
     
-    for item in LAB_FILES:
-        if isinstance(item[1], list):
-            # Multiple diagrams in one file
-            file_path, diagram_configs = item
-            full_path = BASE_DIR / file_path
-            
-            if not full_path.exists():
-                print(f"⚠ File not found: {file_path}")
-                continue
-            
-            diagrams = extract_mermaid_diagrams(full_path)
-            
-            for output_name, diagram_index in diagram_configs:
-                if diagram_index < len(diagrams):
-                    output_path = OUTPUT_DIR / output_name
-                    render_mermaid_to_png(diagrams[diagram_index], output_path)
-                else:
-                    print(f"⚠ Diagram index {diagram_index} not found in {file_path}")
+    # Generate light mode diagrams
+    for file_path, output_name in LAB_FILES:
+        full_path = BASE_DIR / file_path
+        if not full_path.exists():
+            print(f"⚠ File not found: {file_path}")
+            continue
+        diagrams = extract_mermaid_diagrams(full_path)
+        if diagrams:
+            render_mermaid_to_png(diagrams[0], OUTPUT_DIR / output_name)
         else:
-            # Single diagram
-            file_path, output_name = item
-            full_path = BASE_DIR / file_path
-            
-            if not full_path.exists():
-                print(f"⚠ File not found: {file_path}")
-                continue
-            
-            diagrams = extract_mermaid_diagrams(full_path)
-            
-            if diagrams:
-                output_path = OUTPUT_DIR / output_name
-                render_mermaid_to_png(diagrams[0], output_path)
+            print(f"⚠ No mermaid diagram found in {file_path}")
+
+    # Generate multi-diagram files
+    for file_path, diagram_configs in MULTI_FILES:
+        full_path = BASE_DIR / file_path
+        if not full_path.exists():
+            print(f"⚠ File not found: {file_path}")
+            continue
+        diagrams = extract_mermaid_diagrams(full_path)
+        for output_name, diagram_index in diagram_configs:
+            if diagram_index < len(diagrams):
+                render_mermaid_to_png(diagrams[diagram_index], OUTPUT_DIR / output_name)
             else:
-                print(f"⚠ No mermaid diagram found in {file_path}")
+                print(f"⚠ Diagram index {diagram_index} not found in {file_path}")
+
+    # Generate dark mode variants
+    print("\nGenerating dark mode variants...\n")
+    for file_path, base_name in DARK_VARIANTS:
+        full_path = BASE_DIR / file_path
+        if not full_path.exists():
+            print(f"⚠ File not found: {file_path}")
+            continue
+        diagrams = extract_mermaid_diagrams(full_path)
+        if diagrams:
+            dark_code = transform_for_dark_mode(diagrams[0])
+            dark_output = OUTPUT_DIR / f"{base_name}_dark.png"
+            render_mermaid_to_png(dark_code, dark_output,
+                                  background='#171B21', theme='dark')
+        else:
+            print(f"⚠ No mermaid diagram found in {file_path}")
     
     print("\n✓ Done!")
 

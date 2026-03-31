@@ -4,7 +4,7 @@ icon: mcp
 
 # Where we are in this workshop
 
-<figure><img src="../.gitbook/assets/dataflow_outcome_agent_flow_mcp.png" alt="MCP focus: External DB to External MCP Server"><figcaption></figcaption></figure>
+<figure><picture><source srcset="../.gitbook/assets/dataflow_outcome_agent_flow_mcp_dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/dataflow_outcome_agent_flow_mcp.png" alt="MCP focus: External DB to External MCP Server"></picture><figcaption></figcaption></figure>
 
 > **Color Legend:** 🟣 Workflow Data Fabric | 🔵 External Systems
 

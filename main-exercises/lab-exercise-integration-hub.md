@@ -4,7 +4,7 @@ icon: link
 
 # Where we are in this workshop
 
-<figure><img src="../.gitbook/assets/dataflow_outcome_agent_flow_integration_hub.png" alt="Integration Hub focus: Expense to REST API"><figcaption></figcaption></figure>
+<figure><picture><source srcset="../.gitbook/assets/dataflow_outcome_agent_flow_integration_hub_dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/dataflow_outcome_agent_flow_integration_hub.png" alt="Integration Hub focus: Expense to REST API"></picture><figcaption></figcaption></figure>
 
 > **Color Legend:** 🟣 Workflow Data Fabric | 🔵 External Systems
 

@@ -31,7 +31,7 @@ You're a **Data Architect** serving the Finance department. Finance Managers nee
 
 ## Outcome
 
-<figure><img src=".gitbook/assets/dataflow_outcome_agent_flow.png" alt="Agent tools and data sources flowing to external systems"><figcaption></figcaption></figure>
+<figure><picture><source srcset=".gitbook/assets/dataflow_outcome_agent_flow_dark.png" media="(prefers-color-scheme: dark)"><img src=".gitbook/assets/dataflow_outcome_agent_flow.png" alt="Agent tools and data sources flowing to external systems"></picture><figcaption></figcaption></figure>
 
 > **Color Legend:**  Workflow Data Fabric | 🔵 External Systems | ⚪ Workspace
 

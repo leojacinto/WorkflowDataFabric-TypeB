@@ -4,7 +4,7 @@ icon: file-magnifying-glass
 
 # Where we are in this workshop
 
-<figure><img src="../.gitbook/assets/dataflow_outcome_agent_flow_doc_intelligence.png" alt="Document Intelligence focus: Expense to Documents"><figcaption></figcaption></figure>
+<figure><picture><source srcset="../.gitbook/assets/dataflow_outcome_agent_flow_doc_intelligence_dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/dataflow_outcome_agent_flow_doc_intelligence.png" alt="Document Intelligence focus: Expense to Documents"></picture><figcaption></figcaption></figure>
 
 > **Color Legend:** 🟣 Workflow Data Fabric | 🔵 External Systems
 
