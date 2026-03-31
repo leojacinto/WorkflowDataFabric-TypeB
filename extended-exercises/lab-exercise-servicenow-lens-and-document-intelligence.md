@@ -2,6 +2,12 @@
 icon: file-magnifying-glass
 ---
 
+# Where we are in this workshop
+
+<figure><img src="../.gitbook/assets/dataflow_outcome_agent_flow_doc_intelligence.png" alt="Document Intelligence focus: Expense to Documents"><figcaption></figcaption></figure>
+
+> **Color Legend:** 🟣 Workflow Data Fabric | 🔵 External Systems
+
 # Lab Exercise: ServiceNow Document Intelligence and Lens
 
 [Take me back to main page](../)

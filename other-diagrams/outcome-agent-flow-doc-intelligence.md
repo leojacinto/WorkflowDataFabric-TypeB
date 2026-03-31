@@ -1,0 +1,59 @@
+# Outcome: Agent Flow — Document Intelligence Highlight
+
+Greyed-out variant with Expense and Documents highlighted. Documents replaces REST API in this variant.
+Used in `extended-exercises/lab-exercise-servicenow-lens-and-document-intelligence.md`.
+
+```mermaid
+graph TD
+
+    EC[Employee Center or<br/>Workspace with Now Assist]
+  
+    subgraph TOOLS["Agent Tools & Data Sources"]
+        T1["Expense<br/>"]
+        T2["Cost<br/>Center<br/>Details"]
+        T3["Cost<br/>Center<br/>Summary"]        
+        T4["Cost<br/>Center<br/>History"]
+        T5["Expense<br/>History"]
+        T6["External<br/>DB"]
+        T7["Executive<br/>Memos"]
+    end
+
+    subgraph EXT["External Systems"]
+        DOCS["Documents"]
+        CDW["Cloud<br/>Data<br/>Warehouse"]
+        ERP["ERP<br>System"]
+        MCP_EXT["External<br/>MCP<br/>Server"]
+        SharePoint["SharePoint"]
+    end
+    
+    EC --> TOOLS
+    T1 --> DOCS
+    T2 --> ERP
+    T3 --> CDW
+    T4 --> CDW
+    T5 --> CDW
+    T6 --> MCP_EXT
+    T7 --> SharePoint
+
+    %% Styling
+    classDef external fill:#2196F3,stroke:#1565C0,stroke-width:2px,color:#fff
+    classDef wdf fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px,color:#fff
+    classDef greyed fill:#D5D5D5,stroke:#BDBDBD,stroke-width:1px,color:#9E9E9E
+
+    %% Highlight Expense and Documents
+    class T1 wdf
+    class DOCS external
+
+    %% Grey out everything else
+    class EC,T2,T3,T4,T5,T6,T7 greyed
+    class CDW,ERP,MCP_EXT,SharePoint greyed
+
+    %% Grey out non-highlighted edges (0:EC→TOOLS, 2:T2→ERP, 3:T3→CDW, 4:T4→CDW, 5:T5→CDW, 6:T6→MCP_EXT, 7:T7→SharePoint)
+    linkStyle 0 stroke:#D5D5D5,stroke-width:1px
+    linkStyle 2 stroke:#D5D5D5,stroke-width:1px
+    linkStyle 3 stroke:#D5D5D5,stroke-width:1px
+    linkStyle 4 stroke:#D5D5D5,stroke-width:1px
+    linkStyle 5 stroke:#D5D5D5,stroke-width:1px
+    linkStyle 6 stroke:#D5D5D5,stroke-width:1px
+    linkStyle 7 stroke:#D5D5D5,stroke-width:1px
+```
