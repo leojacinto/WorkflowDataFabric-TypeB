@@ -8,7 +8,7 @@ icon: mcp
 
 <figure><picture><source srcset="../.gitbook/assets/dataflow_outcome_agent_flow_mcp_dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/dataflow_outcome_agent_flow_mcp.png" alt="MCP focus: External DB to External MCP Server"></picture><figcaption></figcaption></figure>
 
-> **Color Legend:** 🟤 Data | 🟣 Workflow Data Fabric | 🔵 External Systems
+> **Color Legend:** 🟤 Data | 🟣 Workflow Data Fabric | 🔵 External Systems | ↓ Takes data from
 
 ## Lab Exercise: Model Context Protocol Server/Client
 
