@@ -2,6 +2,12 @@
 icon: folder-grid
 ---
 
+# Where we are in this workshop
+
+<figure><img src="../.gitbook/assets/dataflow_outcome_agent_flow_external_content.png" alt="External Content Connector focus: Executive Memos to SharePoint"><figcaption></figcaption></figure>
+
+> **Color Legend:** 🟣 Workflow Data Fabric | 🔵 External Systems
+
 # Lab Exercise: External Content Connector
 
 [Take me back to main page](../)
