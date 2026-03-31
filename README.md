@@ -33,7 +33,7 @@ You're a **Data Architect** serving the Finance department. Finance Managers nee
 
 <figure><picture><source srcset=".gitbook/assets/dataflow_outcome_agent_flow_dark.png" media="(prefers-color-scheme: dark)"><img src=".gitbook/assets/dataflow_outcome_agent_flow.png" alt="Agent tools and data sources flowing to external systems"></picture><figcaption></figcaption></figure>
 
-> <small>**Legend:** 🟤 Data | 🟣 Workflow Data Fabric | 🔵 External Systems | ⚪ Workspace | ↓ Takes data from</small>
+> **Legend:** 🟤 Data | 🟣 Workflow Data Fabric | 🔵 External Systems | ⚪ Workspace | ↓ Takes data from
 
 <figure><img src=".gitbook/assets/sc_readme_hero.png" alt=""><figcaption></figcaption></figure>
 

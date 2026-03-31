@@ -8,7 +8,7 @@ icon: folder-grid
 
 <figure><picture><source srcset="../.gitbook/assets/dataflow_outcome_agent_flow_external_content_dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/dataflow_outcome_agent_flow_external_content.png" alt="External Content Connector focus: Executive Memos to SharePoint"></picture><figcaption></figcaption></figure>
 
-> <small>**Legend:** 🟤 Data | 🟣 Workflow Data Fabric | 🔵 External Systems | ↓ Takes data from</small>
+> **Legend:** 🟤 Data | 🟣 Workflow Data Fabric | 🔵 External Systems | ↓ Takes data from
 
 ## Lab Exercise: External Content Connector
 
