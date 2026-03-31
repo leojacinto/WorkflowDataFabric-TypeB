@@ -8,7 +8,7 @@ icon: file-magnifying-glass
 
 <figure><picture><source srcset="../.gitbook/assets/dataflow_outcome_agent_flow_doc_intelligence_dark.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/dataflow_outcome_agent_flow_doc_intelligence.png" alt="Document Intelligence focus: Expense to Documents"></picture><figcaption></figcaption></figure>
 
-> **Color Legend:** 🟤 Data | 🟣 Workflow Data Fabric | 🔵 External Systems | ↓ Takes data from
+> <small>**Legend:** 🟤 Data | 🟣 Workflow Data Fabric | 🔵 External Systems | ↓ Takes data from</small>
 
 ## Lab Exercise: ServiceNow Document Intelligence and Lens
 
