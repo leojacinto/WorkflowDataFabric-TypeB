@@ -8,13 +8,18 @@ graph TD
     EC[Employee Center or<br/>Workspace with Now Assist]
   
     subgraph TOOLS["Agent Tools & Data Sources"]
-        T1["Expense<br/>"]
+        T1["Expense"]
         T2["Cost<br/>Center<br/>Details"]
         T3["Cost<br/>Center<br/>Summary"]        
         T4["Cost<br/>Center<br/>History"]
         T5["Expense<br/>History"]
         T6["External<br/>DB"]
         T7["Executive<br/>Memos"]
+        S1["Integration<br>Hub"]
+        S2["Zero<br/>Copy<br/>ERP"]
+        S3["Zero<br/>Copy<br/>SQL"]        
+        S6["MCP"]
+        S7["Externale<br/>Content<br/>Connector"]
     end
 
     subgraph EXT["External Systems"]
@@ -26,13 +31,13 @@ graph TD
     end
     
     EC --> TOOLS
-    T1 --> API
-    T2 --> ERP
-    T3 --> CDW
-    T4 --> CDW
-    T5 --> CDW
-    T6 --> MCP_EXT
-    T7 --> SharePoint
+    T1 --> S1 --> API
+    T2 --> S2 --> ERP
+    T3 --> S3 --> CDW
+    T4 --> S3 
+    T5 --> S3 
+    T6 --> S6 --> MCP_EXT
+    T7 --> S7 --> SharePoint
     
   
 
@@ -45,6 +50,6 @@ graph TD
 
     class API,CDW,ERP,MCP_EXT,SharePoint external
     class Agent,RAG nowassist
-    class T1,T2,T3,T4,T5,T6,T7,T8 wdf
+    class T1,T2,T3,T4,T5,T6,T7,T8,S1,S2,S3,S6,S7 wdf
     class EC user
 ```
