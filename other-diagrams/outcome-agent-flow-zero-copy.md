@@ -48,9 +48,9 @@ graph TD
     class EC,T1,T6,T7 greyed
     class API,MCP_EXT,SharePoint greyed
 
-    %% Grey out non-highlighted edges (0:EC→TOOLS, 1:T1→API, 5:T6→MCP_EXT, 6:T7→SharePoint)
+    %% Grey out non-highlighted edges (0:EC→TOOLS, 1:T1→API, 6:T6→MCP_EXT, 7:T7→SharePoint)
     linkStyle 0 stroke:#D5D5D5,stroke-width:1px
     linkStyle 1 stroke:#D5D5D5,stroke-width:1px
-    linkStyle 5 stroke:#D5D5D5,stroke-width:1px
     linkStyle 6 stroke:#D5D5D5,stroke-width:1px
+    linkStyle 7 stroke:#D5D5D5,stroke-width:1px
 ```
