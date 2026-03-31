@@ -33,7 +33,7 @@ You're a **Data Architect** serving the Finance department. Finance Managers nee
 
 <figure><picture><source srcset=".gitbook/assets/dataflow_outcome_agent_flow_dark.png" media="(prefers-color-scheme: dark)"><img src=".gitbook/assets/dataflow_outcome_agent_flow.png" alt="Agent tools and data sources flowing to external systems"></picture><figcaption></figcaption></figure>
 
-> **Color Legend:**  Workflow Data Fabric | 🔵 External Systems | ⚪ Workspace
+> **Color Legend:** 🟣 Workflow Data Fabric | 🔵 External Systems | ⚪ Workspace
 
 <figure><img src=".gitbook/assets/sc_readme_hero.png" alt=""><figcaption></figcaption></figure>
 
@@ -49,9 +49,7 @@ By completing this lab, you'll build an interconnected financial intelligence pl
 
 You'll master the architectural patterns for transforming siloed enterprise data into unified, intelligent decision-making platforms. **Let's build something intelligent**. 🚀💡
 
-## Workshop agenda
-
-<figure><img src=".gitbook/assets/sc_slide_workshop_agenda.png" alt=""><figcaption></figcaption></figure>
+## Lab exercises
 
 This lab is divided into 5 exercises with the suggested sequence below. The ServiceNow-led lab environments which contains these exercises will allow you to complete individual labs in any sequence you prefer. The exercises focus on walk through and basic configuration of Workflow Data Fabric integrations and there are pre-made custom agents that make use of the integrations to demonstrate what is possible. You will not need to configure agents in this lab but steps are provided on how you can explore how the agents were configured.
 
