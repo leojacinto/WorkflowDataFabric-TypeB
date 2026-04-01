@@ -230,7 +230,9 @@ html_content = gitbook_md_to_html(content)
 html_content = embed_images_in_html(html_content, BASE_DIR)
 html_content = embed_images_in_html(html_content, SCRIPT_DIR)
 
-full_html = PRINT_CSS + html_content + HTML_FOOTER
+# Override: suppress URL expansion after links in print (long query strings are ugly)
+URL_OVERRIDE_CSS = '<style>@media print { a[href^="http"]:after { content: none !important; } }</style>'
+full_html = PRINT_CSS + URL_OVERRIDE_CSS + html_content + HTML_FOOTER
 
 with open(OUTPUT_HTML, 'w', encoding='utf-8') as f:
     f.write(full_html)
