@@ -40,6 +40,8 @@ def clean_gitbook_md(content):
     content = content.replace('</mark>', '')
     # Strip GitBook zero-width space artifacts
     content = content.replace('&#x20;', '')
+    # Unescape GitBook backslash-escaped ampersands (\& → &)
+    content = content.replace('\\&', '&')
     return content
 
 
