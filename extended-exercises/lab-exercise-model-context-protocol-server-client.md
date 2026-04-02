@@ -123,7 +123,7 @@ Navigate to AI Agent Studio Settings. Add a new MCP Server entry for Neon with A
 
 <mark style="color:green;">**c.)**</mark> **URL:** [**https://mcp.neon.tech/mcp**](https://mcp.neon.tech/mcp)
 
-<mark style="color:green;">**d.)**</mark>**&#x20;API Key:** Bearer \<ask\_your\_lab\_guide\_for\_key>
+<mark style="color:green;">**d.)**</mark>**&#x20;API Key:** Bearer <[click\_this\_link\_via\_internal\_SN\_account\_to\_get\_it](https://servicenow.sharepoint.com/:x:/r/sites/iaapj/_layouts/15/Doc.aspx?sourcedoc=%7B4864fa3d-64cc-4918-a234-69be9afbe558%7D\&action=edit\&wdenableroaming=1\&wdlcid=en-GB\&wdorigin=Sharing.ServerTransfer\&wdredirectionreason=Force_SingleStepBoot\&wdinitialsession=5c35c36b-5157-9509-0a0e-36c041910c28\&wdrldsc=2\&wdrldc=1\&wdrldr=ContinueInExcel)>
 
 Note: there should be the word **Bearer** as a prefix so your value in the API Key will be something like **Bearer napi\_some\_secure\_key**
 
