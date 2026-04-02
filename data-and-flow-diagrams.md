@@ -8,6 +8,8 @@ icon: diagram-nested
 
 ## Before we proceed
 
+If you have not done so yet, log in to [Demo Hub](https://demohub.service-now.com/) then go to the [APAC End-to-End AI Workshop ](https://demohub.service-now.com/edsp?id=sc_cat_item\&sys_id=8bb12066fb2f761042e1f57675efdc85\&sysparm_category=f2d15f6893429250e0d5b3aa6aba105a)catalog item to install the lab dependencies in your instance.
+
 <figure><img src=".gitbook/assets/sc_slide_lab_dependencies.png" alt=""><figcaption></figcaption></figure>
 
 ## Components
