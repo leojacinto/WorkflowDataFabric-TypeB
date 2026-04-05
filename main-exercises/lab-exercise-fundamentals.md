@@ -60,7 +60,7 @@ The table you will create here will not be used for the rest of the lab and serv
 
 ## Steps
 
-### <mark style="color:red;">Important Preparation:</mark> Install Lab Dependencies
+### <mark style="color:$warning;">**\[Skip if already done for AI Day 1]**</mark> Install Lab Dependencies
 
 This contains critical steps to prepare your Demo Hub Instance.
 
