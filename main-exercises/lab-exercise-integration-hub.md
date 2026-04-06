@@ -193,7 +193,9 @@ For this section: Open AI Agent Studio > Forecast Variance Integration Hub Trigg
 2.  This will go to the list of Agentic workflows and AI agents. Go to **AI agents** tab > <mark style="color:green;">**a.)**</mark> click **Conditions** > <mark style="color:green;">**b.)**</mark> select **Field** as **Name** <mark style="color:green;">**c.)**</mark> **Operator** as **is** and for <mark style="color:green;">**d.)**</mark> Value type **Forecast Variance** **Integration Hub Trigger** and hit **Return/Enter ↵**. Click on the <mark style="color:green;">**e.)**</mark> result.
 
     <figure><img src="../.gitbook/assets/sc_ihub_ai_studio_search.png" alt=""><figcaption></figcaption></figure>
-3. Click on **Define the specialty**. This shows all the instructions for this AI Agent created in plain English. The **List of steps** describes the sequence, purpose, and nuances of the tools configured, which are shown in the next section. No further action is required in this section.
+3. Click on **Define the specialty**. This shows all the instructions for this AI Agent created in plain English. The **List of steps** describes the sequence, purpose, and nuances of the tools configured, which are shown in the next section. No further action is required in this section.&#x20;
+
+<mark style="color:$warning;">**In case you have issues with Now Assist with Extract Cost Center step later:**</mark> You may need to refine step 1 with instructions along the lines of (and feel free to make adjustments): 1. **When a new entry is created in x\_snc\_forecast\_v\_0\_expense\_transaction\_event, you look up the cost center using "Extract Cost Center" tool. This is done by using the event ID which has a format that starts with EXP, something like EXP-2025-IT-002-1007-01.**
 
 <figure><img src="../.gitbook/assets/sc_ihub_define_specialty.png" alt=""><figcaption></figcaption></figure>
 
@@ -346,6 +348,8 @@ Return to AI Agent Studio browser window. Look for the Now Assist badge. Open No
 <mark style="color:green;">**e.)**</mark> You can also access the **RAG search** results for the vendors associated with the expense event.
 
 <mark style="color:green;">**f.)**</mark> Finally, if the expense event will lead to the associated cost center being over budget, the total cost center expense and the **Finance Case** created for exceeding the budget for further review and action is listed. In this case it is FINC0010020.
+
+<mark style="color:$warning;">**Note ONLY if Extract Cost Center fails:**</mark> See [AI Agent Configuration](https://servicenow-lf.gitbook.io/apac-ai-end-to-end-lab-workflow-data-fabric/main-exercises/lab-exercise-integration-hub#ai-agent-configuration) > Step 3 for a possible fix. Possible failures may also require you to fine-tune the prompt.
 
 <figure><img src="../.gitbook/assets/sc_ihub_agent_results_overview.png" alt=""><figcaption></figcaption></figure>
 
