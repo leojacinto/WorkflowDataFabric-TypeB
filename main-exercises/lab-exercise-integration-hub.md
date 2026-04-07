@@ -117,6 +117,26 @@ graph TB
 
 ### Preparation
 
+#### Preparation: LLM Configuration
+
+Ensure the **AI model provider** is **Azure OpenAI** to so you have an experience consistent to the environment in which the lab has been built on.&#x20;
+
+1.  Navigate to **All** > <mark style="color:green;">**a.)**</mark> type **Now Assist Admin** > <mark style="color:green;">**b.)**</mark> click on **Settings**.
+
+    <figure><img src="../.gitbook/assets/image.png" alt="" width="337"><figcaption></figcaption></figure>
+2.  Go to <mark style="color:green;">**a.)**</mark> Manage AI models > Manage model Providers then <mark style="color:green;">**b.)**</mark> click **Model providers** (takes \~2 minutes to load) and <mark style="color:green;">**c.)**</mark> check whether the Current Model Provider is <mark style="color:red;">**NOT**</mark> **Azure OpenAI** (e.g. **Now LLM Service below**). If it NOT Azure OpenAI, click <mark style="color:green;">**d.)**</mark> click **Edit model provider**; else, skip to section **Preparation: Platform Configuration**. When you click **Edit model provider**, the screen will refresh and change its layout.
+
+    <figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+3.  In the drop-down, select <mark style="color:green;">**a.)**</mark> **Azure OpenAI** then click <mark style="color:green;">**b.)**</mark> **Save and Activate**.
+
+    <figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+4.  It will take \~3-5 minutes to reassign the services. This will result in the screen below. There might be services which will not be assigned successfully, and this can be ignored (e.g. in screenshot below there are 35 skills that failed reassignment to Azure OpenAI. Click **Okay**.
+
+    <figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+5.  Finally the **Model provider** column will show that the assignment is mostly **Azure OpenAI**.
+
+    <figure><img src="../.gitbook/assets/image (4).png" alt="" width="563"><figcaption></figcaption></figure>
+
 #### Preparation: Platform Configuration
 
 These are required preparation steps in platform level. These are cross configurations that affect instance behaviour (across applications).
